@@ -1,0 +1,100 @@
+.bodyBack{
+  background-color: #f5bc51;
+}
+
+#name{
+  border: 1px solid black;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#email{
+  border: 1px solid black;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#password{
+  border: 1px solid black;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#buttonLogin{
+    margin-right: 5%;
+    width: 20%;
+    background-color: #a0d445;
+    border: solid black 1px;
+    padding: 15px;
+    color: black;
+    font-size: 20px;
+}
+
+#buttonAccessWithoutAccount{
+  margin-right: 5%;
+  width: 20%;
+  background-color: #a0d445;
+  border: solid black 1px;
+  padding: 15px;
+  color: black;
+  font-size: 20px;
+}
+
+#buttonRegister{
+  width: 20%;
+  background-color: #a0d445;
+  border: solid black 1px;
+  padding: 15px;
+  color: black;
+  font-size: 20px;
+}
+
+#buttonLogin:hover{
+  color: white;
+  background-color: green;
+  transition: 1s;
+}
+
+#buttonRegister:hover{
+  color: white;
+  background-color: green;
+  transition: 1s;
+}
+
+#buttonAccessWithoutAccount:hover{
+  color: white;
+  background-color: green;
+  transition: 1s;
+}
+
+.buttonGroup{
+  margin-top: 5%;
+}
+
+.containerFields{
+  display: inline-block;
+  width: 60%;
+}
+
+.userField{
+    width: 35%;
+    height: 45px;
+    display: inline-block;
+    text-align: left;
+}
+
+.passwordField{
+  display: inline-block;
+  text-align: left;
+}
+
+.emailField{
+  width: 35%;
+  height: 45px;
+  display: inline-block;
+  text-align: left;
+  margin-top: 5%;
+}
