@@ -1,0 +1,29 @@
+.group{
+    position: absolute;
+    width: 25%;
+    display: inline-grid;
+    top: 13%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+}
+
+.buttonStyle{
+  padding: 5%;
+  margin-bottom: 15%;
+  font-size: 20px;
+  background-color: #b9e65d;
+  border:1px solid black;
+}
+
+body{
+  background-color: lightgreen;
+}
+
+.buttonStyle2{
+  padding: 5%;
+  margin-bottom: 15%;
+  font-size: 20px;
+  background-color: rgba(185, 230, 93, 0.5);#b9e65d;
+  border:1px solid black;
+}

@@ -36,7 +36,7 @@ $message = '';
 <form class="" action="signup.php" method="post">
   <container class="containerFields">
     <section class="userField">
-        <h4 style="font-size:25px;display:initial;">Nombre</h4>
+        <h4 style="font-size:25px;margin-bottom: 0%;">Nombre</h4>
         <input type="text" name="name" id="name">
     </section>
     <section class="emailField">

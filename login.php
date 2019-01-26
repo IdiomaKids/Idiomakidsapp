@@ -55,7 +55,7 @@
     <input type="submit" name="buttonL" id="buttonLogin" value="LOGIN"></input>
 </form>
 <a href="signup.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">CREAR CUENTA</button></a>
-<button type="button" name="buttonWA" id="buttonAccessWithoutAccount">ACCEDER SIN CUENTA</button>
+<a href="sinLogin/sinLogin.html" style="text-decoration:none;color:black;"><button type="button" name="buttonWA" id="buttonAccessWithoutAccount">ACCEDER SIN CUENTA</button></a>
 </div>
 <br>
 <br>

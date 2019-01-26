@@ -26,7 +26,7 @@
 #buttonLogin{
     margin-right: 5%;
     width: 20%;
-    background-color: #a0d445;
+    background-color: rgb(185,230,93);
     border: solid black 1px;
     padding: 15px;
     color: black;
@@ -36,7 +36,7 @@
 #buttonAccessWithoutAccount{
   margin-right: 5%;
   width: 20%;
-  background-color: #a0d445;
+  background-color: rgb(185,230,93);
   border: solid black 1px;
   padding: 15px;
   color: black;
@@ -45,7 +45,7 @@
 
 #buttonRegister{
   width: 20%;
-  background-color: #a0d445;
+  background-color: rgb(185,230,93);
   border: solid black 1px;
   padding: 15px;
   color: black;
