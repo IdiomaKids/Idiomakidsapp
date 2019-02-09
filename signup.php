@@ -5,12 +5,15 @@ $message = '';
   if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['password'])) {
     $sql = "INSERT INTO users (name, email, password) VALUES (:name, :email, :password)";
     $stmt = $conn->prepare($sql);
+
     $stmt->bindParam(':email', $_POST['email']);
+    $email = $_POST['email'];
     $stmt->bindParam(':name', $_POST['name']);
     //$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $stmt->bindParam(':password', $_POST['password']);
     if ($stmt->execute()) {
       $message = 'Usuario creado correctamente';
+      header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php?email=$email");
     } else {
       $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
     }
@@ -41,7 +44,7 @@ $message = '';
     </section>
     <section class="emailField">
         <h4 style="font-size:25px;display:table-row;">Email</h4>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" value="email">
 
     </section>
     <section class="passwordField">

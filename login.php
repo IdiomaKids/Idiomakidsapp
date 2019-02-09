@@ -12,7 +12,7 @@
     $message = '';
     if (count($results) > 0 && $_POST['password'] == $results['password']) {
       $_SESSION['id_user'] = $results['id_user'];
-      header("Location: /xampp/IdiomaKidsFinalWeb/index.php");
+      header("Location: /xampp/IdiomaKidsWeb/index.php");
     } else {
       $message = 'Lo sentimos, el usuario no existe';
     }

@@ -1,100 +1,155 @@
-.bodyBack{
+.bodyBack {
   background-color: #f5bc51;
 }
 
-#name{
+#name {
   border: 1px solid black;
   height: 45px;
   font-size: 20px;
   text-align: center;
 }
 
-#email{
+#email {
   border: 1px solid black;
   height: 45px;
   font-size: 20px;
   text-align: center;
 }
 
-#password{
+#password {
   border: 1px solid black;
   height: 45px;
   font-size: 20px;
   text-align: center;
 }
 
-#buttonLogin{
-    margin-right: 5%;
-    width: 20%;
-    background-color: rgb(185,230,93);
-    border: solid black 1px;
-    padding: 15px;
-    color: black;
-    font-size: 20px;
-}
-
-#buttonAccessWithoutAccount{
+#buttonLogin {
   margin-right: 5%;
   width: 20%;
-  background-color: rgb(185,230,93);
+  background-color: rgb(185, 230, 93);
   border: solid black 1px;
   padding: 15px;
   color: black;
   font-size: 20px;
 }
 
-#buttonRegister{
+#buttonAccessWithoutAccount {
+  margin-right: 5%;
   width: 20%;
-  background-color: rgb(185,230,93);
+  background-color: rgb(185, 230, 93);
   border: solid black 1px;
   padding: 15px;
   color: black;
   font-size: 20px;
 }
 
-#buttonLogin:hover{
+#buttonRegister {
+  width: 20%;
+  background-color: rgb(185, 230, 93);
+  border: solid black 1px;
+  padding: 15px;
+  color: black;
+  font-size: 20px;
+}
+
+#buttonLogin:hover {
   color: white;
   background-color: green;
   transition: 1s;
 }
 
-#buttonRegister:hover{
+#buttonRegister:hover {
   color: white;
   background-color: green;
   transition: 1s;
 }
 
-#buttonAccessWithoutAccount:hover{
+#buttonAccessWithoutAccount:hover {
   color: white;
   background-color: green;
   transition: 1s;
 }
 
-.buttonGroup{
+.buttonGroup {
   margin-top: 5%;
 }
 
-.containerFields{
+.containerFields {
   display: inline-block;
   width: 60%;
 }
 
-.userField{
-    width: 35%;
-    height: 45px;
-    display: inline-block;
-    text-align: left;
-}
-
-.passwordField{
+.userField {
+  width: 35%;
+  height: 45px;
   display: inline-block;
   text-align: left;
 }
 
-.emailField{
+.passwordField {
+  display: inline-block;
+  text-align: left;
+}
+
+.emailField {
   width: 35%;
   height: 45px;
   display: inline-block;
   text-align: left;
   margin-top: 5%;
+}
+
+.estiloNombreJugador {
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  left: 40%;
+  top:15%;
+  width: 40%;
+}
+
+#buttonSelectImg {
+  margin-right: 5%;
+  width: 8%;
+  background-color: rgba(00, 00, 00, 00);
+  border: none;
+  font-size: 20px;
+  transform: translateX(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  left: 46%;
+  top: 44%;
+}
+
+
+.imgCircle {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 3px solid black;
+  margin-left: 12%;
+  margin-bottom: 1%;
+  cursor: pointer;
+}
+
+.imgCircleSet {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: 3px solid black;
+  margin-left: -15%;
+  margin-bottom: 1%;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
+.imgCircle:hover {
+  background-color: green;
+  transition: 0.5s;
+}
+
+.birthdayDate{
+  margin-left: 44.5%;
+  font-size: 20px;
+
 }

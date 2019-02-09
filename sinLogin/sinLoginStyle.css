@@ -12,8 +12,16 @@
   padding: 5%;
   margin-bottom: 15%;
   font-size: 20px;
+  color:black;
   background-color: #b9e65d;
   border:1px solid black;
+}
+
+.buttonStyle:hover{
+  background-color: green;
+  border:1px solid black;
+  color: white;
+  transition:1s;
 }
 
 body{
