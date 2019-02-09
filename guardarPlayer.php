@@ -1,7 +1,8 @@
 <?php
 require 'database.php';
-$email = $_POST['email'];
+
   if (!empty($_POST['name']) && !empty($_POST['birthday']) && !empty($_POST['avatar'])) {
+    $email = $_GET['email'];
     $sql = "INSERT INTO players (name, id_user, birthday, avatar) VALUES (:name, (SELECT id_user FROM users WHERE email = $email2), :birthday, :avatar)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':name', $_POST['name']);
@@ -34,7 +35,7 @@ $email = $_POST['email'];
     <h1 style="text-align:center;margin-bottom:10%;">¿Cómo te llamas?</h1>
     <div class="estiloNombreJugador">
       <h1 style="display:inline-block">Nombre</h1>
-      <input type="text" name="name" id="name" style="border: 1px solid black; height: 45px; font-size: 20px; text-align:center; margin-left:10%;">
+      <input type="text" name="name" id="name" style="border: 1px solid black; height: 45px; font-size: 20px; text-align:center; margin-left:8%;">
     </div>
 <!-- <?php echo $_GET['email'];
 var_dump($sql)
@@ -55,8 +56,10 @@ var_dump($sql)
     <h1 style="text-align:center;margin-top:13%;">Fecha de nacimiento</h1>
 
     <input type="date" name="birthday" class="birthdayDate" id="birthday" name="birthday">
-
-    <input type="submit" name="buttonR" id="buttonRegister" value="CREAR CUENTA PLAYER"></input>
+    <br>
+    <br>
+    <a href="login.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;" class="buttonBack">VOLVER</button></a>
+    <input type="submit" name="buttonR" id="buttonRegister" value="REGISTRAR JUGADOR"></input>
   </form>
 
     <script type="text/javascript">
