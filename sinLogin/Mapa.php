@@ -7,4 +7,4 @@
   <body style="background-color:lightgreen;overflow-y:initial;margin:0%;padding:0%;">
     <img src="../Granja/GranjaFull.png" style="width:100%;height:100%;">
   </body>
-</html>
+</html> 
