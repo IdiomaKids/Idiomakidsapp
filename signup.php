@@ -2,13 +2,12 @@
 require 'database.php';
 
 $message = '';
-  if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['password'])) {
-    $sql = "INSERT INTO users (name, email, password) VALUES (:name, :email, :password)";
+  if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
     $stmt = $conn->prepare($sql);
 
     $stmt->bindParam(':email', $_POST['email']);
     $email = $_POST['email'];
-    $stmt->bindParam(':name', $_POST['name']);
     //$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $stmt->bindParam(':password', $_POST['password']);
     if ($stmt->execute()) {
@@ -38,10 +37,7 @@ $message = '';
 <br>
 <form class="" action="signup.php" method="post">
   <container class="containerFields">
-    <section class="userField">
-        <h4 style="font-size:25px;margin-bottom: 0%;">Nombre</h4>
-        <input type="text" name="name" id="name">
-    </section>
+
     <section class="emailField">
         <h4 style="font-size:25px;display:table-row;">Email</h4>
         <input type="email" name="email" id="email" value="email">
@@ -52,6 +48,11 @@ $message = '';
       <input type="password" name="password" id="password">
     </section>
 
+    <section class="passwordField">
+        <h4 style="font-size:25px;margin-bottom: 0%;">Repetir contraseña</h4>
+        <input type="password" name="name" id="name">
+    </section>
+
   </container>
   <br>
   <br>
@@ -60,7 +61,7 @@ $message = '';
   <?php endif; ?>
   <div class="buttonGroup">
     <a href="login.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">VOLVER</button></a>
-    <input type="submit" name="buttonR" id="buttonRegister" value="CREAR CUENTA"></input>
+    <input type="submit" name="buttonR" id="buttonRegister" value="AÑADIR JUGADOR"></input>
   </div>
 </form>
 

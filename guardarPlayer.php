@@ -1,9 +1,9 @@
 <?php
 require 'database.php';
-
+$email = $_GET['email'];
   if (!empty($_POST['name']) && !empty($_POST['birthday']) && !empty($_POST['avatar'])) {
-    $email = $_GET['email'];
-    $sql = "INSERT INTO players (name, id_user, birthday, avatar) VALUES (:name, (SELECT id_user FROM users WHERE email = $email2), :birthday, :avatar)";
+
+    $sql = "INSERT INTO players (name, id_user, birthday, avatar) VALUES (:name, :(SELECT id_user FROM users WHERE email = $email), :birthday, :avatar)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':name', $_POST['name']);
     $stmt->bindParam(':id_user', $_POST['id_user']);
@@ -32,14 +32,15 @@ require 'database.php';
 
     <form class="" action="guardarPlayer.php" method="post">
 
-    <h1 style="text-align:center;margin-bottom:10%;">¿Cómo te llamas?</h1>
+    <h1 style="text-align:center;margin-bottom:10%;">Añadir jugador</h1>
     <div class="estiloNombreJugador">
       <h1 style="display:inline-block">Nombre</h1>
       <input type="text" name="name" id="name" style="border: 1px solid black; height: 45px; font-size: 20px; text-align:center; margin-left:8%;">
     </div>
-<!-- <?php echo $_GET['email'];
-var_dump($sql)
-?> -->
+<?php echo "<p style='display:inline-block;'>Bienvenido, ";
+echo  $_GET['email'];
+echo "</p>";
+?>
 <h1 style="text-align:center;margin-bottom:10%;">Selecciona un avatar</h1>
     <button type="button" name="button" onclick="showDialog()" id="buttonSelectImg"><img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="avatar" name="avatar" value=""></button>
     <!-- <img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="setImage"> -->
@@ -53,7 +54,7 @@ var_dump($sql)
         <br>
         <button onclick="closeDialog()" id="button" class="buttonDialog">Clic para cerrar</button>
     </dialog>
-    <h1 style="text-align:center;margin-top:13%;">Fecha de nacimiento</h1>
+    <h1 style="text-align:center;margin-top:13%;">Fecha de nacimiento</h1>yhhbl
 
     <input type="date" name="birthday" class="birthdayDate" id="birthday" name="birthday">
     <br>
@@ -74,38 +75,38 @@ var_dump($sql)
       }
 
       function clickImageMarciano(){
-        var marciano = 1
+        var marciano = "images/avatares/marciano.png"
         console.log("Has seleccionado marciano " + marciano);
         document.getElementById('avatar').src = "images/avatares/marciano.png";
-        document.getElementById('avatar').value = "marciano";
+        document.getElementById('avatar').value = "images/avatares/marciano.png";
         console.log(document.getElementById('avatar').value);
         dialog.close();
       }
 
       function clickImagePluto(){
-        var pluto = 2
+        var pluto = "images/avatares/pluto.png"
         console.log("Has seleccionado pluto " + pluto);
         document.getElementById('avatar').src = "images/avatares/pluto.png";
-        document.getElementById('avatar').value = "pluto";
+        document.getElementById('avatar').value = "images/avatares/pluto.png";
         console.log(document.getElementById('avatar').value);
         dialog.close();
 
       }
 
       function clickImageSully(){
-        var sully = 3
+        var sully = "images/avatares/sully.png"
         console.log("Has seleccionado sully " + sully);
         document.getElementById('avatar').src = "images/avatares/sully.png";
-        document.getElementById('avatar').value = "sully";
+        document.getElementById('avatar').value = "images/avatares/sully.png";
         console.log(document.getElementById('avatar').value);
         dialog.close();
       }
 
       function clickImageNemo(){
-        var nemo = 4
+        var nemo = "images/avatares/nemo.png"
         console.log("Has seleccionado nemo " + nemo);
         document.getElementById('avatar').src = "images/avatares/nemo.png";
-        document.getElementById('avatar').value = "nemo";
+        document.getElementById('avatar').value = "images/avatares/nemo.png ";
         console.log(document.getElementById('avatar').value);
         dialog.close();
 
