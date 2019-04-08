@@ -1,18 +1,16 @@
 <?php
 require 'database.php';
-
 $message = '';
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
     $stmt = $conn->prepare($sql);
-
     $stmt->bindParam(':email', $_POST['email']);
     $email = $_POST['email'];
     //$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $stmt->bindParam(':password', $_POST['password']);
     if ($stmt->execute()) {
       $message = 'Usuario creado correctamente';
-      header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php?email=$email");
+      header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php");
     } else {
       $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
     }

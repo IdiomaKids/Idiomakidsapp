@@ -1,0 +1,10 @@
+/*Hoja de estilos*/
+#entorno {
+	display: block;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+
+#fondo {
+	opacity: 0.3;
+}

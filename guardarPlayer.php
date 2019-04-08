@@ -1,20 +1,24 @@
 <?php
 require 'database.php';
-$email = $_GET['email'];
+session_start();
+var_dump($_POST);
+
+
   if (!empty($_POST['name']) && !empty($_POST['birthday']) && !empty($_POST['avatar'])) {
 
-    $sql = "INSERT INTO players (name, id_user, birthday, avatar) VALUES (:name, :(SELECT id_user FROM users WHERE email = $email), :birthday, :avatar)";
+    $sql = "INSERT INTO players (name, birthday, avatar) VALUES (:name, :birthday, :avatar)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':name', $_POST['name']);
-    $stmt->bindParam(':id_user', $_POST['id_user']);
     $stmt->bindParam(':birthday', $_POST['birthday']);
     $stmt->bindParam(':avatar', $_POST['avatar']);
     if ($stmt->execute()) {
       $message = 'Usuario creado correctamente';
-      header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php?email=$email");
     } else {
       $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
     }
+  }else{
+echo "NO SE HA MANDADO ALGO";
+
   }
 
 
@@ -38,11 +42,11 @@ $email = $_GET['email'];
       <input type="text" name="name" id="name" style="border: 1px solid black; height: 45px; font-size: 20px; text-align:center; margin-left:8%;">
     </div>
 <?php echo "<p style='display:inline-block;'>Bienvenido, ";
-echo  $_GET['email'];
+//echo  $_GET['email'];
 echo "</p>";
 ?>
 <h1 style="text-align:center;margin-bottom:10%;">Selecciona un avatar</h1>
-    <button type="button" name="button" onclick="showDialog()" id="buttonSelectImg"><img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="avatar" name="avatar" value=""></button>
+    <button type="button" name="button" onclick="showDialog()" id="buttonSelectImg"><img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="inputAvatar" name="inputAvatar" value=""></button>
     <!-- <img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="setImage"> -->
     <dialog id="dialog">
             <p style="text-align:center;font-size:15px;">Selecciona un avatar</p>
@@ -54,6 +58,7 @@ echo "</p>";
         <br>
         <button onclick="closeDialog()" id="button" class="buttonDialog">Clic para cerrar</button>
     </dialog>
+    <input type="text" name="avatar" id="avatar" value="" style="display:none;">
     <h1 style="text-align:center;margin-top:13%;">Fecha de nacimiento</h1>yhhbl
 
     <input type="date" name="birthday" class="birthdayDate" id="birthday" name="birthday">
@@ -77,7 +82,7 @@ echo "</p>";
       function clickImageMarciano(){
         var marciano = "images/avatares/marciano.png"
         console.log("Has seleccionado marciano " + marciano);
-        document.getElementById('avatar').src = "images/avatares/marciano.png";
+        document.getElementById('inputAvatar').src = "images/avatares/marciano.png";
         document.getElementById('avatar').value = "images/avatares/marciano.png";
         console.log(document.getElementById('avatar').value);
         dialog.close();
@@ -86,7 +91,7 @@ echo "</p>";
       function clickImagePluto(){
         var pluto = "images/avatares/pluto.png"
         console.log("Has seleccionado pluto " + pluto);
-        document.getElementById('avatar').src = "images/avatares/pluto.png";
+        document.getElementById('inputAvatar').src = "images/avatares/pluto.png";
         document.getElementById('avatar').value = "images/avatares/pluto.png";
         console.log(document.getElementById('avatar').value);
         dialog.close();
@@ -96,7 +101,7 @@ echo "</p>";
       function clickImageSully(){
         var sully = "images/avatares/sully.png"
         console.log("Has seleccionado sully " + sully);
-        document.getElementById('avatar').src = "images/avatares/sully.png";
+        document.getElementById('inputAvatar').src = "images/avatares/sully.png";
         document.getElementById('avatar').value = "images/avatares/sully.png";
         console.log(document.getElementById('avatar').value);
         dialog.close();
@@ -105,7 +110,7 @@ echo "</p>";
       function clickImageNemo(){
         var nemo = "images/avatares/nemo.png"
         console.log("Has seleccionado nemo " + nemo);
-        document.getElementById('avatar').src = "images/avatares/nemo.png";
+        document.getElementById('inputAvatar').src = "images/avatares/nemo.png";
         document.getElementById('avatar').value = "images/avatares/nemo.png ";
         console.log(document.getElementById('avatar').value);
         dialog.close();

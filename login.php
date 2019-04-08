@@ -1,6 +1,7 @@
 <?php
   session_start();
   if (isset($_SESSION['id_user'])) {
+    var_dump($_SESSION['id_user']);
     header('Location: /xampp/IdiomaKidsFinalWeb/index.php');
   }
   require 'database.php';
