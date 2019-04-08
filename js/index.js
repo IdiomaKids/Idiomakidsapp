@@ -1,10 +1,4 @@
 /*Programacion de JavaScript*/
-
-
-
-
-
-
 var myObj, myJSON, text, obj;
 
 myObj =
@@ -22,20 +16,28 @@ localStorage.setItem("testJSON", myJSON);
 // Retrieving data:
 text = localStorage.getItem("testJSON");
 obj = JSON.parse(text);
+var url1 = 'images/Identificar/cow1.png';
+var url2 = 'images/Identificar/cow2.png';
+var url3 = 'images/Identificar/cow3.png';
+var url4 = 'images/Identificar/cow4.png';
 
 if (obj.position11 == "cow11.png") {
-var pieza1 = document.getElementById('demo11').src = "C:/xampp/htdocs/xampp/IdiomaKidsWeb/images/Identificar/cow1.png";
+document.getElementById('demo11').setAttributeNS('', 'href', url1);
+
 } if (obj.position12 == "cow12.png"){
-var pieza2 = document.getElementById('demo12').src = "C:/xampp/htdocs/xampp/IdiomaKidsWeb/images/Identificar/cow2.png";
+document.getElementById('demo12').setAttributeNS('', 'href', url2);
 }
 
 if (obj.position21 == "cow21.png") {
-var pieza3 = document.getElementById('demo21').src = "C:/xampp/htdocs/xampp/IdiomaKidsWeb/images/Identificar/cow3.png";
+document.getElementById('demo21').setAttributeNS('', 'href', url3);
+
 } if (obj.position22 == "cow22.png"){
-var pieza4 = document.getElementById('demo22').src = "C:/xampp/htdocs/xampp/IdiomaKidsWeb/images/Identificar/cow4.png";
+document.getElementById('demo22').setAttributeNS('', 'href', url4);
 }
 
 
+
+var piezas = document.getElementsByClassName('movil');
 
 var tamWidh = [368,280,280,372];
 var tamHeight = [262,350,355,270];
@@ -102,10 +104,22 @@ var origX = [0,0,267,175];
 var origY = [0,168,0,253];
 
 function iman(){
+
 	for(var i=0;i<piezas.length;i++){
+
 		if (Math.abs(currentPosx-origX[i])<15 && Math.abs(currentPosy-origY[i])<15) {
+			var count = 0;
 			elementSelect.setAttribute("x",origX[i]);
 			elementSelect.setAttribute("y",origY[i]);
+			elementSelect.removeAttribute("onmousemove");
+			elementSelect.removeAttribute("onmouseout");
+			elementSelect.removeAttribute("onmouseup");
+			count = count +1;
+			console.log(count);
+
+			if (count==4) {
+				console.log("Lo has conseguido!!");
+			}
 		}
 	}
 }
@@ -113,16 +127,12 @@ function iman(){
 var win = document.getElementById("win");
 
 function testing() {
+
+	if (piezas = [0,168,0,253]) {
+		console.log("hola");
+	}
 	var bien_ubicada = 0;
 	var padres = document.getElementsByClassName('padre');
-	for(var i=0;i<piezas.length;i++){
-		var posx = parseFloat(padres[i].firstChild.getAttribute("x"));
-		var posy = parseFloat(padres[i].firstChild.getAttribute("y"));
-		ide = padres[i].getAttribute("id");
-		if(origX[ide] == posx && origY[ide] == posy){
-			bien_ubicada = bien_ubicada + 1;
-		}
-	}
 	if(bien_ubicada == 4){
 		window.alert("Bien hecho!!")
 		win.play();
