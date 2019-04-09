@@ -111,9 +111,6 @@ function iman(){
 			var count = 0;
 			elementSelect.setAttribute("x",origX[i]);
 			elementSelect.setAttribute("y",origY[i]);
-			elementSelect.removeAttribute("onmousemove");
-			elementSelect.removeAttribute("onmouseout");
-			elementSelect.removeAttribute("onmouseup");
 			count = count +1;
 			console.log(count);
 
@@ -128,7 +125,7 @@ var win = document.getElementById("win");
 
 function testing() {
 
-	if (piezas = [0,168,0,253]) {
+	if (piezas = [0,168,0,253] && [0,168,0,253]) {
 		console.log("hola");
 	}
 	var bien_ubicada = 0;
