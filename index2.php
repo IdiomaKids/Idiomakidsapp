@@ -1,12 +1,21 @@
+/*Programacion de JavaScript*/
+<?php
+require 'database.php';
+
+$records = $conn->prepare('SELECT jsondata FROM `games` WHERE id_game = 135');
+$records->execute();
+$results = $records->fetch(PDO::FETCH_ASSOC);
+echo results;
+ ?>
+
+<script>
 var myObj, myJSON, text, obj;
 
 myObj =
-{
-'position11': 'cow11.png',
-'position12': 'cow12.png',
-'position21': 'cow21.png',
-'position22': 'cow22.png'
-};
+
+<?php
+
+?>
 
 
 myJSON = JSON.stringify(myObj);
@@ -15,10 +24,10 @@ localStorage.setItem("testJSON", myJSON);
 // Retrieving data:
 text = localStorage.getItem("testJSON");
 obj = JSON.parse(text);
-var url1 = 'images/Puzzle/Cow/cow1.png';
-var url2 = 'images/Puzzle/Cow/cow2.png';
-var url3 = 'images/Puzzle/Cow/cow3.png';
-var url4 = 'images/Puzzle/Cow/cow4.png';
+var url1 = 'images/Identificar/cow1.png';
+var url2 = 'images/Identificar/cow2.png';
+var url3 = 'images/Identificar/cow3.png';
+var url4 = 'images/Identificar/cow4.png';
 
 if (obj.position11 == "cow11.png") {
 document.getElementById('demo11').setAttributeNS('', 'href', url1);
@@ -38,7 +47,7 @@ document.getElementById('demo22').setAttributeNS('', 'href', url4);
 
 var piezas = document.getElementsByClassName('movil');
 
-var tamWidh = [236.5,180,180,239.1];
+var tamWidh = [368,280,280,372];
 var tamHeight = [262,350,355,270];
 
 for(var i=0;i<piezas.length;i++){
@@ -97,15 +106,23 @@ function reordenar(evt){
 	return entorno.lastChild.firstChild;
 }
 
-var origX = [499,671,499,612];
-var origY = [-30,-45.7,60,130];
+var origX = [0,0,267,175];
+var origY = [0,168,0,253];
 
 function iman(){
+
 	for(var i=0;i<piezas.length;i++){
+
 		if (Math.abs(currentPosx-origX[i])<15 && Math.abs(currentPosy-origY[i])<15) {
 			var count = 0;
 			elementSelect.setAttribute("x",origX[i]);
 			elementSelect.setAttribute("y",origY[i]);
+			count = count +1;
+			console.log(count);
+
+			if (count==4) {
+				console.log("Lo has conseguido!!");
+			}
 		}
 	}
 }
@@ -113,35 +130,36 @@ function iman(){
 var win = document.getElementById("win");
 
 function testing() {
+
+	if (piezas = [0,168,0,253] && [0,168,0,253]) {
+		console.log("hola");
+	}
 	var bien_ubicada = 0;
 	var padres = document.getElementsByClassName('padre');
-	for(var i=0;i<piezas.length;i++){
-		var posx = parseFloat(padres[i].firstChild.getAttribute("x"));
-		var posy = parseFloat(padres[i].firstChild.getAttribute("y"));
-
-		ide = padres[i].getAttribute("id");
-		if(origX[ide] == posx && origY[ide] == posy){
-			padres[i].firstChild.removeAttribute("onmousedown");
-			padres[i].firstChild.removeAttribute("onmousemove");
-			bien_ubicada = bien_ubicada + 1;
-      console.log(bien_ubicada);
-		}
-	}
 	if(bien_ubicada == 4){
+		window.alert("Bien hecho!!")
 		win.play();
-		//document.getElementsByClassName("movil").pointer-events="none";
-
-		document.getElementById("float").id = "float2";
-		document.getElementById("noClick").id = "noClick2";
-		gone();
-
-		padres[i].firstChild.removeAttribute("onmousedown");
-		padres[i].firstChild.removeAttribute("onmousemove");
-		padres[i].firstChild.removeAttribute("onmouseup");
-		padres[i].firstChild.removeAttribute("onmouseout");
 	}
 }
 
-function gone() {
-  setTimeout(function(){ document.getElementById("float2").id = "float"; }, 3000);
-}
+</script>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Pikachu Puzzle</title>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <svg width="100%" height="1000" id="entorno">
+		<g id="fondo"><image xlink:href="images/Identificar/fondo.png" width="594" height="520" x="-23" y="4"></g>
+	<g class="padre" id="0"><image xlink:href="" class="movil" id="demo11" x="0" y="590"></g>
+	<g class="padre" id="1"><image xlink:href="" class="movil" id="demo12" x="622" y="307"></g>
+	<g class="padre" id="2"><image xlink:href="" class="movil" id="demo21" x="374" y="500"></g>
+	<g class="padre" id="3"><image xlink:href="" class="movil" id="demo22" x="531" y="29"></g>
+</svg>
+<audio id="win" src="https://raw.githubusercontent.com/NestorPlasencia/PikaPuzzle/master/media/win.mp3"></audio>
+    <script  src="js/index.js"></script>
+</body>
+
+</html>
