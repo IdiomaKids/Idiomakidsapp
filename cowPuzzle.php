@@ -13,7 +13,7 @@ $jsonP=$results;
  <html lang="en" >
  <head>
    <meta charset="UTF-8">
-   <title>Pikachu Puzzle</title>
+   <title>Cow puzzle</title>
        <link rel="stylesheet" href="css/style.css">
  </head>
  <body>
@@ -44,8 +44,7 @@ $jsonP=$results;
 
  myObj =
   <?= $jsonP['jsondata']; ?>
-
-
+  
  myJSON = JSON.stringify(myObj);
  localStorage.setItem("testJSON", myJSON);
 

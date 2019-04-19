@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="styleIdenifier.css">
+<body>
+
+<img src="images/Identificar/Cuadrado/square.png" alt="" class="fondo">
+
+<div class=""style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 20%;top: 70%;">
+  <img src="" alt="" id="square" class="img">
+  <img src="" alt="" id="triangle" class="img">
+  <img src="" alt="" id="circle" class="img">
+  <img src="" alt="" id="house" class="img">
+</div>
+
+
+
+  <script>
+    var myJSON = [{
+        "id": "1",
+        "shape": "square.png",
+        "solution": "correct"
+      },
+      {
+        "id": "2",
+        "shape": "triangle.png",
+        "solution": "incorrect"
+      },
+      {
+        "id": "3",
+        "shape": "circle.png",
+        "solution": "incorrect"
+      },
+      {
+        "id": "4",
+        "shape": "house.png",
+        "solution": "incorrect"
+      }
+    ];
+
+
+
+    if (myJSON[0].shape == "square.png") {
+      //  window.alert("soy un cuadrado")
+      var solution = myJSON[0].solution;
+      document.getElementById("square").src = "images/Identificar/Cuadrado/square.png";
+      document.getElementById("square").setAttributeNS('','solution', myJSON[0].solution);
+
+      console.log(solution);
+    }
+
+    if (myJSON[1].shape == "triangle.png") {
+      //    window.alert("soy un triangulo")
+      document.getElementById("triangle").src = "images/Identificar/Cuadrado/triangle.png";
+      document.getElementById("triangle").setAttributeNS('','solution', myJSON[1].solution);
+
+
+    }
+
+    if (myJSON[2].shape == "circle.png") {
+      //  window.alert("soy un circulo")
+      document.getElementById("circle").src = "images/Identificar/Cuadrado/circle.png";
+      document.getElementById("circle").setAttributeNS('','solution', myJSON[2].solution);
+
+
+    }
+
+    if (myJSON[3].shape == "house.png") {
+      //    window.alert("soy una casa")
+      document.getElementById("house").src = "images/Identificar/Cuadrado/house.png";
+      document.getElementById("house").setAttributeNS('','solution', myJSON[3].solution);
+
+
+    }
+  </script>
+
+</body>
+
+</html>
