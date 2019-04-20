@@ -44,7 +44,7 @@ $jsonP=$results;
 
  myObj =
   <?= $jsonP['jsondata']; ?>
-  
+
  myJSON = JSON.stringify(myObj);
  localStorage.setItem("testJSON", myJSON);
 
@@ -157,8 +157,8 @@ $jsonP=$results;
 
  		ide = padres[i].getAttribute("id");
  		if(origX[ide] == posx && origY[ide] == posy){
- 			padres[i].firstChild.removeAttribute("onmousedown");
- 			padres[i].firstChild.removeAttribute("onmousemove");
+   			// padres[i].firstChild.removeAttribute("onmousedown");
+   			// padres[i].firstChild.removeAttribute("onmousemove");
  			bien_ubicada = bien_ubicada + 1;
        console.log(bien_ubicada);
  		}

@@ -1,22 +1,17 @@
- [
-    {
-      "id": "1",
-      "shape": "square.png",
-      "solution": "correct"
-    },
-    {
-      "id": "2",
-      "shape": "triangle.png",
-      "solution": "incorrect"
-    },
-    {
-      "id": "3",
-      "shape": "circle.png",
-      "solution": "incorrect"
-    },
-    {
-      "id": "4",
-      "shape": "house.png",
-      "solution": "incorrect"
-    }
-  ]
+ [{
+     "shape": "square.png",
+     "solution": "correct"
+   },
+   {
+     "shape": "triangle.png",
+     "solution": "incorrect"
+   },
+   {
+     "shape": "circle.png",
+     "solution": "incorrect"
+   },
+   {
+     "shape": "house.png",
+     "solution": "incorrect"
+   }
+ ]

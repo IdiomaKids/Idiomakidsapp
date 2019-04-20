@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 require 'database.php';
-$records = $conn->prepare('SELECT jsondata FROM `games` WHERE id_game = 135');
+$records = $conn->prepare('SELECT jsondata FROM `games` WHERE id_game = 111');
 $records->execute();
 $results = $records->fetch(PDO::FETCH_ASSOC);
 // var_dump($results);
@@ -9,11 +9,13 @@ $results = $records->fetch(PDO::FETCH_ASSOC);
 $jsonP=null;
 $jsonP=$results;
  ?>
- 
+
 <html>
 <link rel="stylesheet" href="styleIdenifier.css">
 <body>
 
+
+ <audio id="win" src="https://raw.githubusercontent.com/NestorPlasencia/PikaPuzzle/master/media/win.mp3"></audio>
   <img src="images/Identificar/Cuadrado/square.png" alt="" class="fondo" id="fondoCorrect" solution="correct">
 
   <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 20%;top: 70%;">
@@ -23,43 +25,27 @@ $jsonP=$results;
     <img src="" alt="" id="house" class="img" onclick="verMalo()">
   </div>
 
+  <div id="no" width="100%" height="750px">
+  </div>
 
   <div id="n">
-    <h1>CUADRADO</h1>
+    <h1 class="center">CUADRADO</h1>
   </div>
 
   <div id="i">
-    <h1>INCORRECTO</h1>
+    <h1 class="center">INCORRECTO</h1>
   </div>
 
 
   <script>
-    var myJSON = [{
-        "id": "1",
-        "shape": "square.png",
-        "solution": "correct"
-      },
-      {
-        "id": "2",
-        "shape": "triangle.png",
-        "solution": "incorrect"
-      },
-      {
-        "id": "3",
-        "shape": "circle.png",
-        "solution": "incorrect"
-      },
-      {
-        "id": "4",
-        "shape": "house.png",
-        "solution": "incorrect"
-      }
-    ];
+    var myJSON = <?= $jsonP['jsondata']; ?>
 
+    var win = document.getElementById("win");
 
 
     if (myJSON[0].shape == "square.png") {
       //  window.alert("soy un cuadrado")
+
       document.getElementById("square").src = "images/Identificar/Cuadrado/square.png";
       document.getElementById("square").setAttributeNS('','solution', myJSON[0].solution);
 
@@ -86,6 +72,9 @@ $jsonP=$results;
 
 
     function verBueno(){
+      document.getElementById("no").id="yes";
+      document.getElementById("fondoCorrect").style.opacity = 1;
+      win.play();
       document.getElementById("n").id= "voluble";
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);
     }
