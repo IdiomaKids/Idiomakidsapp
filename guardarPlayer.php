@@ -14,6 +14,12 @@ $emailParent = $_SESSION['email'];
     $stmt->bindParam(':avatar', $_POST['avatar']);
     $stmt->bindParam(':id_user', $parent);
     if ($stmt->execute()) {
+      $_SESSION["birthday"] = $_POST["birthday"];
+      $birthdayP = $_SESSION["birthday"];
+      header("Location: /xampp/IdiomaKidsWeb/pasarela.php");
+      // $actual = date("Y-d-j");
+      // $result = date("Y", strtotime($actual)) - date("Y", strtotime($birthdayP));;
+      // echo $result;
       $message = 'Usuario creado correctamente';
     } else {
       $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
@@ -43,6 +49,9 @@ $emailParent = $_SESSION['email'];
 <?php echo "<p style='display:inline-block;float: right;
     margin-top: -170px;margin-right:10px;'>Bienvenido, $emailParent";
 //echo  $_GET['email'];
+
+echo "<a href='logout.php'>Logout";
+echo "</a>";
 echo "</p>";
 ?>
 <h1 style="text-align:center;margin-bottom:10%;">Selecciona un avatar</h1>
