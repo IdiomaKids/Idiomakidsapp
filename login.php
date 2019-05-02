@@ -1,9 +1,6 @@
 <?php
   session_start();
-  if (isset($_SESSION['id_user'])) {
-    var_dump($_SESSION['id_user']);
-    header('Location: /xampp/IdiomaKidsWeb/index.php');
-  }
+
   require 'database.php';
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $records = $conn->prepare('SELECT id_user, email, password FROM users WHERE email = :email');
@@ -13,10 +10,20 @@
     $message = '';
     if (count($results) > 0 && $_POST['password'] == $results['password']) {
       $_SESSION['id_user'] = $results['id_user'];
+      $_SESSION['email'] = $results['email'];
       header("Location: /xampp/IdiomaKidsWeb/index.php");
     } else {
       $message = 'Lo sentimos, el usuario no existe';
     }
+  }
+  if (isset($_SESSION['id_user'])) {
+    //var_dump($_SESSION['id_user']);
+    $Pemail = $_SESSION['email'];
+    echo "<p>Estas logueado como $Pemail ";
+    echo "<a href='logout.php'>Logout";
+    echo "</a>";
+    echo "</p>";
+
   }
 ?>
 

@@ -15,4 +15,10 @@ if ($result > 5 || $result <=8) {
   echo "<p> in progress ";
   echo "</p>";
 }
+
+if ($result > 9) {
+  // code...
+  echo "<p> in progress ";
+  echo "</p>";
+}
  ?>
