@@ -14,9 +14,10 @@ $message = '';
     if ($stmt->execute()) {
       $last_id = $conn->lastInsertId();
       echo "New record created successfully. Last inserted ID is: " . $last_id;
-      //$_SESSION['id_user'] = $results['id_user'];
+    $_SESSION['id_user'] = $last_id;
+    $_SESSION['email'] = $_POST['email'];
       $message = 'Usuario creado correctamente';
-    //  header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php");
+      header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php");
     } else {
       $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
     }

@@ -1,24 +1,23 @@
 <?php
 require 'database.php';
 session_start();
-var_dump($_SESSION);
-var_dump($_POST);
-
+//var_dump($_SESSION);
+//var_dump($_POST);
+$parent = $_SESSION['id_user'];
+$emailParent = $_SESSION['email'];
   if (!empty($_POST['name']) && !empty($_POST['birthday']) && !empty($_POST['avatar'])) {
 
-    $sql = "INSERT INTO players (name, birthday, avatar) VALUES (:name, :birthday, :avatar)";
+    $sql = "INSERT INTO players (name, id_user, birthday, avatar) VALUES (:name, :id_user, :birthday, :avatar)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':name', $_POST['name']);
     $stmt->bindParam(':birthday', $_POST['birthday']);
     $stmt->bindParam(':avatar', $_POST['avatar']);
+    $stmt->bindParam(':id_user', $parent);
     if ($stmt->execute()) {
       $message = 'Usuario creado correctamente';
     } else {
       $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
     }
-  }else{
-echo "NO SE HA MANDADO ALGO";
-
   }
 
 
@@ -41,7 +40,8 @@ echo "NO SE HA MANDADO ALGO";
       <h1 style="display:inline-block">Nombre</h1>
       <input type="text" name="name" id="name" style="border: 1px solid black; height: 45px; font-size: 20px; text-align:center; margin-left:8%;">
     </div>
-<?php echo "<p style='display:inline-block;'>Bienvenido, ";
+<?php echo "<p style='display:inline-block;float: right;
+    margin-top: -170px;margin-right:10px;'>Bienvenido, $emailParent";
 //echo  $_GET['email'];
 echo "</p>";
 ?>
@@ -62,6 +62,7 @@ echo "</p>";
     <h1 style="text-align:center;margin-top:13%;">Fecha de nacimiento</h1>
 
     <input type="date" name="birthday" class="birthdayDate" id="birthday" name="birthday">
+
     <br>
     <br>
     <a href="login.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;" class="buttonBack">VOLVER</button></a>
