@@ -2,7 +2,7 @@
   session_start();
   if (isset($_SESSION['id_user'])) {
     var_dump($_SESSION['id_user']);
-    header('Location: /xampp/IdiomaKidsFinalWeb/index.php');
+    header('Location: /xampp/IdiomaKidsWeb/index.php');
   }
   require 'database.php';
   if (!empty($_POST['email']) && !empty($_POST['password'])) {

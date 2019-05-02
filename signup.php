@@ -1,16 +1,22 @@
 <?php
+session_start();
 require 'database.php';
+//var_dump($_SESSION['id_user']);
 $message = '';
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':email', $_POST['email']);
     $email = $_POST['email'];
-    //$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $stmt->bindParam(':password', $_POST['password']);
+
+
     if ($stmt->execute()) {
+      $last_id = $conn->lastInsertId();
+      echo "New record created successfully. Last inserted ID is: " . $last_id;
+      //$_SESSION['id_user'] = $results['id_user'];
       $message = 'Usuario creado correctamente';
-      header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php");
+    //  header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php");
     } else {
       $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
     }

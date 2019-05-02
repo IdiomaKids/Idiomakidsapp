@@ -1,8 +1,8 @@
 <?php
 require 'database.php';
 session_start();
+var_dump($_SESSION);
 var_dump($_POST);
-
 
   if (!empty($_POST['name']) && !empty($_POST['birthday']) && !empty($_POST['avatar'])) {
 
@@ -59,7 +59,7 @@ echo "</p>";
         <button onclick="closeDialog()" id="button" class="buttonDialog">Clic para cerrar</button>
     </dialog>
     <input type="text" name="avatar" id="avatar" value="" style="display:none;">
-    <h1 style="text-align:center;margin-top:13%;">Fecha de nacimiento</h1>yhhbl
+    <h1 style="text-align:center;margin-top:13%;">Fecha de nacimiento</h1>
 
     <input type="date" name="birthday" class="birthdayDate" id="birthday" name="birthday">
     <br>

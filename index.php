@@ -29,7 +29,7 @@
 
   <body>
         <?php if(!empty($user)): ?>
-          <br> Welcome. <?= $user['name']; ?>
+          <br> Welcome. <?= $user['id_user']; ?>
           <br>You are Successfully Logged In
           <a href="logout.php">
             Logout
