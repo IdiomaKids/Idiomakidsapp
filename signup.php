@@ -10,17 +10,25 @@ $message = '';
     $email = $_POST['email'];
     $stmt->bindParam(':password', $_POST['password']);
 
+    $pass1 = $_POST['password'];
+    $pass2 = $_POST['passwordR'];
 
-    if ($stmt->execute()) {
-      $last_id = $conn->lastInsertId();
-      echo "New record created successfully. Last inserted ID is: " . $last_id;
-    $_SESSION['id_user'] = $last_id;
-    $_SESSION['email'] = $_POST['email'];
-      $message = 'Usuario creado correctamente';
-      header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php");
-    } else {
-      $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
-    }
+if ($pass1 == $pass2) {
+  if ($stmt->execute()) {
+    $last_id = $conn->lastInsertId();
+    echo "New record created successfully. Last inserted ID is: " . $last_id;
+  $_SESSION['id_user'] = $last_id;
+  $_SESSION['email'] = $_POST['email'];
+    $message = 'Usuario creado correctamente';
+    header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php");
+  } else {
+    $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
+  }
+}else {
+  $message = 'Las contraseñas no son iguales';
+}
+
+
   }
  ?>
 
@@ -45,7 +53,7 @@ $message = '';
 
     <section class="emailField">
         <h4 style="font-size:25px;display:table-row;">Email</h4>
-        <input type="email" name="email" id="email" value="email">
+        <input type="email" name="email" id="email">
 
     </section>
     <section class="passwordField">
@@ -55,9 +63,15 @@ $message = '';
 
     <section class="passwordField">
         <h4 style="font-size:25px;margin-bottom: 0%;">Repetir contraseña</h4>
-        <input type="password" name="name" id="name">
+        <input type="password" name="passwordR" id="passwordR">
     </section>
-
+<script type="text/javascript">
+    var pass1 = document.getElementById('passwordR');
+    var pass2 = document.getElementById('password');
+  if (pass1.value != pass2.value) {
+    window.alert("No voy a pasar a la siguiente pagina")
+  }
+</script>
   </container>
   <br>
   <br>

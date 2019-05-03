@@ -1,8 +1,20 @@
+@font-face {
+  font-family: font;
+  src: url(font.ttf);
+}
+
 .bodyBack {
   background-color: #f5bc51;
 }
 
 #name {
+  border: 1px solid black;
+  height: 45px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#passwordR {
   border: 1px solid black;
   height: 45px;
   font-size: 20px;
@@ -31,6 +43,7 @@
   padding: 15px;
   color: black;
   font-size: 20px;
+  font-family: font;
 }
 
 #buttonAccessWithoutAccount {
@@ -41,6 +54,7 @@
   padding: 15px;
   color: black;
   font-size: 20px;
+  font-family: font;
 }
 
 #buttonRegister {
@@ -50,6 +64,7 @@
   padding: 15px;
   color: black;
   font-size: 20px;
+  font-family: font;
 }
 
 #buttonLogin:hover {
@@ -99,7 +114,7 @@
   display: inline-block;
   text-align: left;
   margin-top: 5%;
-  margin-right: -2%;  
+  margin-right: -2%;
 }
 
 .estiloNombreJugador {
@@ -154,7 +169,7 @@
 .birthdayDate{
   margin-left: 44.5%;
   font-size: 20px;
-
+  font-family: font;
 }
 
 
@@ -162,4 +177,12 @@
 margin-right: 5%;
 margin-left: 27%;
 margin-top: 7%;
+}
+
+h4, h1{
+  font-family: font;
+}
+
+p{
+  font-family: font;
 }
