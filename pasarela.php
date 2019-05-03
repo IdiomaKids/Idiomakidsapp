@@ -1,24 +1,41 @@
 <?php
+require ("database.php");
 session_start();
-$playerBirthday = $_SESSION["birthday"];
-$actual = date("Y-d-j");
-$result = date("Y", strtotime($actual)) - date("Y", strtotime($playerBirthday));
+$variable = $_GET['id'];
+$variable2 = $_GET['birth'];
 
-echo $result;
+$sql = "SELECT birthday FROM players WHERE id_player = $variable";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':id_user', $_SESSION['id_user']);
 
-if ($result <=5 ) {
+
+$stmt->execute();
+
+
+echo "<br>";
+echo $variable;
+echo "<br>";
+echo $variable2;
+
+
+
+if ($variable2 <=5 ) {
 header("Location: /xampp/IdiomaKidsWeb/sinLogin/sinLogin.html");
+echo "<p> in progress 5";
+echo "</p>";
 }
 
-if ($result > 5 || $result <=8) {
-  // code...
-  echo "<p> in progress ";
+else if ($variable2 > 9) {
+  header("Location: /xampp/IdiomaKidsWeb/index.php");
+  echo "<p> in progress 9";
   echo "</p>";
 }
 
-if ($result > 9) {
-  // code...
-  echo "<p> in progress ";
+else if ($variable2 >= 6 || $variable2 <=8) {
+  header("Location: /xampp/IdiomaKidsWeb/signup.php");
+  echo "<p> in progress 8";
   echo "</p>";
 }
+
+
  ?>

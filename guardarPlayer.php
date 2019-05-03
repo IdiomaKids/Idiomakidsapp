@@ -16,7 +16,7 @@ $emailParent = $_SESSION['email'];
     if ($stmt->execute()) {
       $_SESSION["birthday"] = $_POST["birthday"];
       $birthdayP = $_SESSION["birthday"];
-      header("Location: /xampp/IdiomaKidsWeb/pasarela.php");
+      header("Location: /xampp/IdiomaKidsWeb/whoareyou.php");
       // $actual = date("Y-d-j");
       // $result = date("Y", strtotime($actual)) - date("Y", strtotime($birthdayP));;
       // echo $result;
@@ -25,10 +25,8 @@ $emailParent = $_SESSION['email'];
       $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
     }
   }
-
-
-
  ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
