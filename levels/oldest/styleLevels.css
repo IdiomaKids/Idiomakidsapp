@@ -1,0 +1,44 @@
+@font-face {
+  font-family: font;
+  src: url(../../font.ttf);
+}
+
+.group {
+  position: absolute;
+  width: 25%;
+  display: inline-grid;
+  top: 13%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+}
+
+.buttonStyle {
+  font-family: font;
+  padding: 5%;
+  margin-bottom: 15%;
+  font-size: 20px;
+  color: black;
+  background-color:  #ff00f7;
+  border: 1px solid black;
+}
+
+.buttonStyle:hover {
+  background-color: #d201cb;
+  border: 1px solid black;
+  color: white;
+  transition: 1s;
+}
+
+.bodyOldest {
+  background-color: #FFa4FF;
+}
+
+.buttonStyle2 {
+  padding: 5%;
+  margin-bottom: 15%;
+  font-size: 20px;
+  background-color: rgba(185, 230, 93, 0.5);
+  #b9e65d;
+  border: 1px solid black;
+}

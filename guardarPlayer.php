@@ -14,8 +14,6 @@ $emailParent = $_SESSION['email'];
     $stmt->bindParam(':avatar', $_POST['avatar']);
     $stmt->bindParam(':id_user', $parent);
     if ($stmt->execute()) {
-      $_SESSION["birthday"] = $_POST["birthday"];
-      $birthdayP = $_SESSION["birthday"];
       header("Location: /xampp/IdiomaKidsWeb/whoareyou.php");
       // $actual = date("Y-d-j");
       // $result = date("Y", strtotime($actual)) - date("Y", strtotime($birthdayP));;
