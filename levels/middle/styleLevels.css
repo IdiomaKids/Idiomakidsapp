@@ -19,7 +19,7 @@
   margin-bottom: 15%;
   font-size: 20px;
   color: black;
-  background-color:  #00faff;
+  background-color: #00faff;
   border: 1px solid black;
 }
 
@@ -41,4 +41,16 @@
   background-color: rgba(185, 230, 93, 0.5);
   #b9e65d;
   border: 1px solid black;
+}
+
+.downRight {
+  font-family: font;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin: 5px;
+}
+
+h2 {
+  font-family: font;
 }

@@ -27,6 +27,13 @@ $birth = $_SESSION["birthday"];
 $avatar = $_SESSION["avatar"];
 $iduser = $_SESSION["id_user"];
 $idplayer = $_SESSION["id_player"];
+
+echo "<h2>Bienvenido, $name";
+echo "</h2>";
+
+echo "<a class='downRight' href='../../logout.php'>Logout";
+echo "</a>";
+
 // echo $name;
 // echo "<br>";
 // echo $birth;

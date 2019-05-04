@@ -42,3 +42,15 @@
   #b9e65d;
   border: 1px solid black;
 }
+
+.downRight {
+  font-family: font;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin: 5px;
+}
+
+h2 {
+  font-family: font;
+}

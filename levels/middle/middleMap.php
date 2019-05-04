@@ -8,3 +8,20 @@
     <img src="../../Granja/GranjaFull.png" style="width:100%;height:100%;">
   </body>
 </html>
+
+<?php
+require "../../database.php";
+session_start();
+
+$image = $_SESSION['avatar'];
+
+var_dump($image);
+echo "<img src=$image>";
+
+
+
+
+
+
+
+ ?>
