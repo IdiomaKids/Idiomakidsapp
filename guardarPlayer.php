@@ -70,7 +70,7 @@ echo "</p>";
 
     <br>
     <br>
-    <a href="login.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;" class="buttonBack">VOLVER</button></a>
+    <a href="index.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;" class="buttonBack">VOLVER</button></a>
     <input type="submit" name="buttonR" id="buttonRegister" value="REGISTRAR JUGADOR"></input>
   </form>
 

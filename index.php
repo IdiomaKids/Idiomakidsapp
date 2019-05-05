@@ -18,7 +18,7 @@
   }
   if (isset($_SESSION['id_user'])) {
     //var_dump($_SESSION['id_user']);
-    header("Location: /xampp/IdiomaKidsWeb/login.php");
+    header("Location: /xampp/IdiomaKidsWeb/index.php");
     $Pemail = $_SESSION['email'];
     echo "<p>Estas logueado como $Pemail ";
     echo "<a href='logout.php'>Logout";
@@ -44,7 +44,7 @@
 
 <br>
 <br>
-<form class="" action="login.php" method="post">
+<form class="" action="index.php" method="post">
   <container class="containerFields">
 
     <section class="emailField">
