@@ -11,14 +11,14 @@
     if (count($results) > 0 && $_POST['password'] == $results['password']) {
       $_SESSION['id_user'] = $results['id_user'];
       $_SESSION['email'] = $results['email'];
-      header("Location: /xampp/IdiomaKidsWeb/index.php");
+      header("Location: /whoareyou.php");
     } else {
       $message = 'Lo sentimos, el usuario no existe';
     }
   }
   if (isset($_SESSION['id_user'])) {
     //var_dump($_SESSION['id_user']);
-    header("Location: /xampp/IdiomaKidsWeb/index.php");
+    header("Location: /index.php");
     $Pemail = $_SESSION['email'];
     echo "<p>Estas logueado como $Pemail ";
     echo "<a href='logout.php'>Logout";

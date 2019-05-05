@@ -15,12 +15,13 @@ $message = '';
 
 if ($pass1 == $pass2) {
   if ($stmt->execute()) {
+    header("Location: /guardarPlayer.php");
     $last_id = $conn->lastInsertId();
     echo "New record created successfully. Last inserted ID is: " . $last_id;
   $_SESSION['id_user'] = $last_id;
   $_SESSION['email'] = $_POST['email'];
     $message = 'Usuario creado correctamente';
-    header("Location: /xampp/IdiomaKidsWeb/guardarPlayer.php");
+
   } else {
     $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
   }
@@ -79,7 +80,7 @@ if ($pass1 == $pass2) {
     <?= $message ?>
   <?php endif; ?>
   <div class="buttonGroup">
-    <a href="login.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">VOLVER</button></a>
+    <a href="index.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">VOLVER</button></a>
     <input type="submit" name="buttonR" id="buttonRegister" value="AÑADIR JUGADOR"></input>
   </div>
 </form>

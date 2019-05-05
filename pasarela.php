@@ -33,21 +33,20 @@ echo "<br>";
 echo $avatar;
 
 
-
 if ($birth <=5 ) {
-header("Location: /xampp/IdiomaKidsWeb/levels/youngest/youngest.php");
+header("Location: levels/youngest/youngest.php");
 echo "<p> in progress 5";
 echo "</p>";
 }
 
 else if ($birth > 9) {
-  header("Location: /xampp/IdiomaKidsWeb/levels/oldest/oldest.php");
+  header("Location: levels/oldest/oldest.php");
   echo "<p> in progress 9";
   echo "</p>";
 }
 
 else if ($birth >= 6 || $birth <=8) {
-  header("Location: /xampp/IdiomaKidsWeb/levels/middle/middle.php");
+  header("Location: levels/middle/middle.php");
   echo "<p> in progress 8";
   echo "</p>";
 }
