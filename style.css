@@ -122,7 +122,7 @@
   transform: translateY(-50%);
   position: absolute;
   left: 39%;
-  top: 15%;
+  top:15%;
   width: 40%;
 }
 
@@ -138,6 +138,7 @@
   left: 46%;
   top: 44%;
 }
+
 
 .imgCircle {
   width: 150px;
@@ -165,44 +166,23 @@
   transition: 0.5s;
 }
 
-.birthdayDate {
+.birthdayDate{
   margin-left: 44.5%;
   font-size: 20px;
   font-family: font;
 }
 
-.buttonBack {
-  margin-right: 5%;
-  margin-left: 27%;
-  margin-top: 7%;
+
+.buttonBack{
+margin-right: 5%;
+margin-left: 27%;
+margin-top: 7%;
 }
 
-h4, h1 {
+h4, h1{
   font-family: font;
 }
 
-p {
+p{
   font-family: font;
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .emailField {
-    width: 59%;
-    height: 45px;
-    display: inline-block;
-    text-align: left;
-    margin-top: 5%;
-    margin-right: -2%;
-    align-items: center;
-  }
-
-  .passwordField {
-    display: block;
-    text-align: left;
-    margin-right: 8%;
-    margin-top: 70px;
-    width: auto;
-    align-items: center;
-    margin-left: 22%;
-  }
 }

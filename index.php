@@ -32,7 +32,6 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="../../images/LogoApp.png" />
     <script type="text/javascript" src="script.js"></script>
     <meta charset="utf-8">
     <title></title>

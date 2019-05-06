@@ -22,6 +22,12 @@ echo "</a>";
 // echo "<br>";
 // echo $idplayer;
 
+
+
+
+
+
+
  ?>
 
 <!DOCTYPE html>
