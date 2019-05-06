@@ -91,7 +91,7 @@
 
 .containerFields {
   display: inline-block;
-  width: 60%;
+  width: 70%;
   margin-left: 6%;
 }
 
@@ -122,7 +122,7 @@
   transform: translateY(-50%);
   position: absolute;
   left: 39%;
-  top:15%;
+  top: 15%;
   width: 40%;
 }
 
@@ -138,7 +138,6 @@
   left: 46%;
   top: 44%;
 }
-
 
 .imgCircle {
   width: 150px;
@@ -166,23 +165,45 @@
   transition: 0.5s;
 }
 
-.birthdayDate{
+.birthdayDate {
   margin-left: 44.5%;
   font-size: 20px;
   font-family: font;
 }
 
-
-.buttonBack{
-margin-right: 5%;
-margin-left: 27%;
-margin-top: 7%;
+.buttonBack {
+  margin-right: 5%;
+  margin-left: 27%;
+  margin-top: 7%;
 }
 
-h4, h1{
+.salir {
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  margin-bottom: 5%;
+  width: 255px;
+  background-color: rgb(185, 230, 93);
+  border: solid black 1px;
+  font-size: 20px;
+  padding: 15px;
+}
+
+h4, h1 {
   font-family: font;
 }
 
-p{
+p {
   font-family: font;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .emailField {
+      width: 52%;
+      height: 100px;
+      text-align: left;
+      margin-top: 5%;
 }

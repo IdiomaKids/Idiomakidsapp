@@ -45,7 +45,7 @@ if ($pass1 == $pass2) {
     <center>
       <h1>REGISTRO</h1>
 
-<img src="images/LogoApp.png" style="width:35%;margin-top:1%;"></img>
+<img src="images/LogoApp.png" style="width:33%;margin-top:1%;"></img>
 
 <br>
 <br>

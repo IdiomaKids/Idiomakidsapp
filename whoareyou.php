@@ -43,6 +43,8 @@ foreach ($conn->query($sql) as $fila) {
            echo "<a href='pasarela.php?id=".$fila["id_player"]."&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
            echo "<div style='width:200px;display:inline-block;margin-top:10%;'>";
            echo "<img alt=".$fila["id_player"]." style='background-color:white;width: 150px;height: 150px;border-radius: 100px;border: 3px solid black;margin-left: 12%;margin-bottom: 1%;cursor: pointer;' src=".$fila["avatar"].">";
+           echo "<p style='text-align:center;text-decoration:none;'>$name";
+           echo "</p>";
            echo "</a>";
            echo "</div>";
 
@@ -61,12 +63,6 @@ echo "</section>";
   <body class="bodyBack">
 <h1 style="text-align:center;">¿Quién eres?</h1>
 
-
-
-  <br> Welcome. <?= $_SESSION['email']; ?>
-  <br>You are Successfully Logged In
-  <a href="logout.php">
-    Logout
-  </a>
+  <a href="logout.php" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:5%;"><button type="button" name="buttonR" class="salir" >SALIR</button></a>
   </body>
 </html>
