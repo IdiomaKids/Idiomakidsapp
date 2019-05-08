@@ -18,7 +18,7 @@ $image = $_SESSION['avatar'];
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>IdiomaKids</title>
     <link rel="stylesheet" href="styleLevels.css">
   </head>
   <body style="background-color:lightgreen;overflow-y:initial;margin:0%;padding:0%;z-index:5;">

@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js"></script>
     <meta charset="utf-8">
-    <title></title>
+    <title>IdiomaKids</title>
   </head>
   <body class="bodyBack">
 

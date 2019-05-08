@@ -39,7 +39,7 @@ $emailParent = $_SESSION['email'];
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>IdiomaKids</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pruebaDialog/dialog-con-estilo.css">
   </head>

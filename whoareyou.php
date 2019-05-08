@@ -58,7 +58,7 @@ echo "</section>";
   <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
-    <title></title>
+    <title>IdiomaKids</title>
   </head>
   <body class="bodyBack">
 <h1 style="text-align:center;">¿Quién eres?</h1>

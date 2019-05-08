@@ -38,7 +38,7 @@ if ($pass1 == $pass2) {
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js"></script>
     <meta charset="utf-8">
-    <title></title>
+    <title>IdiomaKids</title>
   </head>
   <body class="bodyBack">
 
@@ -82,6 +82,11 @@ if ($pass1 == $pass2) {
   <div class="buttonGroup">
     <a href="index.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">VOLVER</button></a>
     <input type="submit" name="buttonR" id="buttonRegister" value="AÑADIR JUGADOR"></input>
+    <div class="">
+      <input type="checkbox" name="button" required></input>
+      <p style="display:inline-block;">He leido y acepto la <a target="_blank" href="dataProtection.html">política de protección de datos</a> de IdiomaKids</p>
+
+    </div>
   </div>
 </form>
 
