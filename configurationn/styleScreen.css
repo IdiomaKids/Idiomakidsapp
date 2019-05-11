@@ -1,3 +1,7 @@
+@font-face {
+  font-family: sans-serif;
+  src: url(../../font.ttf);
+}
 
 .group {
   position: absolute;
@@ -15,19 +19,19 @@
   margin-bottom: 15%;
   font-size: 20px;
   color: black;
-  background-color:  #ff00f7;
+  background-color: #b9e65d;
   border: 1px solid black;
 }
 
 .buttonStyle:hover {
-  background-color: #d201cb;
+  background-color: green;
   border: 1px solid black;
   color: white;
   transition: 1s;
 }
 
-.bodyOldest {
-  background-color: #FFa4FF;
+.bodyMiddle {
+  background-color: #f5bc51;
 }
 
 .buttonStyle2 {

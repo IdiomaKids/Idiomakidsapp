@@ -14,7 +14,7 @@
 }
 
 .buttonStyle {
-  font-family: font;
+  font-family: sans-serif;
   padding: 5%;
   margin-bottom: 15%;
   font-size: 20px;
@@ -44,7 +44,7 @@
 }
 
 .downRight {
-  font-family: font;
+  font-family: sans-serif;
   right: 0;
   bottom: 0;
   position: absolute;
@@ -52,5 +52,27 @@
 }
 
 h2 {
-  font-family: font;
+  font-family: sans-serif;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .emailField {
+    width: 52%;
+    height: 100px;
+    text-align: left;
+    margin-top: 5%;
+  }
+  h2{
+    font-size: 50px;
+    text-align: center;
+  }
+  .group{
+    top: 20%;
+    left: 50%;
+    position: absolute;
+    width: 60%;
+  }
+  .buttonStyle{
+    font-size: 40px;
+  }
 }

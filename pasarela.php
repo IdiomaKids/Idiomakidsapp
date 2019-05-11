@@ -6,6 +6,7 @@ $birth = $_GET['birth'];
 $name = $_GET['name'];
 $iduser = $_GET['iduser'];
 $avatar = $_GET['avatar'];
+
 if ($birth <=5 ) {
 header("Location: levels/youngest/youngest.php");
 echo "<p> in progress 5";

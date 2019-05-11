@@ -14,7 +14,7 @@
 }
 
 .buttonStyle {
-  font-family: font;
+  font-family: sans-serif;
   padding: 5%;
   margin-bottom: 15%;
   font-size: 20px;
@@ -44,7 +44,7 @@
 }
 
 .downRight {
-  font-family: font;
+  font-family: sans-serif;
   right: 0;
   bottom: 0;
   position: absolute;
@@ -61,5 +61,75 @@
 }
 
 h2 {
-  font-family: font;
+  font-family: sans-serif;
+}
+.primer{
+  border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+    /* background-color: black; */
+    z-index: 1;
+    cursor: pointer;
+}
+.segundo{
+  border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 120px;
+    right: 100;
+    margin: 5px;
+    /* background-color: black; */
+    z-index: 1;
+    cursor: pointer;
+}
+.tercero{
+  border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 340px;
+    right: 710px;
+    margin: 5px;
+    /* background-color: black; */
+    z-index: 1;
+    cursor: pointer;
+}
+.cuarto{
+  border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50px;
+    right: 70px;
+    margin: 5px;
+    /* background-color: black; */
+    z-index: 1;
+    cursor: pointer;
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .emailField {
+    width: 52%;
+    height: 100px;
+    text-align: left;
+    margin-top: 5%;
+  }
+  h2{
+    font-size: 50px;
+    text-align: center;
+  }
+  .group{
+    top: 20%;
+    left: 50%;
+    position: absolute;
+    width: 60%;
+  }
+  .buttonStyle{
+    font-size: 40px;
+  }
 }

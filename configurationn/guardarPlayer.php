@@ -1,11 +1,10 @@
 <?php
-require 'database.php';
+require '../database.php';
 session_start();
 //var_dump($_SESSION);
 //var_dump($_POST);
 $parent = $_SESSION['id_user'];
 $emailParent = $_SESSION['email'];
-
   if (!empty($_POST['name']) && !empty($_POST['birthday']) && !empty($_POST['avatar'])) {
 
     $sql = "INSERT INTO players (name, id_user, birthday, avatar) VALUES (:name, :id_user, :birthday, :avatar)";
@@ -14,15 +13,11 @@ $emailParent = $_SESSION['email'];
     $stmt->bindParam(':birthday', $_POST['birthday']);
     $stmt->bindParam(':avatar', $_POST['avatar']);
     $stmt->bindParam(':id_user', $parent);
-    $_SESSION['id_player'] = $_POST['id_player'];
-    $_SESSION['name'] = $_POST['name'];
-    $_SESSION['id_user'] = $parent;
-    $_SESSION['birthday'] = $_POST['birthday'];
-    $_SESSION['avatar'] = $_POST['avatar'];
-
     if ($stmt->execute()) {
-      header("Location: /pasarelaCero.php");
-
+      header("Location: /whoareyou.php");
+      // $actual = date("Y-d-j");
+      // $result = date("Y", strtotime($actual)) - date("Y", strtotime($birthdayP));;
+      // echo $result;
       $message = 'Usuario creado correctamente';
     } else {
       $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
@@ -35,12 +30,12 @@ $emailParent = $_SESSION['email'];
   <head>
     <meta charset="utf-8">
     <title>IdiomaKids</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="pruebaDialog/dialog-con-estilo.css">
   </head>
   <body class="bodyBack">
 
-    <form class="" action="guardarPlayerCero.php" method="post">
+    <form class="" action="guardarPlayer.php" method="post">
 
     <h1 style="text-align:center;margin-bottom:10%;">Añadir jugador</h1>
     <div class="estiloNombreJugador">
@@ -56,15 +51,15 @@ echo "</a>";
 echo "</p>";
 ?>
 <h1 style="text-align:center;margin-bottom:10%;">Selecciona un avatar</h1>
-    <button type="button" name="button" onclick="showDialog()" id="buttonSelectImg"><img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="inputAvatar" name="inputAvatar" value=""></button>
+    <button type="button" name="button" onclick="showDialog()" id="buttonSelectImg"><img src="../images/avatares/avatar.png" alt="" class="imgCircleSet" id="inputAvatar" name="inputAvatar" value=""></button>
     <!-- <img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="setImage"> -->
     <dialog id="dialog">
             <p style="text-align:center;font-size:15px;">Selecciona un avatar</p>
-        <img src="images/avatares/marciano.png"  class="imgCircle" id="marciano" onclick="clickImageMarciano()" value="">
-        <img src="images/avatares/pluto.png" class="imgCircle" id="pluto" onclick="clickImagePluto()" value="">
+        <img src="../images/avatares/marciano.png"  class="imgCircle" id="marciano" onclick="clickImageMarciano()" value="">
+        <img src="../images/avatares/pluto.png" class="imgCircle" id="pluto" onclick="clickImagePluto()" value="">
         <br>
-        <img src="images/avatares/sully.png" class="imgCircle" id="sully" onclick="clickImageSully()" value="">
-        <img src="images/avatares/nemo.png" class="imgCircle" id="nemo" onclick="clickImageNemo()" value="">
+        <img src="../images/avatares/sully.png" class="imgCircle" id="sully" onclick="clickImageSully()" value="">
+        <img src="../images/avatares/nemo.png" class="imgCircle" id="nemo" onclick="clickImageNemo()" value="">
         <br>
         <button onclick="closeDialog()" id="button" class="buttonDialog">Clic para cerrar</button>
     </dialog>

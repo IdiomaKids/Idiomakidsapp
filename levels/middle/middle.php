@@ -42,8 +42,7 @@ echo "</a>";
     <div class="group">
       <a href="youngestMap.php" style="text-align:center;text-decoration:none;" class="buttonStyle">MAPA</a>
       <button type="button" name="button" class="buttonStyle">PERSONAJE</button>
-      <button type="button" name="button" class="buttonStyle">CONFIGURACIÓN PADRES</button>
-      <a href="../../checkUser.php" class="buttonStyle" style="text-align:center;text-decoration:none;">CAMBIAR JUGADOR</a>
+      <a href="../../checkUser.php" class="buttonStyle" style="text-align:center;text-decoration:none;">CONFIGURACIÓN PADRES</a>
       <a href="../../whoareyou.php" class="buttonStyle" style="text-align:center;text-decoration:none;">CAMBIAR JUGADOR</a>
       <a href="../../whoareyou.php" class="buttonStyle" style="text-align:center;text-decoration:none;">SALIR</a>
 

@@ -44,6 +44,7 @@
   color: black;
   font-size: 20px;
   font-family: sans-serif;
+  cursor: pointer;
 }
 
 #buttonAccessWithoutAccount {
@@ -55,6 +56,7 @@
   color: black;
   font-size: 20px;
   font-family: sans-serif;
+  cursor: pointer;
 }
 
 #buttonRegister {
@@ -65,6 +67,7 @@
   color: black;
   font-size: 20px;
   font-family: sans-serif;
+  cursor: pointer;
 }
 
 #buttonLogin:hover {
@@ -137,6 +140,7 @@
   position: absolute;
   left: 46%;
   top: 44%;
+  cursor: pointer;
 }
 
 .imgCircle {
@@ -190,6 +194,12 @@
   border: solid black 1px;
   font-size: 20px;
   padding: 15px;
+  cursor: pointer;
+}
+
+.salir:hover{
+  background-color: green;
+  color: white;
 }
 
 h4, h1 {
@@ -202,8 +212,8 @@ p {
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   .emailField {
-      width: 52%;
-      height: 100px;
-      text-align: left;
-      margin-top: 5%;
-}
+    width: 52%;
+    height: 100px;
+    text-align: left;
+    margin-top: 5%;
+  }

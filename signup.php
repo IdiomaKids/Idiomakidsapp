@@ -15,7 +15,7 @@ $message = '';
 
 if ($pass1 == $pass2) {
   if ($stmt->execute()) {
-    header("Location: /guardarPlayer.php");
+    header("Location: /guardarPlayerCero.php");
     $last_id = $conn->lastInsertId();
     echo "New record created successfully. Last inserted ID is: " . $last_id;
   $_SESSION['id_user'] = $last_id;
@@ -84,7 +84,7 @@ if ($pass1 == $pass2) {
     <input type="submit" name="buttonR" id="buttonRegister" value="AÑADIR JUGADOR"></input>
     <div class="">
       <input type="checkbox" name="button" required></input>
-      <p style="display:inline-block;">He leido y acepto la <a target="_blank" href="dataProtection.html">política de protección de datos</a> de IdiomaKids</p>
+      <p style="display:inline-block;">He leido y acepto la <a href="dataProtection.html">política de protección de datos</a> de IdiomaKids</p>
 
     </div>
   </div>

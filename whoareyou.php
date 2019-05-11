@@ -40,9 +40,10 @@ foreach ($conn->query($sql) as $fila) {
            $_SESSION["birthday"] = $fila["birthday"];
            $_SESSION["id_player"] = $fila["id_player"];
            //var_dump($fila['id_player']);
-           echo "<a href='pasarela.php?id=".$fila["id_player"]."&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
+           echo "<a style='text-decoration:none;color:black;' href='pasarela.php?id=".$fila["id_player"]."&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
            echo "<div style='width:200px;display:inline-block;margin-top:10%;'>";
            echo "<img alt=".$fila["id_player"]." style='background-color:white;width: 150px;height: 150px;border-radius: 100px;border: 3px solid black;margin-left: 12%;margin-bottom: 1%;cursor: pointer;' src=".$fila["avatar"].">";
+           echo "<img>";
            echo "<p style='text-align:center;text-decoration:none;'>$name";
            echo "</p>";
            echo "</a>";

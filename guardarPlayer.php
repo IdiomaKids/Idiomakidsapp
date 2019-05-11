@@ -14,7 +14,7 @@ $emailParent = $_SESSION['email'];
     $stmt->bindParam(':avatar', $_POST['avatar']);
     $stmt->bindParam(':id_user', $parent);
     if ($stmt->execute()) {
-      header("Location: /whoareyou.php");
+      header("Location: /configurationn/adminPlayer.php");
       // $actual = date("Y-d-j");
       // $result = date("Y", strtotime($actual)) - date("Y", strtotime($birthdayP));;
       // echo $result;
