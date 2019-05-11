@@ -25,7 +25,7 @@ $jsonP=$results;
     <img src="" alt="" id="house" class="img" onclick="verMalo()">
   </div>
 
-  <div id="no" width="100%" height="750px">
+  <div id="no" width="100%" height="-webkit-fill-available">
   </div>
 
   <div id="n">

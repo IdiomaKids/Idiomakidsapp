@@ -93,7 +93,7 @@ align-items: center;
 
 #yes{
   /* border: 1px solid black; */
-    height: 725px;
+    /* height: -webkit-fill-available; */
     background-color: #00000000;
     display: block;
     position: relative;

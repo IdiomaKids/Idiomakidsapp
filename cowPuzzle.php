@@ -19,14 +19,14 @@ $jsonP=$results;
  <body>
    <!-- <div class="res" width="547" height="523" id="entorno" style="display:none;border:0px solid black;"> -->
 
-   <svg width="100%" height="600" id="entorno">
+   <svg width="95%" height="600" id="entorno">
     <g id="fondo" style="border:1px solid black"><image xlink:href="images/Puzzle/Cow/fondo.png" width="350" height="334" x="500" y="17" style="border:1px solid black" viewBox="0 0 100 100"></g>
   <g class="padre" id="0"><image xlink:href="" class="movil" id="demo11" x="738" y="325"></g>
   <g class="padre" id="1"><image xlink:href="" class="movil" id="demo12" x="1027" y="311"></g>
   <g class="padre" id="2"><image xlink:href="" class="movil" id="demo21" x="94" y="255"></g>
   <g class="padre" id="3"><image xlink:href="" class="movil" id="demo22" x="383" y="327"></g>
  </svg>
-
+<p style="display:none;" id="valor"></p>
  <!-- </div> -->
 
  <div id="float">
@@ -164,6 +164,8 @@ $jsonP=$results;
  		}
  	}
  	if(bien_ubicada == 4){
+    var bien = document.getElementById('valor').value = '4';
+    //window.alert(bien);
  		win.play();
  		//document.getElementsByClassName("movil").pointer-events="none";
 
