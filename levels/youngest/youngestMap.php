@@ -250,9 +250,7 @@ function onload1(){
     echo "</script>";
     echo " <script> document.getElementById('image').style.bottom = '120px'";
     echo "</script>";
-    if ($total7>0) {
-      header ('Location: youngestMap.php');
-    }
+    
 
     }
      ?>
