@@ -4,32 +4,22 @@ session_start();
 $iduser = $_SESSION['id_user'];
 $email = $_SESSION['email'];
 $idplayer2 = $_SESSION['id_player'];
-
 $name = $_SESSION['name'];
 $birth = $_SESSION["birthday"];
 $avatar = $_SESSION["avatar"];
-
-
 //echo $iduser;
-
   $sql = "SELECT id_player, name, id_user, birthday, avatar FROM players WHERE id_user = $iduser";
   $stmt = $conn->prepare($sql);
   $stmt->bindParam(':id_user', $_SESSION['id_user']);
   $stmt->execute();
-
   $sql3 = "SELECT COUNT(id_player) FROM players WHERE id_user = $iduser";
   $result = $conn->query($sql3); //$pdo sería el objeto conexión
   $total = $result->fetchColumn();
   // echo $total;
   // echo $sql3;
-
-echo $avatar;
+//echo $avatar;
 //echo $row['name'];
 //var_dump($sql);
-
-
-
-
 echo "<section style='position: absolute;
     transform: translateX(-50%);
     left: 50%;
@@ -41,8 +31,6 @@ foreach ($conn->query($sql) as $fila) {
   $iduser = $fila['id_user'];
   $idplayer = $fila['id_player'];
   $avatar = $fila['avatar'];
-
-
   $actual = date("Y-d-j");
   $result = date("Y", strtotime($actual)) - date("Y", strtotime($playerBirthday));
   //echo $result;
@@ -54,8 +42,6 @@ foreach ($conn->query($sql) as $fila) {
            //var_dump($fila['id_player']);
            echo "<a style='text-decoration:none;color:black;' href='#?id=".$fila["id_player"]."&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
            echo "</a>";
-
-
            // echo "<a style='display:inline-block;'href='adminPlayer.php?id=$idplayer'>Borrar";
            // echo "<p style='display:inline-block;' onclick='delete()'>Eliminar";
             // echo "</a>";
@@ -65,34 +51,34 @@ foreach ($conn->query($sql) as $fila) {
            echo "<img>";
            //echo $fila["id_player"];
            echo "<p style='text-align:center;text-decoration:none;'>$name";
-
            echo "</p>";
-           echo "<a style='display:block;text-align:center;text-decoration:none;color:red;'href='adminPlayer.php?id=$idplayer'>Borrar";
+           echo "<a id = 'comp' style='display:block;text-align:center;text-decoration:none;color:red;'href='adminPlayer.php?id=$idplayer'>Borrar";
            echo "</a>";
            echo "</a>";
            echo "</div>";
 //echo $idplayer;
         // echo $fila['id_player'];
         extract($_GET);
-
-
 if ($total == 1) {
-  echo "<p style='text-align:center;'> Al ser el único jugador no se puede borrar";
-  echo "</p>";
-
+  echo "<script>document.getElementById('comp').style.display = 'none'</script>";
 }else{
-
         if($id==$idplayer && $result!=1){
-            $sql2 = "DELETE FROM players WHERE id_player=$id";
+            $sql3 = "DELETE FROM player_data_map WHERE id_player=$id;";
+            $stmt3 = $conn->prepare($sql3);
+            $stmt3->execute();
+
+            $sql4 = "DELETE FROM score where id_player = $id";
+            $stmt4 = $conn->prepare($sql4);
+            $stmt4->execute();
+
+            $sql2 = "DELETE FROM players where id_player = $id";
             $stmt2 = $conn->prepare($sql2);
             $stmt2->execute();
-            //echo "<script>alert('ELIMINADO $id')</script>";
+            echo "<script>alert('ELIMINADO $id')</script>";
             echo "<script>location.href='adminPlayer.php'</script>";
         }
       }
 }
-
-
 echo "</section>";
  ?>
 

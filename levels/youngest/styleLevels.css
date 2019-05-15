@@ -82,6 +82,7 @@ h2 {
     position: absolute;
     bottom: 120px;
     right: 100;
+    left: 51px;
     margin: 5px;
     /* background-color: black; */
     z-index: 0;
@@ -127,6 +128,17 @@ h2 {
   color: white;
   background-color: green;
   transition: 1s;
+  cursor: pointer;
+}
+
+#back {
+  width: 150%;
+  background-color: rgb(185, 230, 93);
+  border: solid black 1px;
+  padding: 15px;
+  color: black;
+  font-size: 20px;
+  font-family: sans-serif;
   cursor: pointer;
 }
 

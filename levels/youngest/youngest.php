@@ -6,7 +6,7 @@ $birth = $_SESSION["birthday"];
 $avatar = $_SESSION["avatar"];
 $iduser = $_SESSION["id_user"];
 $idplayer = $_SESSION["id_player"];
-
+echo $idplayer;
 
 
 echo "<h2>Bienvenido, $name";
@@ -44,7 +44,7 @@ echo "</a>";
       <a href="youngestMap.php" style="text-align:center;text-decoration:none;" class="buttonStyle">MAPA</a>
       <button type="button" name="button" class="buttonStyle">PERSONAJE</button>
       <a href="../../checkUser.php" class="buttonStyle" style="text-align:center;text-decoration:none;">CONFIGURACIÓN PADRES</a>
-      <a href="../../whoareyou.php" class="buttonStyle" style="text-align:center;text-decoration:none;">CAMBIAR JUGADOR</a>
+      <a href="../../whoareyouFromMap.php" class="buttonStyle" style="text-align:center;text-decoration:none;">CAMBIAR JUGADOR</a>
       <a href="../../whoareyou.php" class="buttonStyle" style="text-align:center;text-decoration:none;">SALIR</a>
 
     </div>
