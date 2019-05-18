@@ -14,7 +14,7 @@ session_start();
     <div class="group">
       <a href="#" style="text-align:center;text-decoration:none;" class="buttonStyle">CONTENIDO</a>
         <a href="adminPlayer.php" style="text-align:center;text-decoration:none;" class="buttonStyle">ADMINSTRAR JUGADOR</a>
-      <a href="#" class="buttonStyle" style="text-align:center;text-decoration:none;">CALIFICACIONES</a>
+      <a href="../../whoareyouCalifications.php" class="buttonStyle" style="text-align:center;text-decoration:none;">CALIFICACIONES</a>
       <br>
       <br>
       <br>

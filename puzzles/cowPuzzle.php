@@ -1,6 +1,6 @@
 <?php
-require 'database.php';
-$records = $conn->prepare('SELECT jsondata FROM `games` WHERE id_game = 114');
+require '../database.php';
+$records = $conn->prepare('SELECT jsondata FROM `games` WHERE id_game = 112');
 $records->execute();
 $results = $records->fetch(PDO::FETCH_ASSOC);
 // var_dump($results);
@@ -14,13 +14,13 @@ $jsonP=$results;
  <head>
    <meta charset="UTF-8">
    <title>Cow puzzle</title>
-       <link rel="stylesheet" href="css/style.css">
+       <link rel="stylesheet" href="style.css">
  </head>
  <body>
    <!-- <div class="res" width="547" height="523" id="entorno" style="display:none;border:0px solid black;"> -->
 
    <svg width="95%" height="600" id="entorno">
-    <g id="fondo" style="border:1px solid black"><image xlink:href="images/Puzzle/Carrot/fondocarrot.png" width="350" height="334" x="500" y="17" style="border:1px solid black" viewBox="0 0 100 100"></g>
+    <g id="fondo" style="border:1px solid black"><image xlink:href="../images/Puzzle/Cow/fondo.png" width="350" height="334" x="500" y="17" style="border:1px solid black" viewBox="0 0 100 100"></g>
   <g class="padre" id="0"><image xlink:href="" class="movil" id="demo11" x="738" y="325"></g>
   <g class="padre" id="1"><image xlink:href="" class="movil" id="demo12" x="1027" y="311"></g>
   <g class="padre" id="2"><image xlink:href="" class="movil" id="demo21" x="94" y="255"></g>
@@ -30,7 +30,7 @@ $jsonP=$results;
  <!-- </div> -->
 
  <div id="float">
-   <h1 class="center">ZANAHORIA</h1>
+   <h1 class="center">VACA</h1>
  </div>
 
  <div id="noClick"></div>
@@ -51,22 +51,22 @@ $jsonP=$results;
  // Retrieving data:
  text = localStorage.getItem("testJSON");
  obj = JSON.parse(text);
- var url1 = 'images/Puzzle/Carrot/carrot1.png';
- var url2 = 'images/Puzzle/Carrot/carrot2.png';
- var url3 = 'images/Puzzle/Carrot/carrot3.png';
- var url4 = 'images/Puzzle/Carrot/carrot4.png';
+ var url1 = '../images/Puzzle/Cow/cow1.png';
+ var url2 = '../images/Puzzle/Cow/cow2.png';
+ var url3 = '../images/Puzzle/Cow/cow3.png';
+ var url4 = '../images/Puzzle/Cow/cow4.png';
 
- if (obj.position11 == "carrot11.png") {
+ if (obj.position11 == "cow11.png") {
  document.getElementById('demo11').setAttributeNS('', 'href', url1);
 
-} if (obj.position12 == "carrot12.png"){
+ } if (obj.position12 == "cow12.png"){
  document.getElementById('demo12').setAttributeNS('', 'href', url2);
  }
 
- if (obj.position21 == "carrot21.png") {
+ if (obj.position21 == "cow21.png") {
  document.getElementById('demo21').setAttributeNS('', 'href', url3);
 
-} if (obj.position22 == "carrot22.png"){
+ } if (obj.position22 == "cow22.png"){
  document.getElementById('demo22').setAttributeNS('', 'href', url4);
  }
 

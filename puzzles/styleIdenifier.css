@@ -10,9 +10,18 @@
   position: absolute;
   transform: translateY(-50%);
   transform: translateX(-50%);
-  top: 10%;
   width: 250px;
   opacity: 0.3;
+}
+
+.fondobody {
+  display: inline-block;
+  left: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+  opacity: 0.3;
+  width: 400px;
 }
 
 #voluble{

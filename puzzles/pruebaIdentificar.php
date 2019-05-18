@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-require 'database.php';
+require '../database.php';
 $records = $conn->prepare('SELECT jsondata FROM `games` WHERE id_game = 111');
 $records->execute();
 $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -16,7 +16,7 @@ $jsonP=$results;
 
 
  <audio id="win" src="https://raw.githubusercontent.com/NestorPlasencia/PikaPuzzle/master/media/win.mp3"></audio>
-  <img src="images/Identificar/Cuadrado/square.png" alt="" class="fondo" id="fondoCorrect" solution="correct">
+  <img src="../images/Identificar/Cuadrado/square.png" alt="" class="fondo" id="fondoCorrect" solution="correct">
 
   <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 20%;top: 70%;">
     <img src="" alt="" id="square" class="img" onclick="verBueno()">
@@ -46,7 +46,7 @@ $jsonP=$results;
     if (myJSON[0].shape == "square.png") {
       //  window.alert("soy un cuadrado")
 
-      document.getElementById("square").src = "images/Identificar/Cuadrado/square.png";
+      document.getElementById("square").src = "../images/Identificar/Cuadrado/square.png";
       document.getElementById("square").setAttributeNS('','solution', myJSON[0].solution);
 
 
@@ -54,19 +54,19 @@ $jsonP=$results;
 
     if (myJSON[1].shape == "triangle.png") {
       //    window.alert("soy un triangulo")
-      document.getElementById("triangle").src = "images/Identificar/Cuadrado/triangle.png";
+      document.getElementById("triangle").src = "../images/Identificar/Cuadrado/triangle.png";
       document.getElementById("triangle").setAttributeNS('','solution', myJSON[1].solution);
     }
 
     if (myJSON[2].shape == "circle.png") {
       //  window.alert("soy un circulo")
-      document.getElementById("circle").src = "images/Identificar/Cuadrado/circle.png";
+      document.getElementById("circle").src = "../images/Identificar/Cuadrado/circle.png";
       document.getElementById("circle").setAttributeNS('','solution', myJSON[2].solution);
     }
 
     if (myJSON[3].shape == "house.png") {
       //    window.alert("soy una casa")
-      document.getElementById("house").src = "images/Identificar/Cuadrado/house.png";
+      document.getElementById("house").src = "../images/Identificar/Cuadrado/house.png";
       document.getElementById("house").setAttributeNS('','solution', myJSON[3].solution);
     }
 
