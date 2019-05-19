@@ -408,7 +408,7 @@ $total723 = $result723->fetchColumn();
            ?>
 
 
-        if (z == 4) {
+        if (z == 1) {
 
           document.getElementById('boton211').style.display = "none";
           document.getElementById('boton311').style.display = "inline-block";
