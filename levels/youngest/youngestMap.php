@@ -213,7 +213,7 @@ enviar();
     </script>
     <dialog id="dialog2" style="width:90%;height:90%;top:3%;z-index:1;"value="0">
           <p value="-1" id="score2" style="display:none;">hey</p>
-          <iframe src="../../puzzles/cowPuzzle.php" width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;width:-webkit-fill-available;height:-webkit-fill-available;"id="frame2"></iframe>
+          <iframe src="../../puzzles/applePuzzle.php" width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;width:-webkit-fill-available;height:-webkit-fill-available;"id="frame2"></iframe>
 
       <script type="text/javascript">
       <?php
@@ -224,7 +224,7 @@ $total72 = $result72->fetchColumn();
        ?>
       var contador2 = 0;
       function boton11() {
-        document.getElementById('frame2').src = "../../puzzles/pruebaIdentificar.php";
+        document.getElementById('frame2').src = "../../puzzles/pruebaIdentificarPig.php";
         var x = document.getElementById('frame2').contentWindow.document.getElementById('valor').value
           document.getElementById('boton11').style.display = "none";
           document.getElementById('boton21').style.display = "inline-block";
@@ -239,13 +239,13 @@ $total72 = $result72->fetchColumn();
       function boton21() {
         var y = document.getElementById('frame2').contentWindow.document.getElementById('fondoCorrect').style.opacity
         if (y == 1) {
-          document.getElementById('frame2').src = "../../puzzles/carrotPuzzle.php";
+          document.getElementById('frame2').src = "../../puzzles/threePuzzle.php";
           document.getElementById('boton21').style.display = "none";
           document.getElementById('boton31').style.display = "inline-block";
           contador2 = contador2 + 1;
           window.alert(contador2);
         }
-        document.getElementById('frame2').src = "../../puzzles/carrotPuzzle.php";
+        document.getElementById('frame2').src = "../../puzzles/threePuzzle.php";
         document.getElementById('boton21').style.display = "none";
         document.getElementById('boton31').style.display = "inline-block";
       }
@@ -331,7 +331,7 @@ enviar2();
     </script>
     <dialog id="dialog3" style="width:90%;height:90%;top:3%;z-index:1;"value="0">
           <p value="-1" id="score2" style="display:none;">hey</p>
-          <iframe src="../../puzzles/cowPuzzle.php" width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;width:-webkit-fill-available;height:-webkit-fill-available;"id="frame3"></iframe>
+          <iframe src="../../puzzles/pruebaIdentificarArbol.php" width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;width:-webkit-fill-available;height:-webkit-fill-available;"id="frame3"></iframe>
 
       <script type="text/javascript">
       <?php
@@ -342,11 +342,11 @@ $total723 = $result723->fetchColumn();
        ?>
       var contador3 = 0;
       function boton111() {
-        document.getElementById('frame3').src = "../../puzzles/pruebaIdentificar.php";
-        var x = document.getElementById('frame3').contentWindow.document.getElementById('valor').value
+        document.getElementById('frame3').src = "../../puzzles/horsePuzzle.php";
+        var x = document.getElementById('frame3').contentWindow.document.getElementById('fondoCorrect').style.opacity
           document.getElementById('boton111').style.display = "none";
           document.getElementById('boton211').style.display = "inline-block";
-        if (x == 4) {
+        if (x == 1) {
           document.getElementById('boton111').style.display = "none";
           document.getElementById('boton211').style.display = "inline-block";
           contador3 = contador3 + 1;
@@ -355,15 +355,15 @@ $total723 = $result723->fetchColumn();
       }
 
       function boton211() {
-        var y = document.getElementById('frame3').contentWindow.document.getElementById('fondoCorrect').style.opacity
-        if (y == 1) {
-          document.getElementById('frame3').src = "../../puzzles/carrotPuzzle.php";
+        var y = document.getElementById('frame3').contentWindow.document.getElementById('valor').value
+        if (y == 4) {
+          document.getElementById('frame3').src = "../../puzzles/identifcarCabeza.php";
           document.getElementById('boton211').style.display = "none";
           document.getElementById('boton311').style.display = "inline-block";
           contador3 = contador3 + 1;
           window.alert(contador3);
         }
-        document.getElementById('frame3').src = "../../puzzles/carrotPuzzle.php";
+        document.getElementById('frame3').src = "../../puzzles/identifcarCabeza.php";
         document.getElementById('boton211').style.display = "none";
         document.getElementById('boton311').style.display = "inline-block";
       }
@@ -371,7 +371,7 @@ $total723 = $result723->fetchColumn();
       function boton311(){
 
 
-        var z = document.getElementById('frame3').contentWindow.document.getElementById('valor').value
+        var z = document.getElementById('frame3').contentWindow.document.getElementById('fondoCorrect').style.opacity
 
 
 
@@ -450,7 +450,7 @@ function enviar4(){
 </script>
 <dialog id="dialog4" style="width:90%;height:90%;top:3%;z-index:1;"value="0">
       <p value="-1" id="score2" style="display:none;">hey</p>
-      <iframe src="../../puzzles/cowPuzzle.php" width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;width:-webkit-fill-available;height:-webkit-fill-available;"id="frame4"></iframe>
+      <iframe src="../../puzzles/carrotPuzzle.php" width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;width:-webkit-fill-available;height:-webkit-fill-available;"id="frame4"></iframe>
 
   <script type="text/javascript">
   <?php
@@ -476,13 +476,13 @@ $total7234 = $result7234->fetchColumn();
   function boton2111() {
     var y = document.getElementById('frame4').contentWindow.document.getElementById('fondoCorrect').style.opacity
     if (y == 1) {
-      document.getElementById('frame4').src = "../../puzzles/carrotPuzzle.php";
+      document.getElementById('frame4').src = "../../puzzles/cowPuzzle.php";
       document.getElementById('boton2111').style.display = "none";
       document.getElementById('boton3111').style.display = "inline-block";
       contador4 = contador4 + 1;
       window.alert(contador4);
     }
-    document.getElementById('frame4').src = "../../puzzles/carrotPuzzle.php";
+    document.getElementById('frame4').src = "../../puzzles/cowPuzzle.php";
     document.getElementById('boton2111').style.display = "none";
     document.getElementById('boton3111').style.display = "inline-block";
   }
