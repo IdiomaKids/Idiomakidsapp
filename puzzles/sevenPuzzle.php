@@ -1,7 +1,6 @@
 <?php
 require '../database.php';
-//Recogemos el JSON de la bbdd que necesitemos
-$records = $conn->prepare('SELECT jsondata FROM `games` WHERE id_game = 121');
+$records = $conn->prepare('SELECT jsondata FROM `games` WHERE id_game = 143');
 $records->execute();
 $results = $records->fetch(PDO::FETCH_ASSOC);
 // var_dump($results);
@@ -21,7 +20,7 @@ $jsonP=$results;
    <!-- <div class="res" width="547" height="523" id="entorno" style="display:none;border:0px solid black;"> -->
 
    <svg width="95%" height="600" id="entorno">
-    <g id="fondo" style="border:1px solid black"><image xlink:href="../images/Puzzle/Apple/fondoapple.png" width="350" height="334" x="500" y="17" style="border:1px solid black" viewBox="0 0 100 100"></g>
+    <g id="fondo" style="border:1px solid black"><image xlink:href="../images/Puzzle/Seven/fondoSeven.png" width="350" height="334" x="500" y="17" style="border:1px solid black" viewBox="0 0 100 100"></g>
   <g class="padre" id="0"><image xlink:href="" class="movil" id="demo11" x="738" y="325"></g>
   <g class="padre" id="1"><image xlink:href="" class="movil" id="demo12" x="1027" y="311"></g>
   <g class="padre" id="2"><image xlink:href="" class="movil" id="demo21" x="94" y="255"></g>
@@ -31,7 +30,7 @@ $jsonP=$results;
  <!-- </div> -->
 
  <div id="float">
-   <h1 class="center">MANZANA</h1>
+   <h1 class="center">SIETE</h1>
  </div>
 
  <div id="noClick"></div>
@@ -41,7 +40,6 @@ $jsonP=$results;
  </html>
 
  <script>
- //Tratamos el JSON y vamos recorriendolo
  var myObj, myJSON, text, obj;
 
  myObj =
@@ -53,34 +51,32 @@ $jsonP=$results;
  // Retrieving data:
  text = localStorage.getItem("testJSON");
  obj = JSON.parse(text);
- var url1 = '../images/Puzzle/Apple/apple1.png';
- var url2 = '../images/Puzzle/Apple/apple2.png';
- var url3 = '../images/Puzzle/Apple/apple3.png';
- var url4 = '../images/Puzzle/Apple/apple4.png';
+ var url1 = '../images/Puzzle/Seven/seven1.png';
+ var url2 = '../images/Puzzle/Seven/seven2.png';
+ var url3 = '../images/Puzzle/Seven/seven3.png';
+ var url4 = '../images/Puzzle/Seven/seven4.png';
 
- if (obj.position11 == "apple11.png") {
+ if (obj.position11 == "seven11.png") {
  document.getElementById('demo11').setAttributeNS('', 'href', url1);
 
-} if (obj.position12 == "apple12.png"){
+} if (obj.position12 == "seven12.png"){
  document.getElementById('demo12').setAttributeNS('', 'href', url2);
  }
 
- if (obj.position21 == "apple21.png") {
+ if (obj.position21 == "seven21.png") {
  document.getElementById('demo21').setAttributeNS('', 'href', url3);
 
-} if (obj.position22 == "apple22.png"){
+} if (obj.position22 == "seven22.png"){
  document.getElementById('demo22').setAttributeNS('', 'href', url4);
  }
 
 
-//Regogemos las piezas y las guardamos en la variable piezas
+
  var piezas = document.getElementsByClassName('movil');
 
-//Definimos el tamaño de las piezas
  var tamWidh = [236.5,180,180,239.1];
  var tamHeight = [262,350,355,270];
 
-//recorremos la longitud de la variable y le vamos asignanao a cada posición el tamaño y dos eventos, el de agarrar y soltar
  for(var i=0;i<piezas.length;i++){
  	piezas[i].setAttribute("width", tamWidh[i]);
  	piezas[i].setAttribute("height",tamHeight[i]);
@@ -93,7 +89,6 @@ $jsonP=$results;
  var currentPosX = 0;
  var currentPosY = 0;
 
-//En esta función seleccionamos la pieza que va a moverse, evt lo utilizamos para llamar a la pieza en concreto que queremos seleccionar
  function seleccionarElemento(evt) {
  	elementSelect = reordenar(evt);
  	currentX = evt.clientX;
@@ -103,7 +98,6 @@ $jsonP=$results;
  	elementSelect.setAttribute("onmousemove","moverElemento(evt)");
  }
 
-//En esta función movemos la pieza que tenemos seleccionada, para eso le pasamos esta función en la función de arriba
  function moverElemento(evt){
  	var dx = evt.clientX - currentX;
  	var dy = evt.clientY - currentY;
@@ -118,7 +112,6 @@ $jsonP=$results;
  	iman();
  }
 
-//En esta función quitamos las propiedades de la pieza selccionada y la dejamos como estaba al principio, sin funciones, pero si en la posición que la dejamos al deselecctionarla
  function deseleccionarElemento(evt){
  	testing();
  	if(elementSelect != 0){
@@ -129,9 +122,8 @@ $jsonP=$results;
  	}
  }
 
-
  var entorno = document.getElementById('entorno');
-//En esta funcioón asignamos los sitios donde van los nodos de las piezas, al utilizar varias piezas, necesitamos varios nodos, asi que los clonamos y ponemos varios nodos
+
  function reordenar(evt){
  	var padre = evt.target.parentNode;
  	var clone = padre.cloneNode(true);
@@ -141,11 +133,9 @@ $jsonP=$results;
  	return entorno.lastChild.firstChild;
  }
 
-//Estas son las posiciones donde van las piezas
  var origX = [499,671,499,612];
  var origY = [-30,-45.7,60,130];
 
-//La función iman hace que cuando estes cerca de la posición de la pieza se imante hacia esa posición
  function iman(){
  	for(var i=0;i<piezas.length;i++){
  		if (Math.abs(currentPosx-origX[i])<15 && Math.abs(currentPosy-origY[i])<15) {
@@ -158,7 +148,6 @@ $jsonP=$results;
 
  var win = document.getElementById("win");
 
-//Esta función comprueba que las piezas esten bien colocadas
  function testing() {
  	var bien_ubicada = 0;
  	var padres = document.getElementsByClassName('padre');
@@ -174,7 +163,6 @@ $jsonP=$results;
        console.log(bien_ubicada);
  		}
  	}
-  //Comprobamos que las piezas esten bien, y si lo estan ponemos todos los eventes fuera de las piezas, haciendo que no se puedan mover las piezas de su casilla
  	if(bien_ubicada == 4){
     var bien = document.getElementById('valor').value = '4';
     //window.alert(bien);

@@ -461,7 +461,7 @@ $total7234 = $result7234->fetchColumn();
    ?>
   var contador4 = 0;
   function boton1111() {
-    document.getElementById('frame4').src = "../../puzzles/pruebaIdentificar.php";
+    document.getElementById('frame4').src = "../../puzzles/pruebaIdentificarBanana.php";
     var x = document.getElementById('frame4').contentWindow.document.getElementById('valor').value
       document.getElementById('boton1111').style.display = "none";
       document.getElementById('boton2111').style.display = "inline-block";
@@ -476,13 +476,13 @@ $total7234 = $result7234->fetchColumn();
   function boton2111() {
     var y = document.getElementById('frame4').contentWindow.document.getElementById('fondoCorrect').style.opacity
     if (y == 1) {
-      document.getElementById('frame4').src = "../../puzzles/cowPuzzle.php";
+      document.getElementById('frame4').src = "../../puzzles/sevenPuzzle.php";
       document.getElementById('boton2111').style.display = "none";
       document.getElementById('boton3111').style.display = "inline-block";
       contador4 = contador4 + 1;
       window.alert(contador4);
     }
-    document.getElementById('frame4').src = "../../puzzles/cowPuzzle.php";
+    document.getElementById('frame4').src = "../../puzzles/sevenPuzzle.php";
     document.getElementById('boton2111').style.display = "none";
     document.getElementById('boton3111').style.display = "inline-block";
   }
@@ -742,6 +742,22 @@ function onload1(){
 
     }
   }
+}
+
+if ($total7 < 1) {
+  echo "<script> document.getElementById('2').style.display = 'none' </script>";
+}else {
+  echo "<script> document.getElementById('2').style.display = 'block' </script>";
+}
+if ($total72 < 1) {
+  echo "<script> document.getElementById('3').style.display = 'none' </script>";
+}else {
+  echo "<script> document.getElementById('3').style.display = 'block' </script>";
+}
+if ($total721 < 1) {
+  echo "<script> document.getElementById('4').style.display = 'none' </script>";
+}else {
+  echo "<script> document.getElementById('4').style.display = 'block' </script>";
 }
      ?>
   </body>

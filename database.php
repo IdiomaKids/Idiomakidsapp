@@ -1,3 +1,5 @@
+<!-- Aqui realizamos la conexión a la bbdd -->
+
 <?php
 $server = 'db5000068006.hosting-data.io';
 $username = 'dbu19163';

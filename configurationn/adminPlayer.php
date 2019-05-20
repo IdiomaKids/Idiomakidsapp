@@ -1,6 +1,7 @@
 <?php
 require '../database.php';
 session_start();
+//Recogemos de la variable de sesión los datos que necesitamos del jugador
 $iduser = $_SESSION['id_user'];
 $email = $_SESSION['email'];
 $idplayer2 = $_SESSION['id_player'];
@@ -8,6 +9,7 @@ $name = $_SESSION['name'];
 $birth = $_SESSION["birthday"];
 $avatar = $_SESSION["avatar"];
 //echo $iduser;
+//Hacemos una consulta que nos devuelva los jugadores que tiene asociado el padre
   $sql = "SELECT id_player, name, id_user, birthday, avatar FROM players WHERE id_user = $iduser";
   $stmt = $conn->prepare($sql);
   $stmt->bindParam(':id_user', $_SESSION['id_user']);
@@ -25,6 +27,8 @@ echo "<section style='position: absolute;
     left: 50%;
     display: inline-block;
     width: 808px;'>";
+
+//Recorremos la query y pintmoas los jugadores
 foreach ($conn->query($sql) as $fila) {
   $playerBirthday = $fila["birthday"];
   $name = $fila['name'];
@@ -59,6 +63,7 @@ foreach ($conn->query($sql) as $fila) {
 //echo $idplayer;
         // echo $fila['id_player'];
         extract($_GET);
+//Si solo tenemos un jugador en la bbdd no se puede eliminar, ya que qedaria inutilizable la cuenta del padre, asi que desactivamos el botón de borrado
 if ($total == 1) {
   echo "<script>document.getElementById('comp').style.display = 'none'</script>";
 }else{
