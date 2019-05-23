@@ -14,13 +14,14 @@ $emailParent = $_SESSION['email'];
     $stmt->bindParam(':birthday', $_POST['birthday']);
     $stmt->bindParam(':avatar', $_POST['avatar']);
     $stmt->bindParam(':id_user', $parent);
-    $_SESSION['id_player'] = $_POST['id_player'];
+
     $_SESSION['name'] = $_POST['name'];
     $_SESSION['id_user'] = $parent;
     $_SESSION['birthday'] = $_POST['birthday'];
     $_SESSION['avatar'] = $_POST['avatar'];
 
     if ($stmt->execute()) {
+      $_SESSION['id_player'] = $conn->lastInsertId();
       header("Location: /pasarelaCero.php");
 
       $message = 'Usuario creado correctamente';

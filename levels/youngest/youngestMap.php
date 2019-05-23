@@ -45,13 +45,6 @@ $idplayer = $_SESSION['id_player'];
       $PHPvariable0 = "0";
 
 
-
-
-
-      $sql3 = "SELECT COUNT(id_player) FROM player_data_map WHERE id_player = $idplayer";
-      $result = $conn->query($sql3);
-      $total = $result->fetchColumn();
-
       $sql = "INSERT INTO player_data_map (id_map, id_player, player_character_position, enable) VALUES (1, $idplayer, 1, 0)";
       $stmt = $conn->prepare($sql);
       if ($total == $PHPvariable) {
@@ -59,6 +52,13 @@ $idplayer = $_SESSION['id_player'];
       }else if ($total!=$PHPvariable){
 
       }
+
+
+      $sql3 = "SELECT COUNT(id_player) FROM player_data_map WHERE id_player = $idplayer";
+      $result = $conn->query($sql3);
+      $total = $result->fetchColumn();
+
+
 
       $sql4 = "SELECT COUNT(id_player) FROM score WHERE id_player = $idplayer and id_level = 11";
       $result4 = $conn->query($sql4);
@@ -98,7 +98,7 @@ $idplayer = $_SESSION['id_player'];
       ?>
     </div>
 
-    <dialog id="dialog" style="width:90%;height:90%;top:3%;z-index:1;"value="0">
+    <dialog id="dialog" style="width:90%;height:90%;top:3%;z-index:2;"value="0">
           <p value="-1" id="score2" style="display:none;">hey</p>
       <iframe src="../../puzzles/pruebaIdentificar.php" width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;width:-webkit-fill-available;height:-webkit-fill-available;"id="frame1"></iframe>
 
@@ -166,8 +166,12 @@ $idplayer = $_SESSION['id_player'];
           if ($contador == 3){
             $sql15 = "UPDATE score SET score = $contador WHERE id_player = $idplayer AND id_level = 11";
             $stmt15 = $conn->prepare($sql15);
-            $stmt15->execute();
-          }
+            if ($stmt15->execute()) {
+              // code...
+            $sql132 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 11";
+            $stmt132 = $conn->prepare($sql132);
+            $stmt132 -> execute();
+          }}
            ?>
 
 
@@ -211,7 +215,7 @@ enviar();
 
     }
     </script>
-    <dialog id="dialog2" style="width:90%;height:90%;top:3%;z-index:1;"value="0">
+    <dialog id="dialog2" style="width:90%;height:90%;top:3%;z-index:2;"value="0">
           <p value="-1" id="score2" style="display:none;">hey</p>
           <iframe src="../../puzzles/applePuzzle.php" width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;width:-webkit-fill-available;height:-webkit-fill-available;"id="frame2"></iframe>
 
@@ -232,7 +236,7 @@ $total72 = $result72->fetchColumn();
           document.getElementById('boton11').style.display = "none";
           document.getElementById('boton21').style.display = "inline-block";
           contador2 = contador2 + 1;
-          window.alert(contador2);
+          // window.alert(contador2);
         }
       }
 
@@ -243,7 +247,7 @@ $total72 = $result72->fetchColumn();
           document.getElementById('boton21').style.display = "none";
           document.getElementById('boton31').style.display = "inline-block";
           contador2 = contador2 + 1;
-          window.alert(contador2);
+          // window.alert(contador2);
         }
         document.getElementById('frame2').src = "../../puzzles/threePuzzle.php";
         document.getElementById('boton21').style.display = "none";
@@ -282,10 +286,16 @@ $total72 = $result72->fetchColumn();
 
 
           <?php
-          if ($contador2 == 3){
+          if ($contador2 == 3)
             $sql15 = "UPDATE score SET score = $contador2 WHERE id_player = $idplayer AND id_level = 12";
             $stmt15 = $conn->prepare($sql15);
-            $stmt15->execute();
+
+            if ($stmt15->execute()) {
+              // code...
+
+            $sql132 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 12";
+            $stmt132 = $conn->prepare($sql132);
+            $stmt132 -> execute();
           }
            ?>
 
@@ -329,7 +339,7 @@ enviar2();
 
     }
     </script>
-    <dialog id="dialog3" style="width:90%;height:90%;top:3%;z-index:1;"value="0">
+    <dialog id="dialog3" style="width:90%;height:90%;top:3%;z-index:2;"value="0">
           <p value="-1" id="score2" style="display:none;">hey</p>
           <iframe src="../../puzzles/pruebaIdentificarArbol.php" width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;width:-webkit-fill-available;height:-webkit-fill-available;"id="frame3"></iframe>
 
@@ -350,7 +360,7 @@ $total723 = $result723->fetchColumn();
           document.getElementById('boton111').style.display = "none";
           document.getElementById('boton211').style.display = "inline-block";
           contador3 = contador3 + 1;
-          window.alert(contador3);
+          // window.alert(contador3);
         }
       }
 
@@ -361,7 +371,7 @@ $total723 = $result723->fetchColumn();
           document.getElementById('boton211').style.display = "none";
           document.getElementById('boton311').style.display = "inline-block";
           contador3 = contador3 + 1;
-          window.alert(contador3);
+          // window.alert(contador3);
         }
         document.getElementById('frame3').src = "../../puzzles/identifcarCabeza.php";
         document.getElementById('boton211').style.display = "none";
@@ -403,8 +413,14 @@ $total723 = $result723->fetchColumn();
           if ($contador3 == 3){
             $sql15 = "UPDATE score SET score = $contador3 WHERE id_player = $idplayer AND id_level = 13";
             $stmt15 = $conn->prepare($sql15);
-            $stmt15->execute();
-          }
+
+            if ($stmt15->execute()) {
+              // code...
+
+            $sql132 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 13";
+            $stmt132 = $conn->prepare($sql132);
+            $stmt132 -> execute();
+          }}
            ?>
 
 
@@ -448,7 +464,7 @@ function enviar4(){
 }
 
 </script>
-<dialog id="dialog4" style="width:90%;height:90%;top:3%;z-index:1;"value="0">
+<dialog id="dialog4" style="width:90%;height:90%;top:3%;z-index:2;"value="0">
       <p value="-1" id="score2" style="display:none;">hey</p>
       <iframe src="../../puzzles/carrotPuzzle.php" width="-webkit-fill-available" height="-webkit-fill-available" style="border:none;width:-webkit-fill-available;height:-webkit-fill-available;"id="frame4"></iframe>
 
@@ -461,7 +477,7 @@ $total7234 = $result7234->fetchColumn();
    ?>
   var contador4 = 0;
   function boton1111() {
-    document.getElementById('frame4').src = "../../puzzles/pruebaIdentificar.php";
+    document.getElementById('frame4').src = "../../puzzles/pruebaIdentificarBanana.php";
     var x = document.getElementById('frame4').contentWindow.document.getElementById('valor').value
       document.getElementById('boton1111').style.display = "none";
       document.getElementById('boton2111').style.display = "inline-block";
@@ -469,20 +485,20 @@ $total7234 = $result7234->fetchColumn();
       document.getElementById('boton1111').style.display = "none";
       document.getElementById('boton2111').style.display = "inline-block";
       contador4 = contador4 + 1;
-      window.alert(contador4);
+      // window.alert(contador4);
     }
   }
 
   function boton2111() {
     var y = document.getElementById('frame4').contentWindow.document.getElementById('fondoCorrect').style.opacity
     if (y == 1) {
-      document.getElementById('frame4').src = "../../puzzles/cowPuzzle.php";
+      document.getElementById('frame4').src = "../../puzzles/sevenPuzzle.php";
       document.getElementById('boton2111').style.display = "none";
       document.getElementById('boton3111').style.display = "inline-block";
       contador4 = contador4 + 1;
-      window.alert(contador4);
+      // window.alert(contador4);
     }
-    document.getElementById('frame4').src = "../../puzzles/cowPuzzle.php";
+    document.getElementById('frame4').src = "../../puzzles/sevenPuzzle.php";
     document.getElementById('boton2111').style.display = "none";
     document.getElementById('boton3111').style.display = "inline-block";
   }
@@ -522,7 +538,14 @@ $total7234 = $result7234->fetchColumn();
       if ($contador4 == 3){
         $sql15 = "UPDATE score SET score = $contador4 WHERE id_player = $idplayer AND id_level = 14";
         $stmt15 = $conn->prepare($sql15);
-        $stmt15->execute();
+
+
+        if ($stmt15->execute()) {
+          $sql132 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 14";
+          $stmt132 = $conn->prepare($sql132);
+          $stmt132 -> execute();
+        }
+
       }
        ?>
 
@@ -742,6 +765,22 @@ function onload1(){
 
     }
   }
+}
+
+if ($total7 < 1) {
+  echo "<script> document.getElementById('2').style.display = 'none' </script>";
+}else {
+  echo "<script> document.getElementById('2').style.display = 'block' </script>";
+}
+if ($total72 < 1) {
+  echo "<script> document.getElementById('3').style.display = 'none' </script>";
+}else {
+  echo "<script> document.getElementById('3').style.display = 'block' </script>";
+}
+if ($total721 < 1) {
+  echo "<script> document.getElementById('4').style.display = 'none' </script>";
+}else {
+  echo "<script> document.getElementById('4').style.display = 'block' </script>";
 }
      ?>
   </body>

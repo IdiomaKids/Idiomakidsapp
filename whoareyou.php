@@ -3,7 +3,7 @@ require 'database.php';
 session_start();
 $iduser = $_SESSION['id_user'];
 $email = $_SESSION['email'];
-
+$_SESSION["id_player"] = $idplayer; 
 //echo $iduser;
 
   $sql = "SELECT id_player, name, id_user, birthday, avatar FROM players WHERE id_user = $iduser";

@@ -85,7 +85,7 @@ h2 {
     left: 51px;
     margin: 5px;
     /* background-color: black; */
-    z-index: 0;
+    z-index: 1;
     cursor: pointer;
 }
 .tercero{
@@ -97,7 +97,7 @@ h2 {
     right: 710px;
     margin: 5px;
     /* background-color: black; */
-    z-index: 0;
+    z-index: 1;
     cursor: pointer;
 }
 .cuarto{
@@ -109,7 +109,7 @@ h2 {
     right: 70px;
     margin: 5px;
     /* background-color: black; */
-    z-index: 0  ;
+    z-index: 1  ;
     cursor: pointer;
 }
 
