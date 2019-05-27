@@ -273,6 +273,6 @@ echo "</p>";
  </script>
 
 </div>
-<a href="configurationn/configScreen.php" class="buttonStyle" style="text-align:center;text-decoration:none;">SALIR</a>
+<a onclick="javascript:history.back(1)" class="buttonStyle" style="text-align:center;text-decoration:none;">VOLVER</a>
  </body>
  </html>

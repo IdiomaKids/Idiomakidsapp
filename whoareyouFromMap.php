@@ -4,7 +4,7 @@ session_start();
 $iduser = $_SESSION['id_user'];
 $email = $_SESSION['email'];
 $idplayer = $_SESSION['id_player'];
-echo $idplayer;
+
 
   $sql = "SELECT id_player, name, id_user, birthday, avatar FROM players WHERE id_user = $iduser";
   $stmt = $conn->prepare($sql);
@@ -16,7 +16,11 @@ echo $idplayer;
 //echo $row['name'];
 //var_dump($sql);
 
-
+if (isset($_SESSION['id_player'])) {
+  $idplayer = $_SESSION['id_player'];
+  echo "<script> window.alert('soy $idplayer')";
+  echo "</script>";
+}
 
 
 echo "<section style='position: absolute;
@@ -31,18 +35,18 @@ foreach ($conn->query($sql) as $fila) {
   $idplayer = $fila['id_player'];
   $avatar = $fila['avatar'];
 
+
   $actual = date("Y-d-j");
-  $result = date("Y", strtotime($actual)) - date("Y", strtotime($playerBirthday));
-  //echo $result;
+  $result = $actual - date("Y", strtotime($playerBirthday));
+  // echo $result;
            // print "Nombre: " .  $fila['name'] . "\n";
            // echo "<p>";
            // print "id player: " . $fila['id_player'] . "\n";
            $_SESSION["birthday"] = $fila["birthday"];
-           $_SESSION["id_player"] = $fila["id_player"];
            //var_dump($fila['id_player']);
-           echo "<a style='text-decoration:none;color:black;' href='pasarela.php?id=".$fila["id_player"]."&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
+           echo "<a style='text-decoration:none;color:black;' href='pasarela.php?id=$idplayer&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
            echo "<div style='width:200px;display:inline-block;margin-top:10%;'>";
-           echo "<img alt=".$fila["id_player"]." style='background-color:white;width: 150px;height: 150px;border-radius: 100px;border: 3px solid black;margin-left: 12%;margin-bottom: 1%;cursor: pointer;' src=".$fila["avatar"].">";
+           echo "<img style='background-color:white;width: 150px;height: 150px;border-radius: 100px;border: 3px solid black;margin-left: 12%;margin-bottom: 1%;cursor: pointer;' src=".$fila["avatar"].">";
            echo "<img>";
            echo "<p style='text-align:center;text-decoration:none;'>$name";
            echo "</p>";
@@ -69,6 +73,6 @@ echo "</section>";
 
  ?>
 
-  <a href="../../pasarelaCero.php" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:5%;"><button type="button" name="buttonR" class="salir" >SALIR</button></a>
+  <a onclick="javascript:history.back(1)" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:5%;"><button type="button" name="buttonR" class="salir" >SALIR</button></a>
   </body>
 </html>

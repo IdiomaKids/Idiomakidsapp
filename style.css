@@ -153,6 +153,16 @@
   cursor: pointer;
 }
 
+.imgCircle2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 3px solid black;
+  margin-left: 10%;
+  /* margin-bottom: 1%; */
+  cursor: pointer;
+}
+
 .imgCircleSet {
   width: 150px;
   height: 150px;

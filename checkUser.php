@@ -5,7 +5,7 @@ $birth = $_SESSION["birthday"];
 $avatar = $_SESSION["avatar"];
 $iduser = $_SESSION["id_user"];
 $idplayer = $_SESSION["id_player"];
-
+// echo $idplayer;
 
 require 'database.php';
 //echo $iduser;
@@ -23,8 +23,13 @@ $_SESSION['birth'] = $_POST['birth'];
   }
 
   if ($fila['email'] == $email2 && $fila['password'] == $pass2) {
+    $_SESSION['id_player'] = $idplayer;
     header("Location: /configurationn/configScreen.php");
       echo "<p> Bienn";
+      echo "</p>";
+    }
+    else {
+      echo "<p> Mal";
       echo "</p>";
     }
   }

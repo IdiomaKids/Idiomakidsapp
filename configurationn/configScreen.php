@@ -1,6 +1,8 @@
 <?php
 require '../database.php';
 session_start();
+$idplayer = $_SESSION['id_player'];
+echo $idplayer;
  ?>
 
 <!DOCTYPE html>

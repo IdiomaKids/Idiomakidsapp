@@ -197,8 +197,8 @@ enviar();
       <button type="button" name="button" onclick="boton2()" id="boton2" class="botonN"style="display:none;">Siguiente</button>
       <button type="button" name="button" onclick="boton3()" id="boton3" onclick="closeDialog()" class="botonN"style="display:none;">Fin</button>
 
-      <button type="button" name="button" onclick="closeDialog()"style="display:inline-block;position:absolute;top:0;left:0;margin:5px;">Cerrar</button>
-      <img src="../../images/Cerrar.png" style="display:inline-block;position:absolute;top:0;left:0;margin:5px;" onclick="closeDialog()"alt="">
+
+
 
     </dialog>
 
@@ -322,8 +322,8 @@ enviar2();
       <button type="button" name="button" onclick="boton21()" id="boton21" class="botonN"style="display:none;">Siguiente</button>
       <button type="button" name="button" onclick="boton31()" id="boton31" onclick="closeDialog()" class="botonN"style="display:none;">Fin</button>
 
-      <button type="button" name="button" onclick="closeDialog()"style="display:inline-block;position:absolute;top:0;left:0;margin:5px;">Cerrar</button>
-      <img src="../../images/Cerrar.png" style="display:inline-block;position:absolute;top:0;left:0;margin:5px;" onclick="closeDialog()"alt="">
+
+
 
     </dialog>
     <div class="tercero" id="3" onclick="openGame3()">
@@ -446,8 +446,8 @@ enviar3();
       <button type="button" name="button" onclick="boton211()" id="boton211" class="botonN"style="display:none;">Siguiente</button>
       <button type="button" name="button" onclick="boton311()" id="boton311" onclick="closeDialog()" class="botonN"style="display:none;">Fin</button>
 
-      <button type="button" name="button" onclick="closeDialog()"style="display:inline-block;position:absolute;top:0;left:0;margin:5px;">Cerrar</button>
-      <img src="../../images/Cerrar.png" style="display:inline-block;position:absolute;top:0;left:0;margin:5px;" onclick="closeDialog()"alt="">
+
+
 
     </dialog>
     <div class="cuarto" id="4" onclick="openGame4()">
@@ -572,8 +572,8 @@ enviar4();
   <button type="button" name="button" onclick="boton2111()" id="boton2111" class="botonN"style="display:none;">Siguiente</button>
   <button type="button" name="button" onclick="boton3111()" id="boton3111" onclick="closeDialog()" class="botonN"style="display:none;">Fin</button>
 
-  <button type="button" name="button" onclick="closeDialog()"style="display:inline-block;position:absolute;top:0;left:0;margin:5px;">Cerrar</button>
-  <img src="../../images/Cerrar.png" style="display:inline-block;position:absolute;top:0;left:0;margin:5px;" onclick="closeDialog()"alt="">
+
+
 
 </dialog>
     <script type="text/javascript">

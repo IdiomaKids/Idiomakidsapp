@@ -38,7 +38,7 @@
   font-size: 20px;
   width: 10%;
   height: 40px;
-  left: 48%;
+  left: 44.5%;
   background-color: rgb(185, 230, 93);
   border: 1px solid black;
 }
@@ -63,13 +63,13 @@
 
 #float2{
 	width: 90%;
-	/* border: 1px solid black; */
+	border: 1px solid black;
 	height: 300px;
 	position: absolute;
   z-index: 1;
 	transform: translateY(-50%);
 	transform: translateX(-50%);
-	background-color: #7fff00;
+	background-color: #7dde1c;
 	top: 30%;
 	left: 50%;
 	transition-delay: 4s;

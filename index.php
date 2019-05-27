@@ -20,10 +20,10 @@
     //var_dump($_SESSION['id_user']);
     //header("Location: /index.php");
     $Pemail = $_SESSION['email'];
-    echo "<p>Estas logueado como $Pemail ";
-    echo "<a href='logout.php'>Logout";
-    echo "</a>";
-    echo "</p>";
+    // echo "<p>Estas logueado como $Pemail ";
+    // echo "<a href='logout.php'>Logout";
+    // echo "</a>";
+    // echo "</p>";
 
   }
 ?>
@@ -35,6 +35,7 @@
     <script type="text/javascript" src="script.js"></script>
     <meta charset="utf-8">
     <title>IdiomaKids</title>
+    <meta name="description" content="Aprender jugando nunca habia sido tan divertido. Con IdiomaKids podrás aprender mientras juegas, y completamente gratis.">
   </head>
   <body class="bodyBack">
 

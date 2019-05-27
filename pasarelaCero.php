@@ -11,8 +11,7 @@ $avatar = $_SESSION['avatar'];
 //echo $birth;
 
 $actual = date("Y-d-j");
-$result = date("Y", strtotime($actual)) - date("Y", strtotime($birth));;
-
+$result = $actual - date("Y", strtotime($birth));
 
 $sql = "SELECT id_player, name, id_user, birthday, avatar FROM players WHERE id_player = $idplayer";
 $stmt = $conn->prepare($sql);
