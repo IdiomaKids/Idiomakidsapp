@@ -90,7 +90,7 @@ foreach ($conn->query($sql) as $fila) {
            }
            else if ($total4 == 1) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 1</p>";
-           echo "<img src='../../images/Identificar/1Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           echo "<img src='../../images/Identificar/1Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
            }
            else if ($total4 == 2) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 1</p>";
@@ -98,7 +98,7 @@ foreach ($conn->query($sql) as $fila) {
            }
            else if ($total4 == 3) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 1</p>";
-           echo "<img src='../../images/Identificar/3estrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           echo "<img src='../../images/Identificar/3Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
            }
            if ($total5 == 0) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 2</p>";
@@ -106,7 +106,7 @@ foreach ($conn->query($sql) as $fila) {
            }
            else if ($total5 == 1) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 2</p>";
-           echo "<img src='../../images/Identificar/1Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           echo "<img src='../../images/Identificar/1Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
            }
            else if ($total5 == 2) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 2</p>";
@@ -114,7 +114,7 @@ foreach ($conn->query($sql) as $fila) {
            }
            else if ($total5 == 3) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 2</p>";
-           echo "<img src='../../images/Identificar/3estrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           echo "<img src='../../images/Identificar/3Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
            }
            if ($total6 == 0) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 3</p>";
@@ -122,15 +122,15 @@ foreach ($conn->query($sql) as $fila) {
            }
            else if ($total6 == 1) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 3</p>";
-           echo "<img src='../../images/Identificar/1Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           echo "<img src='../../images/Identificar/1Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
            }
            else if ($total6 == 2) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 3</p>";
-           echo "<img src='../../images/Identificar/2Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           echo "<img src='../../images/Identificar/2Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
            }
            else if ($total6 == 3) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 3</p>";
-           echo "<img src='../../images/Identificar/3Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           echo "<img src='../../images/Identificar/3Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
            }
            if ($total7 == 0) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 4</p>";
@@ -139,16 +139,16 @@ foreach ($conn->query($sql) as $fila) {
            else if ($total7 == 1) {
 
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 4</p>";
-           echo "<img src='../../images/Identificar/1Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           echo "<img src='../../images/Identificar/1Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
            }
            else if ($total7 == 2) {
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 4</p>";
-           echo "<img src='../../images/Identificar/2Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           echo "<img src='../../images/Identificar/2Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
            }
            else if ($total7 == 3) {
 
              echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 4</p>";
-           echo "<img src='../../images/Identificar/3Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           echo "<img src='../../images/Identificar/3Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
          }echo "<hr>";
 echo "</div>";
 

@@ -54,6 +54,7 @@ echo "</h2>";
     <title></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="levels/youngest/styleLevels.css">
+    <link rel="stylesheet" href="sinLogin/sinLoginStyle.css">
   </head>
   <body class="bodyBack">
     <a href="../../logout.php">
@@ -91,7 +92,7 @@ echo "</h2>";
     left: 27.4%;
     z-index: 1;
     display: inline-block;
-    position: absolute;" id="redColumn">
+    position: absolute;" id="redColumn"  onclick="bloqPj1()">
 
   </img>
   <img src="../../images/pjBlock.png" alt="" style="
@@ -100,7 +101,7 @@ echo "</h2>";
     height: 436px;
     left: 44.6%;
     z-index: 1;
-    position: absolute;" id="blueColumn">
+    position: absolute;" id="blueColumn" onclick="bloqPj2()">
 
   </img>
   <img src="../../images/pjBlock.png" alt="" style="
@@ -109,7 +110,7 @@ echo "</h2>";
     height: 436px;
     left: 61.7%;
     z-index: 1;
-    position: absolute;" id="pinkColumn">
+    position: absolute;" id="pinkColumn" onclick="bloqPj3()">
 
   </img>
   <img src="../../images/pjBlock.png" style="
@@ -118,7 +119,7 @@ echo "</h2>";
     height: 436px;
     left: 78.83%;
     z-index: 1;
-    position: absolute;" id="purpleColumn">
+    position: absolute;" id="purpleColumn" onclick="bloqPj4()">
 
   </img>
     <div class="">
@@ -207,6 +208,50 @@ if ($total == 3) {
     ">
   </form>
 
+
+  <script type="text/javascript">
+
+  function bloqPj1(){
+  document.getElementById("float").id = "float2";
+  gone();
+}
+function bloqPj2(){
+document.getElementById("floatL1").id = "float3";
+gone2();
+}
+function bloqPj3(){
+document.getElementById("floatL2").id = "float4";
+gone3();
+}
+function bloqPj4(){
+document.getElementById("floatL3").id = "float5";
+gone4();
+}
+  function gone() {
+    setTimeout(function(){ document.getElementById("float2").id = "float"; }, 3000);
+  }
+  function gone2() {
+    setTimeout(function(){ document.getElementById("float3").id = "floatL1"; }, 3000);
+  }
+  function gone3() {
+    setTimeout(function(){ document.getElementById("float4").id = "floatL2"; }, 3000);
+  }
+  function gone4() {
+    setTimeout(function(){ document.getElementById("float5").id = "floatl3"; }, 3000);
+  }
+  </script>
+  <div id="float">
+    <h1 class="center">Disponibles solo al completar el nivel 1</h1>
+  </div>
+  <div id="floatL1">
+    <h1 class="center">Disponibles solo al completar el nivel 2</h1>
+  </div>
+  <div id="floatL2">
+    <h1 class="center">Disponibles solo al completar el nivel 3</h1>
+  </div>
+  <div id="floatL3">
+    <h1 class="center">Disponibles solo al completar el nivel 4</h1>
+  </div>
   </body>
 
   <script type="text/javascript">
@@ -371,5 +416,9 @@ if ($total == 3) {
     document.getElementById('avatar').value = "images/avatares/nemoCharacter/nemoPurple.png";
     console.log(document.getElementById('avatar').value);
   }
+
+
+
+
   </script>
 </html>

@@ -77,8 +77,62 @@
 justify-content: center;
 align-items: center;
 }
+#float3{
+	width: 90%;
+	border: 1px solid black;
+	height: 300px;
+	position: absolute;
+  z-index: 1;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+	background-color: #7dde1c;
+	top: 30%;
+	left: 50%;
+	transition-delay: 4s;
+	display: flex;
+justify-content: center;
+align-items: center;
+}
+#float4{
+	width: 90%;
+	border: 1px solid black;
+	height: 300px;
+	position: absolute;
+  z-index: 1;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+	background-color: #7dde1c;
+	top: 30%;
+	left: 50%;
+	transition-delay: 4s;
+	display: flex;
+justify-content: center;
+align-items: center;
+}
+#float5{
+	width: 90%;
+	border: 1px solid black;
+	height: 300px;
+	position: absolute;
+  z-index: 1;
+	transform: translateY(-50%);
+	transform: translateX(-50%);
+	background-color: #7dde1c;
+	top: 30%;
+	left: 50%;
+	transition-delay: 4s;
+	display: flex;
+justify-content: center;
+align-items: center;
+}
 
 #float{
+	display: none;
+}#floatL2{
+	display: none;
+}#floatL3{
+	display: none;
+}#floatL1{
 	display: none;
 }
 
