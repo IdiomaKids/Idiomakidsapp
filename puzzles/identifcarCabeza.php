@@ -15,7 +15,7 @@ $jsonP=$results;
 <body>
 
 
-<audio id="win" src="https://github.com/IdiomaKids/Idiomakidsapp/blob/rescate/clap.mp3"></audio>
+ <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
 <!-- <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct"> -->
 <h1 style="text-align:center;font-family:sans-serif;">SEÑALA LA CABEZA</h1>
   <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct" usemap="#image-map">
