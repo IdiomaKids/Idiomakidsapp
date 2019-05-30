@@ -15,7 +15,7 @@ $jsonP=$results;
 <body>
 
 
- <audio id="win" src="https://raw.githubusercontent.com/NestorPlasencia/PikaPuzzle/master/media/win.mp3"></audio>
+<audio id="win" src="https://github.com/IdiomaKids/Idiomakidsapp/blob/rescate/clap.mp3"></audio>
   <img src="../images/Identificar/Arbol/tree.png" alt="" class="fondo" id="fondoCorrect" solution="correct">
 
   <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 20%;top: 70%;">
