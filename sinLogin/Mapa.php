@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="sinLoginStyle.css">
   </head>
   <body style="background-color:lightgreen;overflow-y:initial;margin:0%;padding:0%;">
+    <a href="../../logout.php">
+    <img src="../../images/logout.png" alt="" style="
+   width: 50px;
+   position: absolute;
+   right: 0;
+   top: 0;
+   margin: 5px;
+   z-index: 1;
+"></a>
     <script type="text/javascript">
     function reg(){
     document.getElementById("float").id = "float2";
