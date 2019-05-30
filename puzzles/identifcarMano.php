@@ -28,6 +28,14 @@ $jsonP=$results;
     position: absolute;
     top: 34%;"alt="" title="" coords="500,252,50" shape="circle" onclick="verBueno()">
   </map>
+  <area target="" style="
+      /* border: 1px solid black; */
+      left: 33.7%;
+      padding: 181px;
+      position: absolute;
+      top: 10%;
+      height: 200px;
+      " alt="" title="" coords="500,252,50" shape="circle" onclick="verMalo()">
   <div id="no" width="100%" height="-webkit-fill-available">
   </div>
 
@@ -51,7 +59,10 @@ $jsonP=$results;
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);
     }
 
-
+    function verMalo(){
+      document.getElementById("i").id = "voluble2";
+      setTimeout(function(){ document.getElementById("voluble2").id = "i"; }, 1000);
+    }
 
   </script>
 
