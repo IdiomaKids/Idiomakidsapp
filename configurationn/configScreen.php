@@ -13,15 +13,23 @@ echo $idplayer;
     <title>IdiomaKids</title>
   </head>
   <body class="bodyMiddle">
+    <a href="../../logout.php">
+    <img src="../../images/logout.png" alt="" style="
+   width: 50px;
+   position: absolute;
+   right: 0;
+   top: 0;
+   margin: 5px;
+"></a>
     <div class="group">
-      <a href="#" style="text-align:center;text-decoration:none;" class="buttonStyle">CONTENIDO</a>
+      <a href="../../content.php" style="text-align:center;text-decoration:none;" class="buttonStyle">CONTENIDO</a>
         <a href="adminPlayer.php" style="text-align:center;text-decoration:none;" class="buttonStyle">ADMINSTRAR JUGADOR</a>
       <a href="../../whoareyouCalifications.php" class="buttonStyle" style="text-align:center;text-decoration:none;">CALIFICACIONES</a>
       <br>
       <br>
       <br>
       <br>
-      <a href="../pasarelaCero.php" class="buttonStyle" style="text-align:center;text-decoration:none;">VOLVER</a>
+      <a href="../whoareyouSetS.php" class="buttonStyle" style="text-align:center;text-decoration:none;">VOLVER</a>
 
     </div>
   </body>

@@ -23,7 +23,10 @@ echo "<section style='position: absolute;
     transform: translateX(-50%);
     left: 50%;
     display: inline-block;
-    width: 808px;'>";
+    width: 850px;
+    top:5%;
+    overflow-y:scroll;
+    height:541px;' class='scsec'>";
 foreach ($conn->query($sql) as $fila) {
   $playerBirthday = $fila["birthday"];
   $name = $fila['name'];
@@ -33,23 +36,130 @@ foreach ($conn->query($sql) as $fila) {
 
   $actual = date("Y-d-j");
   $result = $actual - date("Y", strtotime($playerBirthday));
+  $sql4 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 11";
+  $result4 = $conn->query($sql4);
+  $total4 = $result4->fetchColumn();
+
+  $sql5 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 12";
+  $result5 = $conn->query($sql5);
+  $total5 = $result5->fetchColumn();
+
+  $sql6 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 13";
+  $result6 = $conn->query($sql6);
+  $total6 = $result6->fetchColumn();
+
+  $sql7 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 14";
+  $result7 = $conn->query($sql7);
+  $total7 = $result7->fetchColumn();
+
+
+  // echo $total4;
+  //
+  // echo $total5;
+  //
+  // echo $total6;
+  //
+  // echo $total7;
   //echo $result;
            // print "Nombre: " .  $fila['name'] . "\n";
            // echo "<p>";
            // print "id player: " . $fila['id_player'] . "\n";
            $_SESSION["birthday"] = $fila["birthday"];
            //var_dump($fila['id_player']);
-           echo "<a style='text-decoration:none;color:black;' href='califications.php?id=$idplayer&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
+           //echo "<a style='text-decoration:none;color:black;' href='califications.php?id=$idplayer&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
            echo "<div style='width:200px;display:inline-block;margin-top:10%;'>";
            echo "<img  style='background-color:white;width: 150px;height: 150px;border-radius: 100px;border: 3px solid black;margin-left: 12%;margin-bottom: 1%;cursor: pointer;' src=".$fila["avatar"].">";
-           echo "<img>";
+
+           echo "</img>";
            echo "<p style='text-align:center;text-decoration:none;'>$name";
+
+
+           echo "<p id='uno' style='display:none;'> 100";
            echo "</p>";
+           echo "</p>";
+           echo "<hr>";
            echo "</a>";
+
            echo "</div>";
+           echo "<div style='display: inline-block;
+    width: 220px;'>";
+           if ($total4 == 0) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 1</p>";
+           echo "<img src='../../images/Identificar/0Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+
+           }
+           else if ($total4 == 1) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 1</p>";
+           echo "<img src='../../images/Identificar/1Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total4 == 2) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 1</p>";
+           echo "<img src='../../images/Identificar/2Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total4 == 3) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 1</p>";
+           echo "<img src='../../images/Identificar/3estrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           if ($total5 == 0) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 2</p>";
+           echo "<img src='../../images/Identificar/0Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total5 == 1) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 2</p>";
+           echo "<img src='../../images/Identificar/1Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total5 == 2) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 2</p>";
+           echo "<img src='../../images/Identificar/2Lestrellas.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total5 == 3) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 2</p>";
+           echo "<img src='../../images/Identificar/3estrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           if ($total6 == 0) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 3</p>";
+           echo "<img src='../../images/Identificar/0Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total6 == 1) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 3</p>";
+           echo "<img src='../../images/Identificar/1Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total6 == 2) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 3</p>";
+           echo "<img src='../../images/Identificar/2Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total6 == 3) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 3</p>";
+           echo "<img src='../../images/Identificar/3Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           if ($total7 == 0) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 4</p>";
+           echo "<img src='../../images/Identificar/0Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total7 == 1) {
+
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 4</p>";
+           echo "<img src='../../images/Identificar/1Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total7 == 2) {
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 4</p>";
+           echo "<img src='../../images/Identificar/2Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+           }
+           else if ($total7 == 3) {
+
+             echo "<p style='display: inline-block;top: 25%; padding-right:13px; padding-right:13px; padding-right:13px;'>Nivel 4</p>";
+           echo "<img src='../../images/Identificar/3Lestrella.png' width='150px' style='top:9px;display:inline-block;position:relative;'>";
+         }echo "<hr>";
+echo "</div>";
+
 
         // echo $fila['id_player'];
+
+
+
+
 }
+
 echo "</section>";
  ?>
 
@@ -61,8 +171,16 @@ echo "</section>";
     <title>IdiomaKids</title>
   </head>
   <body class="bodyBack">
-<h1 style="text-align:center;">De que jugador quieres ver las calificaciones</h1>
+    <a href="../../logout.php">
+    <img src="../../images/logout.png" alt="" style="
+   width: 50px;
+   position: absolute;
+   right: 0;
+   top: 0;
+   margin: 5px;
+"></a>
+<h1 style="text-align:center;">Calificaciones</h1>
 
-  <a href="/configurationn/configScreen.php" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:5%;"><button type="button" name="buttonR" class="salir" >SALIR</button></a>
+  <a href="/configurationn/configScreen.php" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:5%;"><button type="button" name="buttonR" class="salir" >VOLVER</button></a>
   </body>
 </html>

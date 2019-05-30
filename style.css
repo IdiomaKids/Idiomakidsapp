@@ -70,6 +70,27 @@
   cursor: pointer;
 }
 
+#buttonRegisterCheck {
+  width: 20%;
+  background-color: rgb(185, 230, 93);
+  border: solid black 1px;
+  padding: 15px;
+  color: black;
+  font-size: 20px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+#buttonRegister2 {
+  width: 20%;
+  background-color: rgb(154, 167, 129);
+  border: solid black 1px;
+  padding: 15px;
+  color: lightgray;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
 #buttonLogin:hover {
   color: white;
   background-color: green;
@@ -82,6 +103,12 @@
   transition: 1s;
 }
 
+#buttonRegisterCheck:hover {
+  color: white;
+  background-color: green;
+  transition: 1s;
+}
+
 #buttonAccessWithoutAccount:hover {
   color: white;
   background-color: green;
@@ -89,7 +116,7 @@
 }
 
 .buttonGroup {
-  margin-top: 5%;
+  margin-top: 3%;
 }
 
 .containerFields {
@@ -212,6 +239,10 @@
   color: white;
 }
 
+.scsec::-webkit-scrollbar{
+  width: 7px;
+  background: transparent;
+}
 h4, h1 {
   font-family: sans-serif;
 }

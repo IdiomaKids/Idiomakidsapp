@@ -54,7 +54,7 @@ echo "</p>";
 </style>
  <!DOCTYPE html>
  <html>
-
+ <img src="images/logout.png" alt="">
  <body onload="show()" style="background-color:#f5bc51">
    <div style="text-align:center;">
 <h1 style="text-align:center;font-family:sans-serif;">CAIFICACIONES</h1>

@@ -40,7 +40,14 @@ $emailParent = $_SESSION['email'];
     <link rel="stylesheet" href="pruebaDialog/dialog-con-estilo.css">
   </head>
   <body class="bodyBack">
-
+    <a href="../../logout.php">
+    <img src="../../images/logout.png" alt="" style="
+    width: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 5px;
+    "></a>
     <form class="" action="guardarPlayerCero.php" method="post">
 
     <h1 style="text-align:center;margin-bottom:10%;">Añadir jugador</h1>
@@ -48,14 +55,14 @@ $emailParent = $_SESSION['email'];
       <h1 style="display:inline-block">Nombre</h1>
       <input type="text" name="name" id="name" style="border: 1px solid black; height: 45px; font-size: 20px; text-align:center; margin-left:8%;">
     </div>
-<?php echo "<p style='display:inline-block;float: right;
+<!-- <?php echo "<p style='display:inline-block;float: right;
     margin-top: -170px;margin-right:10px;'>Bienvenido, $emailParent";
 //echo  $_GET['email'];
 
 echo "<a href='logout.php'>Logout";
 echo "</a>";
 echo "</p>";
-?>
+?> -->
 <h1 style="text-align:center;margin-bottom:10%;">Selecciona un avatar</h1>
     <button type="button" name="button" onclick="showDialog()" id="buttonSelectImg"><img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="inputAvatar" name="inputAvatar" value=""></button>
     <!-- <img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="setImage"> -->
@@ -76,8 +83,8 @@ echo "</p>";
 
     <br>
     <br>
-    <a href="index.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;" class="buttonBack">VOLVER</button></a>
-    <input type="submit" name="buttonR" id="buttonRegister" value="REGISTRAR JUGADOR"></input>
+    <!-- <a href="index.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;" class="buttonBack">VOLVER</button></a> -->
+    <input type="submit" style="margin-left:41%;margin-top:3%;"name="buttonR" id="buttonRegister" value="REGISTRAR JUGADOR"></input>
   </form>
 
     <script type="text/javascript">

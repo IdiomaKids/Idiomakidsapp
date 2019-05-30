@@ -19,17 +19,13 @@ $_SESSION['birth'] = $_POST['birth'];
     //echo $fila['email'];
     //echo $fila['password'];
     $email2 = $_POST['email'];
-    $pass2 = $_POST['password'];
+    $pass2 = password_verify($_POST['password'], $fila['password']);
   }
 
-  if ($fila['email'] == $email2 && $fila['password'] == $pass2) {
+  if ($fila['email'] == $email2 && $fila['password'] == $pass2 ) {
     $_SESSION['id_player'] = $idplayer;
     header("Location: /configurationn/configScreen.php");
       echo "<p> Bienn";
-      echo "</p>";
-    }
-    else {
-      echo "<p> Mal";
       echo "</p>";
     }
   }
@@ -43,6 +39,14 @@ $_SESSION['birth'] = $_POST['birth'];
     <link rel="stylesheet" href="style.css">
   </head>
   <body class="bodyBack">
+    <a href="../../logout.php">
+    <img src="../../images/logout.png" alt="" style="
+   width: 50px;
+   position: absolute;
+   right: 0;
+   top: 0;
+   margin: 5px;
+"></a>
     <h1 style="text-align:center;">Configuración padres</h1>
     <form class="" action="checkUser.php" method="post">
       <container style="margin-left:9%;"class="containerFields">

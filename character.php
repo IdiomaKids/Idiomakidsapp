@@ -56,6 +56,14 @@ echo "</h2>";
     <link rel="stylesheet" href="levels/youngest/styleLevels.css">
   </head>
   <body class="bodyBack">
+    <a href="../../logout.php">
+    <img src="../../images/logout.png" alt="" style="
+   width: 50px;
+   position: absolute;
+   right: 0;
+   top: 0;
+   margin: 5px;
+"></a>
     <!-- <button type="button" name="button"></button> -->
     <div>
     <div style="height: 200px;">
@@ -76,7 +84,8 @@ echo "</h2>";
 
   <!-- <p value="" id="avatar" style="display:none;"></p> -->
   <input type="text" name="avatar" id="avatar" value="" style="display:none;">
-  <div class="" style="
+  <img src="../../images/pjBlock.png" alt="" style="
+
     width: 109px;
     height: 436px;
     left: 27.4%;
@@ -84,31 +93,34 @@ echo "</h2>";
     display: inline-block;
     position: absolute;" id="redColumn">
 
-  </div>
-  <div class="" style="
+  </img>
+  <img src="../../images/pjBlock.png" alt="" style="
+
     width: 108px;
     height: 436px;
     left: 44.6%;
     z-index: 1;
     position: absolute;" id="blueColumn">
 
-  </div>
-  <div class="" style="
+  </img>
+  <img src="../../images/pjBlock.png" alt="" style="
+
     width: 108px;
     height: 436px;
     left: 61.7%;
     z-index: 1;
     position: absolute;" id="pinkColumn">
 
-  </div>
-  <div class="" style="
+  </img>
+  <img src="../../images/pjBlock.png" style="
+
     width: 108px;
     height: 436px;
     left: 78.83%;
     z-index: 1;
     position: absolute;" id="purpleColumn">
 
-  </div>
+  </img>
     <div class="">
     <img src="images/avatares/plutoCharacter/plutoWhite.png"  onclick="clickImagePluto()" class="imgCircle2" id="plutoWhite" value="">
     <img src="images/avatares/plutoCharacter/plutoRed.png"  onclick="clickImagePlutoRed()" class="imgCircle2" id="plutoRed" value="">
@@ -184,7 +196,7 @@ if ($total == 3) {
 
 
 ?>
-    <a href="pasarelaCero.php" id="buttonRegister" style="text-align:center;text-decoration:none;position:absolute;margin:5px;bottom:0;left:25%;">SALIR</a>
+    <a href="pasarelaCero.php" id="buttonRegister" style="text-align:center;text-decoration:none;position:absolute;margin:5px;bottom:0;left:25%;">VOLVER</a>
     <input type="submit" name="" value="CAMBIAR PERSONAJE" id="buttonRegister" style="
     text-align: center;
     text-decoration: none;

@@ -51,6 +51,11 @@
   margin: 5px;
 }
 
+.scsec::webkit-scrollbar{
+  width: 7px;
+  background: transparent;
+}
+
 h2 {
   font-family: sans-serif;
 }

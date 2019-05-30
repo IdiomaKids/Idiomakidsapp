@@ -14,6 +14,15 @@ $idplayer = $_SESSION['id_player'];
     <link rel="stylesheet" href="styleLevels.css">
   </head>
   <body style="background-color:lightgreen;overflow-y:initial;margin:0%;padding:0%;z-index:5;"id="body1" onload="buenoL()">
+    <a href="../../logout.php">
+    <img src="../../images/logout.png" alt="" style="
+   width: 50px;
+   position: absolute;
+   right: 0;
+   top: 0;
+   margin: 5px;
+   z-index:1;
+"></a>
     <img src="../../Granja/GranjaFull.png" style="width:100%;height:100%;position:absolute;">
     <a href="../../pasarelaCero.php" style="    text-decoration: none;
     color: black;
@@ -24,7 +33,7 @@ $idplayer = $_SESSION['id_player'];
       <img src="../../images/Identificar/0estrella.png" width="150px" style="position:absolute;top:0;display:none;" id="1s0"alt="">
       <img src="../../images/Identificar/1estrella.png" width="150px" style="position:absolute;top:0;display:none;" id="1s1"alt="">
       <img src="../../images/Identificar/2estrellas.png" width="150px" style="position:absolute;top:0;display:none;" id="1s2"alt="">
-      <img src="../../images/Identificar/3estrellas.png" width="150px" style="position:absolute;top:0;display:none;" id="1s3"alt="">
+      <img src="../../images/Identificar/3estrella.png" width="150px" style="position:absolute;top:0;display:none;" id="1s3"alt="">
       <script type="text/javascript">
       var myVar;
       function enviar(){
@@ -78,23 +87,9 @@ $idplayer = $_SESSION['id_player'];
       $total7 = $result7->fetchColumn();
       //echo $total7;
       //echo $idplayer;
-      if ($total7 == 0) {
 
-      echo "<script> document.getElementById('1s0').style.display = 'inline-block' </script>";
+      echo "<script> document.getElementById('1s".$total7."').style.display = 'inline-block' </script>";
 
-      }
-      else if($total7 == 1){
-
-        echo "<script> document.getElementById('1s1').style.display = 'inline-block' </script>";
-      }
-      else if ($total7 == 2){
-
-        echo "<script> document.getElementById('1s2').style.display = 'inline-block' </script>";
-      }
-      else if ($total7 == 3){
-
-        echo "<script> document.getElementById('1s3').style.display = 'inline-block' </script>";
-      }
       ?>
     </div>
 
@@ -104,7 +99,7 @@ $idplayer = $_SESSION['id_player'];
 
       <script type="text/javascript">
       var contador = 0;
-      function boton() {
+      function boton1() {
         var y = document.getElementById('frame1').contentWindow.document.getElementById('fondoCorrect').style.opacity
         if (y == 1) {
           document.getElementById('frame1').src = "../../puzzles/cowPuzzle.php";
@@ -146,7 +141,7 @@ $idplayer = $_SESSION['id_player'];
               $stmt13->execute();
             }
 
-            var_dump($sql13);
+            //var_dump($sql13);
           }
            ?>
 
@@ -193,7 +188,7 @@ enviar();
 
       </script>
 
-      <button type="button" name="button" onclick="boton()" id="boton" class="botonN"style="display:inline-block;">Siguiente</button>
+      <button type="button" name="button" onclick="boton1()" id="boton" class="botonN"style="display:inline-block;">Siguiente</button>
       <button type="button" name="button" onclick="boton2()" id="boton2" class="botonN"style="display:none;">Siguiente</button>
       <button type="button" name="button" onclick="boton3()" id="boton3" onclick="closeDialog()" class="botonN"style="display:none;">Fin</button>
 
@@ -206,7 +201,7 @@ enviar();
       <img src="../../images/Identificar/0estrella.png" width="150px" style="position:absolute;top:0;display:none;"id="2s0"alt="">
       <img src="../../images/Identificar/1estrella.png" width="150px" style="position:absolute;top:0;display:none;"id="2s1"alt="">
       <img src="../../images/Identificar/2estrellas.png" width="150px" style="position:absolute;top:0;display:none;"id="2s2"alt="">
-      <img src="../../images/Identificar/3estrellas.png" width="150px" style="position:absolute;top:0;display:none;"id="2s3"alt="">
+      <img src="../../images/Identificar/3estrella.png" width="150px" style="position:absolute;top:0;display:none;"id="2s3"alt="">
     </div>
     <script type="text/javascript">
     function enviar2(){
@@ -269,7 +264,7 @@ $total72 = $result72->fetchColumn();
               $stmt13->execute();
             }
 
-            var_dump($sql13);
+            // var_dump($sql13);
           }
            ?>
 
@@ -330,7 +325,7 @@ enviar2();
       <img src="../../images/Identificar/0estrella.png" width="150px" style="position:absolute;top:0;display:none;"id="3s0"alt="">
       <img src="../../images/Identificar/1estrella.png" width="150px" style="position:absolute;top:0;display:none;"id="3s1"alt="">
       <img src="../../images/Identificar/2estrellas.png" width="150px" style="position:absolute;top:0;display:none;"id="3s2"alt="">
-      <img src="../../images/Identificar/3estrellas.png" width="150px" style="position:absolute;top:0;display:none;"id="3s3"alt="">
+      <img src="../../images/Identificar/3estrella.png" width="150px" style="position:absolute;top:0;display:none;"id="3s3"alt="">
     </div>
     <script type="text/javascript">
     function enviar3(){
@@ -393,7 +388,7 @@ $total723 = $result723->fetchColumn();
               $stmt13->execute();
             }
 
-            var_dump($sql13);
+            // var_dump($sql13);
           }
            ?>
 
@@ -454,7 +449,7 @@ enviar3();
       <img src="../../images/Identificar/0estrella.png" width="150px" style="position:absolute;top:0;display:none;"id="4s0"alt="">
       <img src="../../images/Identificar/1estrella.png" width="150px" style="position:absolute;top:0;display:none;"id="4s1"alt="">
       <img src="../../images/Identificar/2estrellas.png" width="150px" style="position:absolute;top:0;display:none;"id="4s2"alt="">
-      <img src="../../images/Identificar/3estrellas.png" width="150px" style="position:absolute;top:0;display:none;"id="4s3"alt="">
+      <img src="../../images/Identificar/3estrella.png" width="150px" style="position:absolute;top:0;display:none;"id="4s3"alt="">
     </div>
 <script type="text/javascript">
 function enviar4(){
@@ -485,6 +480,9 @@ $total7234 = $result7234->fetchColumn();
       document.getElementById('boton1111').style.display = "none";
       document.getElementById('boton2111').style.display = "inline-block";
       contador4 = contador4 + 1;
+      window.alert(contador4);
+      setTimeout(function(){     document.getElementById('frame4').src = "../../puzzles/sevenPuzzle.php";
+ }, 4000);
       // window.alert(contador4);
     }
   }
@@ -518,7 +516,7 @@ $total7234 = $result7234->fetchColumn();
           $stmt13->execute();
         }
 
-        var_dump($sql13);
+        // var_dump($sql13);
       }
        ?>
 
@@ -555,9 +553,9 @@ $total7234 = $result7234->fetchColumn();
       document.getElementById('boton2111').style.display = "none";
       document.getElementById('boton3111').style.display = "inline-block";
       contador4 = contador4 + 1;
-
+      setTimeout(function(){     enviar4();
+      }, 4000)
       closeDialog();
-
 
     }
 
@@ -615,15 +613,20 @@ function onload1(){
     right: 0;
     margin: 5px;' src='../../$image>'>";?>
     <?php
+
+
+
     if ($total7 > 0) {
       echo $total7;
-    echo "<script> document.getElementById('image').style.left = '50px'";
-    echo "</script>";
-    echo " <script> document.getElementById('image').style.bottom = '120px'";
-    echo "</script>";
-    $sql20 = "UPDATE player_data_map SET player_character_position = 2 WHERE id_player = $idplayer AND id_map = 1";
-    $stmt20 = $conn->prepare($sql20);
-    if ($total7>0) {
+      echo "<script> document.getElementById('image').style.left = '50px'";
+      echo "</script>";
+      echo " <script> document.getElementById('image').style.bottom = '120px'";
+      echo "</script>";
+
+      $sql20 = "UPDATE player_data_map SET player_character_position = 2 WHERE id_player = $idplayer AND id_map = 1";
+      $stmt20 = $conn->prepare($sql20);
+      if ($total7>0) {
+
       $stmt20->execute();
       if ($stmt20->execute()) {
         $sql21 = "SELECT COUNT(id_player) FROM score WHERE id_player = $idplayer and id_level = 12";
@@ -663,7 +666,7 @@ function onload1(){
       }
     }
 
-    var_dump($sql20);
+    // var_dump($sql20);
 
     }
 
@@ -715,6 +718,8 @@ function onload1(){
       }
     }
   }
+
+
 
   if ($total721 > 0) {
 
@@ -782,6 +787,10 @@ if ($total721 < 1) {
 }else {
   echo "<script> document.getElementById('4').style.display = 'block' </script>";
 }
+
+// var_dump("HASTA EL FIN");
+
+
      ?>
   </body>
 </html>

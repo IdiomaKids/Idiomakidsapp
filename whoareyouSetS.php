@@ -12,7 +12,6 @@ $_SESSION["id_player"] = $idplayer;
 
   $stmt->execute();
 
-
 //echo $row['name'];
 //var_dump($sql);
 
@@ -59,6 +58,14 @@ echo "</section>";
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <script language="javascript" type="text/javascript">
+function cerrar() {
+  window.close('whoareyouSetS.php');
+  window.open('logout.php');
+
+
+}
+</script>
     <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
     <title>IdiomaKids</title>
@@ -74,6 +81,6 @@ echo "</section>";
 "></a>
 <h1 style="text-align:center;">¿Quién eres?</h1>
 
-  <a href="logout.php" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:5%;"><button type="button" name="buttonR" class="salir" >SALIR</button></a>
+  <a href="logout.php" onclick="cerrar()" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:5%;"><button type="button" name="buttonR" class="salir">CERRAR SESIÓN</button></a>
   </body>
 </html>

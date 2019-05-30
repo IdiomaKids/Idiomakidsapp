@@ -27,7 +27,10 @@ echo "<section style='position: absolute;
     transform: translateX(-50%);
     left: 50%;
     display: inline-block;
-    width: 808px;'>";
+    width: 850px;
+    top:0%;
+    overflow-y:scroll;
+    height:570px;' class='scsec'>";
 foreach ($conn->query($sql) as $fila) {
   $playerBirthday = $fila["birthday"];
   $name = $fila['name'];
@@ -66,6 +69,14 @@ echo "</section>";
     <title>IdiomaKids</title>
   </head>
   <body class="bodyBack">
+    <a href="../../logout.php">
+    <img src="../../images/logout.png" alt="" style="
+   width: 50px;
+   position: absolute;
+   right: 0;
+   top: 0;
+   margin: 5px;
+"></a>
 <h1 style="text-align:center;">¿Quién eres?</h1>
 <?php
 // echo "<a href='pasarela.php?id=".$fila["id_player"]."&birth=$result&name=$name&iduser=$iduser&avatar=$avatar' style='text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:5%;'>";

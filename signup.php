@@ -8,7 +8,8 @@ $message = '';
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':email', $_POST['email']);
     $email = $_POST['email'];
-    $stmt->bindParam(':password', $_POST['password']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $stmt->bindParam(':password', $password);
 
     $pass1 = $_POST['password'];
     $pass2 = $_POST['passwordR'];
@@ -59,12 +60,12 @@ if ($pass1 == $pass2) {
     </section>
     <section class="passwordField">
       <h4 style="font-size:25px;display:table-row;">Contraseña</h4>
-      <input type="password" name="password" id="password">
+      <input type="password" name="password" minlength = 6 id="password" onfocusout="passCheck()" onmouseout="passCheck()">
     </section>
 
     <section class="passwordField">
         <h4 style="font-size:25px;margin-bottom: 0%;">Repetir contraseña</h4>
-        <input type="password" name="passwordR" id="passwordR">
+        <input type="password" name="passwordR" minlength = 6 id="passwordR" onfocusout="passCheck()" onmouseout="passCheck()">
     </section>
 <script type="text/javascript">
     var pass1 = document.getElementById('passwordR');
@@ -76,15 +77,32 @@ if ($pass1 == $pass2) {
   </container>
   <br>
   <br>
+  <script type="text/javascript">
+    function passCheck(){
+      var x = document.getElementById('password').value;
+      var y = document.getElementById('passwordR').value;
+
+      if (x == y && x >1 && y>1) {
+        document.getElementById('MessageCheck').style.display = 'none';
+        document.getElementById('buttonRegister2').id = 'buttonRegisterCheck';
+
+      }else{
+        document.getElementById('MessageCheck').style.display = 'inline-block';
+        document.getElementById('buttonRegisterCheck').id = 'buttonRegister2';
+
+      }
+    }
+  </script>
   <?php if(!empty($message)): ?>
     <?= $message ?>
   <?php endif; ?>
+  <p style="display:none;" id="MessageCheck">Las contraseñas no son iguales</p>
   <div class="buttonGroup">
     <a href="index.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">VOLVER</button></a>
-    <input type="submit" name="buttonR" id="buttonRegister" value="AÑADIR JUGADOR"></input>
+    <input type="submit" name="buttonR" id="buttonRegister2" value="REGISTRAR"></input>
     <div class="">
       <input type="checkbox" name="button" required></input>
-      <p style="display:inline-block;">He leido y acepto la <a href="dataProtection.html">política de protección de datos</a> de IdiomaKids</p>
+      <p style="display:inline-block;">He leido y acepto la <a href="dataProtection.html" target="_blank">política de protección de datos</a> de IdiomaKids</p>
 
     </div>
   </div>

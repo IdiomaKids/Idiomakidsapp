@@ -20,7 +20,7 @@ align-items: center;
 	transform: translateY(-50%);
 	transform: translateX(-50%);
 	background-color: #7fff00a1;
-	top: 15%;
+	top: 25%;
 	left: 50%;
 	transition-delay: 4s;
 	display: flex;

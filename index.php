@@ -8,22 +8,26 @@
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
     $message = '';
-    if (count($results) > 0 && $_POST['password'] == $results['password']) {
+    if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
       $_SESSION['id_user'] = $results['id_user'];
       $_SESSION['email'] = $results['email'];
+
+
       header("Location: /whoareyou.php");
     } else {
       $message = 'Lo sentimos, el usuario no existe';
     }
   }
   if (isset($_SESSION['id_user'])) {
-    //var_dump($_SESSION['id_user']);
-    //header("Location: /index.php");
-    $Pemail = $_SESSION['email'];
-    // echo "<p>Estas logueado como $Pemail ";
-    // echo "<a href='logout.php'>Logout";
-    // echo "</a>";
-    // echo "</p>";
+    $iduser2 = $_SESSION['id_user'];
+    $sql212 = "SELECT COUNT(id_player) FROM players WHERE id_user = $iduser2";
+    $result212 = $conn->query($sql212);
+    $total212 = $result212->fetchColumn();
+    if ($total212 == 0) {
+      header("Location: /guardarPlayerCero.php");
+    }else{
+    header("Location: /whoareyouSetS.php");
+  }
 
   }
 ?>

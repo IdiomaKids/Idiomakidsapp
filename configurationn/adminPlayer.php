@@ -7,7 +7,7 @@ $idplayer2 = $_SESSION['id_player'];
 $name = $_SESSION['name'];
 $birth = $_SESSION["birthday"];
 $avatar = $_SESSION["avatar"];
-echo $idplayer2;
+// echo $idplayer2;
   $sql = "SELECT id_player, name, id_user, birthday, avatar FROM players WHERE id_user = $iduser";
   $stmt = $conn->prepare($sql);
   $stmt->bindParam(':id_user', $_SESSION['id_user']);
@@ -24,7 +24,10 @@ echo "<section style='position: absolute;
     transform: translateX(-50%);
     left: 50%;
     display: inline-block;
-    width: 808px;'>";
+    width: 808px;
+    top:0%;
+    height:610px;
+    overflow-y:scroll;' class='scsec'>";
 foreach ($conn->query($sql) as $fila) {
   $playerBirthday = $fila["birthday"];
   $name = $fila['name'];
@@ -90,10 +93,18 @@ echo "</section>";
     <title>IdiomaKids</title>
   </head>
   <body class="bodyBack">
-<h1 style="text-align:center;">¿Quién eres?</h1>
+    <a href="../../logout.php">
+    <img src="../../images/logout.png" alt="" style="
+   width: 50px;
+   position: absolute;
+   right: 0;
+   top: 0;
+   margin: 5px;
+"></a>
+<h1 style="text-align:center;"></h1>
 <container style="position: relative;
     /* width: 90%; */
-    bottom: -570px;
+    bottom: -610px;
     margin: 5px;
     left: 28%;"class="buttonStyle">
 <a href="../guardarPlayer.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">AÑADIR</button></a>
