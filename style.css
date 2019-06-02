@@ -234,15 +234,28 @@
   cursor: pointer;
 }
 
-.salir:hover{
+.salir:hover {
   background-color: green;
   color: white;
 }
 
-.scsec::-webkit-scrollbar{
+.scsec::-webkit-scrollbar {
   width: 7px;
   background: transparent;
 }
+
+.scsec {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  display: inline-block;
+  width: 1230px;
+  top: 7%;
+  height: 525px;
+  overflow-y: scroll;
+  border-bottom: 1px solid #FF9800;
+}
+
 h4, h1 {
   font-family: sans-serif;
 }
