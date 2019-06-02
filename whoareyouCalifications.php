@@ -23,8 +23,8 @@ echo "<section style='position: absolute;
     transform: translateX(-50%);
     left: 50%;
     display: inline-block;
-    width: 850px;
-    top:5%;
+    width: 1275px;
+    top:8%;
     overflow-y:scroll;
     height:541px;' class='scsec'>";
 foreach ($conn->query($sql) as $fila) {
@@ -181,6 +181,6 @@ echo "</section>";
 "></a>
 <h1 style="text-align:center;">Calificaciones</h1>
 
-  <a href="/configurationn/configScreen.php" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:5%;"><button type="button" name="buttonR" class="salir" >VOLVER</button></a>
+  <a href="/configurationn/configScreen.php" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:1%;"><button type="button" name="buttonR" class="salir" >VOLVER</button></a>
   </body>
 </html>

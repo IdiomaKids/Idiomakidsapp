@@ -33,7 +33,7 @@ if (!empty($_POST['avatar'])) {
 // echo $total;
 // echo $total2;
 // echo $total3;
- echo $total4;
+ // echo $total4;
 
 
 
@@ -173,7 +173,7 @@ $stmt4 -> execute();
 $result4 = $conn->query($sql4);
 $total4 = $result4->fetchColumn();;
 
-echo $total4;
+// echo $total4;
 
 if ($total == 3) {
   echo "<script> document.getElementById('redColumn').style.display = 'none';";

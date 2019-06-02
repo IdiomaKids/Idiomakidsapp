@@ -16,12 +16,13 @@
 
 .fondobody {
   display: inline-block;
-  left: 50%;
+  left: 60%;
   position: absolute;
   transform: translateY(-50%);
   transform: translateX(-50%);
   opacity: 0.3;
   width: 400px;
+  top: 8%;
 }
 
 #voluble{

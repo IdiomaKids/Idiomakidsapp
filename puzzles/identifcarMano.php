@@ -16,25 +16,28 @@ $jsonP=$results;
 
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
+   <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
 <!-- <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct"> -->
-<h1 style="text-align:center;font-family:sans-serif;">SEÑALA LA MANO IZQUIERDA</h1>
+<!-- <h1 style="text-align:center;font-family:sans-serif;">SEÑALA LA MANO IZQUIERDA</h1> -->
   <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct" usemap="#image-map">
-
+<img src="../images/Identificar/ManoIzq/hand.png" alt="" style="    position: absolute;
+    left: 25%;
+    top: 20%;">
   <map name="image-map">
       <area target="" style="
       /* border: 1px solid black; */
-    left: 60%;
+    left: 70%;
     padding: 28px;
     position: absolute;
-    top: 34%;"alt="" title="" coords="500,252,50" shape="circle" onclick="verBueno()">
+    top: 32%;"alt="" title="" coords="500,252,50" shape="circle" onclick="verBueno()">
   </map>
   <area target="" style="
       /* border: 1px solid black; */
-      left: 33.7%;
-      padding: 181px;
+      left: 45.3%;
+      padding: 170px;
       position: absolute;
-      top: 10%;
-      height: 200px;
+      top: 7%;
+      height: 164px;
       " alt="" title="" coords="500,252,50" shape="circle" onclick="verMalo()">
   <div id="no" width="100%" height="-webkit-fill-available">
   </div>
@@ -60,8 +63,10 @@ $jsonP=$results;
     }
 
     function verMalo(){
+        lose.play();
       document.getElementById("i").id = "voluble2";
-      setTimeout(function(){ document.getElementById("voluble2").id = "i"; }, 1000);
+
+      setTimeout(function(){ document.getElementById("voluble2").id = "i"; }, 2000);
     }
 
   </script>

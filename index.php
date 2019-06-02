@@ -70,7 +70,9 @@
 </form>
 <a href="signup.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">CREAR CUENTA</button></a>
 <a href="sinLogin/sinLogin.php" style="text-decoration:none;color:black;"><button type="button" name="buttonWA" id="buttonAccessWithoutAccount">ACCEDER SIN CUENTA</button></a>
+
 </div>
+<a href="recover.php"><p style="text-align:center;margin-left:-4%;">He olvidado mi contraseña</p></a>
 <br>
 <br>
 

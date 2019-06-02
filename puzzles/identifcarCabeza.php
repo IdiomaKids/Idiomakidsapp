@@ -16,25 +16,30 @@ $jsonP=$results;
 
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
+   <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
 <!-- <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct"> -->
-<h1 style="text-align:center;font-family:sans-serif;">SEÑALA LA CABEZA</h1>
+<!-- <h1 style="text-align:center;font-family:sans-serif;">SEÑALA LA MANO IZQUIERDA</h1> -->
   <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct" usemap="#image-map">
-
+  <img src="../images/Identificar/ManoIzq/head.png" alt="" style="    position: absolute;
+      left: 20%;
+      top: 20%;">
   <map name="image-map">
       <area target="" style="
       /* border: 1px solid black; */
-    left: 43.7%;
-    padding: 100px;
-    position: absolute;
-    top: 10%;"alt="" title="" coords="500,252,50" shape="circle" onclick="verBueno()">
+      left: 53.8%;
+      padding: 85px;
+      position: absolute;
+      top: 7%;
+      padding-left: 123px;"alt="" title="" coords="500,252,50" shape="circle" onclick="verBueno()">
   </map>
   <area target="" style="
-      border: 1px solid black;
-      left: 36.3%;
-      padding: 181px;
-      position: absolute;
-      top: 10%;
-      height: 200px;
+      /* border: 1px solid black; */
+      left: 46.7%;
+    padding: 150px;
+    position: absolute;
+    top: 32%;
+    padding-left: 255px;
+    height: 30px;
       " alt="" title="" coords="500,252,50" shape="circle" onclick="verMalo()">
   <div id="no" width="100%" height="-webkit-fill-available">
   </div>
@@ -60,8 +65,10 @@ $jsonP=$results;
     }
 
     function verMalo(){
+        lose.play();
       document.getElementById("i").id = "voluble2";
-      setTimeout(function(){ document.getElementById("voluble2").id = "i"; }, 1000);
+
+      setTimeout(function(){ document.getElementById("voluble2").id = "i"; }, 2000);
     }
 
   </script>

@@ -24,10 +24,11 @@ echo "<section style='position: absolute;
     transform: translateX(-50%);
     left: 50%;
     display: inline-block;
-    width: 808px;
-    top:0%;
-    height:610px;
-    overflow-y:scroll;' class='scsec'>";
+    width: 1230px;
+    top:7%;
+    height:525px;
+    overflow-y:scroll;
+    border-bottom: 1px solid #FF9800;' class='scsec'>";
 foreach ($conn->query($sql) as $fila) {
   $playerBirthday = $fila["birthday"];
   $name = $fila['name'];
@@ -48,7 +49,7 @@ foreach ($conn->query($sql) as $fila) {
            // echo "<p style='display:inline-block;' onclick='delete()'>Eliminar";
             // echo "</a>";
            // echo "</p>";
-           echo "<div style='width:200px;display:inline-block;margin-top:10%;'>";
+           echo "<div style='width:200px;display:inline-block;margin-top:5%;'>";
            echo "<img style='background-color:white;width: 150px;height: 150px;border-radius: 100px;border: 3px solid black;margin-left: 12%;margin-bottom: 1%;cursor: pointer;' src='../".$fila["avatar"]."'>";
            echo "<img>";
            //echo $fila["id_player"];
@@ -77,7 +78,7 @@ if ($total == 1) {
             $sql2 = "DELETE FROM players where id_player = $id";
             $stmt2 = $conn->prepare($sql2);
             $stmt2->execute();
-            echo "<script>alert('ELIMINADO $id')</script>";
+            // echo "<script>alert('ELIMINADO $id')</script>";
             echo "<script>location.href='adminPlayer.php'</script>";
         }
       }
@@ -93,6 +94,7 @@ echo "</section>";
     <title>IdiomaKids</title>
   </head>
   <body class="bodyBack">
+    <h1 style="text-align:center;">ADMINISTRAR JUGADOR</h1>
     <a href="../../logout.php">
     <img src="../../images/logout.png" alt="" style="
    width: 50px;
@@ -104,7 +106,7 @@ echo "</section>";
 <h1 style="text-align:center;"></h1>
 <container style="position: relative;
     /* width: 90%; */
-    bottom: -610px;
+    bottom: -590px;
     margin: 5px;
     left: 28%;"class="buttonStyle">
 <a href="../guardarPlayer.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">AÑADIR</button></a>

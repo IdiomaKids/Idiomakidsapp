@@ -60,7 +60,7 @@ if ($pass1 == $pass2) {
     </section>
     <section class="passwordField">
       <h4 style="font-size:25px;display:table-row;">Contraseña</h4>
-      <input type="password" name="password" minlength = 6 id="password" onfocusout="passCheck()" onmouseout="passCheck()">
+      <input type="password" name="password" minlength = 6 id="password">
     </section>
 
     <section class="passwordField">

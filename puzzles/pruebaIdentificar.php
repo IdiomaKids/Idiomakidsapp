@@ -16,6 +16,7 @@ $jsonP=$results;
 
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
+   <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
   <img src="../images/Identificar/Cuadrado/square.png" alt="" class="fondo" id="fondoCorrect" solution="correct">
 
   <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 20%;top: 70%;">
@@ -80,8 +81,10 @@ $jsonP=$results;
     }
 
     function verMalo(){
+        lose.play();
       document.getElementById("i").id = "voluble2";
-      setTimeout(function(){ document.getElementById("voluble2").id = "i"; }, 1000);
+
+      setTimeout(function(){ document.getElementById("voluble2").id = "i"; }, 2000);
     }
 
   </script>

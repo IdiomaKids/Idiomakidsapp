@@ -9,6 +9,7 @@ $idplayer = $_SESSION["id_player"];
 
 require 'database.php';
 //echo $iduser;
+$message = '';
 $sql = "SELECT email, password FROM users WHERE id_user = $iduser";
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':id_user', $_SESSION['id_user']);
@@ -21,13 +22,18 @@ $_SESSION['birth'] = $_POST['birth'];
     $email2 = $_POST['email'];
     $pass2 = password_verify($_POST['password'], $fila['password']);
   }
-
+  if($email2 > 1 && $fila['email'] != $email2){
+    $message = 'Email erroneo';
+  }if($pass2 > 1 && $fila['password'] != $pass2){
+      $message = 'Contraseña erronea';
+  }
   if ($fila['email'] == $email2 && $fila['password'] == $pass2 ) {
     $_SESSION['id_player'] = $idplayer;
     header("Location: /configurationn/configScreen.php");
       echo "<p> Bienn";
       echo "</p>";
     }
+
   }
  ?>
 
@@ -63,7 +69,7 @@ $_SESSION['birth'] = $_POST['birth'];
 
       </container>
       <?php if(!empty($message)): ?>
-        <p> <?= $message ?></p>
+        <p style="text-align:center;"> <?= $message ?></p>
       <?php endif; ?>
       <div style="margin-left:35%;"class="buttonGroup">
         <input type="submit" name="buttonL" id="buttonLogin" value="CONFIRMAR"></input>

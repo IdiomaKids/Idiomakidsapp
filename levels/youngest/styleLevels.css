@@ -30,6 +30,23 @@
   transition: 1s;
 }
 
+.logout{
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 5px;
+  z-index:1;
+}
+
+.volver{
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  margin: 5px;
+}
+
 .bodyYoungest {
   background-color: lightgreen;
 }

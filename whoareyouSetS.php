@@ -22,10 +22,11 @@ echo "<section style='position: absolute;
     transform: translateX(-50%);
     left: 50%;
     display: inline-block;
-    width: 850px;
-    top:0%;
+    width: 1230px;
+    top:7%;
     overflow-y:scroll;
-    height:570px;' class='scsec'>";
+    height:525px;
+    border-bottom: 1px solid #FF9800;' class='scsec'>";
 foreach ($conn->query($sql) as $fila) {
   $playerBirthday = $fila["birthday"];
   $name = $fila['name'];
@@ -42,7 +43,7 @@ foreach ($conn->query($sql) as $fila) {
            $_SESSION["birthday"] = $fila["birthday"];
            //var_dump($fila['id_player']);
            echo "<a style='text-decoration:none;color:black;' href='pasarela.php?id=$idplayer&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
-           echo "<div style='width:200px;display:inline-block;margin-top:10%;'>";
+           echo "<div style='width:200px;display:inline-block;margin-top:5%;'>";
            echo "<img style='background-color:white;width: 150px;height: 150px;border-radius: 100px;border: 3px solid black;margin-left: 12%;margin-bottom: 1%;cursor: pointer;' src=".$fila["avatar"].">";
            echo "<img>";
            echo "<p style='text-align:center;text-decoration:none;'>$name";
@@ -79,7 +80,7 @@ function cerrar() {
    top: 0;
    margin: 5px;
 "></a>
-<h1 style="text-align:center;">¿Quién eres?</h1>
+<h1 style="text-align:center;font-size:45px;">¿Quién eres?</h1>
 
   <a href="logout.php" onclick="cerrar()" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:5%;"><button type="button" name="buttonR" class="salir">CERRAR SESIÓN</button></a>
   </body>
