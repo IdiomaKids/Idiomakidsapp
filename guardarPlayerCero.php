@@ -53,7 +53,7 @@ $emailParent = $_SESSION['email'];
     <h1 style="text-align:center;margin-bottom:10%;">Añadir jugador</h1>
     <div class="estiloNombreJugador">
       <h1 style="display:inline-block">Nombre</h1>
-      <input type="text" name="name" id="name" style="border: 1px solid black; height: 45px; font-size: 20px; text-align:center; margin-left:8%;">
+      <input type="text" name="name" id="name" style="border: 1px solid black; height: 45px; font-size: 20px; text-align:center; margin-left:8%;" required>
     </div>
 <!-- <?php echo "<p style='display:inline-block;float: right;
     margin-top: -170px;margin-right:10px;'>Bienvenido, $emailParent";
@@ -76,10 +76,10 @@ echo "</p>";
         <br>
         <button onclick="closeDialog()" id="button" class="buttonDialog">Clic para cerrar</button>
     </dialog>
-    <input type="text" name="avatar" id="avatar" value="" style="display:none;">
+    <input type="text" name="avatar" id="avatar" value="" style="display:none;" required>
     <h1 style="text-align:center;margin-top:13%;">Fecha de nacimiento</h1>
 
-    <input type="date" name="birthday" class="birthdayDate" id="birthday" name="birthday">
+    <input type="date" name="birthday" class="birthdayDate" id="birthday" name="birthday" required>
 
     <br>
     <br>

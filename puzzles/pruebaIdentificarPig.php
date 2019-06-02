@@ -17,9 +17,9 @@ $jsonP=$results;
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
-  <img src="../images/Identificar/Cerdo/pig.png" alt="" class="fondo" id="fondoCorrect" solution="correct">
+  <img src="../images/Identificar/Cerdo/pig.png" alt="" class="fondo" id="fondoCorrect" solution="correct" style="top:15%;">
 
-  <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 20%;top: 70%;">
+  <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 18%;top: 70%;">
     <img src="" alt="" id="pink" class="img" onclick="verBueno()">
     <img src="" alt="" id="orange" class="img" onclick="verMalo()">
     <img src="" alt="" id="green" class="img" onclick="verMalo()">
