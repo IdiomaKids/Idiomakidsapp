@@ -342,9 +342,8 @@ echo "<script> document.getElementById('1s".$total7."').style.display = 'inline-
                 document.getElementById('boton1111').style.display = "none";
                 document.getElementById('boton2111').style.display = "inline-block";
                 contador4 = contador4 + 1;
-                window.alert(contador4);
-                setTimeout(function(){     document.getElementById('frame4').src = "../../puzzles/sevenPuzzle.php";
-            }, 4000);
+                // window.alert(contador4);
+
                 // window.alert(contador4);
               }
             }
@@ -391,8 +390,7 @@ echo "<script> document.getElementById('1s".$total7."').style.display = 'inline-
                 document.getElementById('boton2111').style.display = "none";
                 document.getElementById('boton3111').style.display = "inline-block";
                 contador4 = contador4 + 1;
-                setTimeout(function(){     enviar4();
-                }, 4000)
+
                 closeDialog();
 
               }

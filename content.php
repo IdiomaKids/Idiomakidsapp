@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="images/LogoApp.ico"/>
     <title>IdiomaKids</title>
   </head>
   <body class="bodyBack">
@@ -15,16 +16,8 @@
    top: 0;
    margin: 5px;
 "></a>
-    <!-- <h1 style="text-align:center;">¿De que mapa quieres ver los contenidos?</h1>
-    <div class="buttonGroup" style="margin-top: 15%;
-    margin-left: 20%;">
-
-
-<a href="../../youngestContent.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">PEQUEÑOS</button></a>
-<a href="../../middleContent.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">MEDIANOS</button></a>
-<a href="../../oldestContent.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">MAYORES</button></a> -->
-
-    </div>
+<!-- Esta es una pagina simple que informa de los contenidos de los mapas -->
+  </div>
     <h1 style="text-align:center;">CONTENIDO</h1>
 <div class="" style="margin-top:5%;">
 

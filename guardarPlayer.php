@@ -1,10 +1,9 @@
 <?php
 require 'database.php';
 session_start();
-//var_dump($_SESSION);
-//var_dump($_POST);
 $parent = $_SESSION['id_user'];
 $emailParent = $_SESSION['email'];
+//Aqui hacemos el insert en la BBDD del niñi que esta asociado al tutor que tenga en la variable de sesion
   if (!empty($_POST['name']) && !empty($_POST['birthday']) && !empty($_POST['avatar'])) {
 
     $sql = "INSERT INTO players (name, id_user, birthday, avatar) VALUES (:name, :id_user, :birthday, :avatar)";
@@ -13,11 +12,9 @@ $emailParent = $_SESSION['email'];
     $stmt->bindParam(':birthday', $_POST['birthday']);
     $stmt->bindParam(':avatar', $_POST['avatar']);
     $stmt->bindParam(':id_user', $parent);
+    //Si la query se ejecuta mandamos el jugador a la pantalla de adminPLayer.php junto con los otros niños
     if ($stmt->execute()) {
       header("Location: /configurationn/adminPlayer.php");
-      // $actual = date("Y-d-j");
-      // $result = date("Y", strtotime($actual)) - date("Y", strtotime($birthdayP));;
-      // echo $result;
       $message = 'Usuario creado correctamente';
     } else {
       $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
@@ -49,17 +46,9 @@ $emailParent = $_SESSION['email'];
       <h1 style="display:inline-block">Nombre</h1>
       <input type="text" name="name" id="name" style="border: 1px solid black; height: 45px; font-size: 20px; text-align:center; margin-left:8%;" required>
     </div>
-<!-- <?php echo "<p style='display:inline-block;float: right;
-    margin-top: -170px;margin-right:10px;'>Bienvenido, $emailParent";
-//echo  $_GET['email'];
 
-echo "<a href='logout.php'>Logout";
-echo "</a>";
-echo "</p>";
-?> -->
 <h1 style="text-align:center;margin-bottom:10%;">Selecciona un avatar</h1>
     <button type="button" name="button" onclick="showDialog()" id="buttonSelectImg"><img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="inputAvatar" name="inputAvatar" value=""></button>
-    <!-- <img src="images/avatares/avatar.png" alt="" class="imgCircleSet" id="setImage"> -->
     <dialog id="dialog">
             <p style="text-align:center;font-size:15px;">Selecciona un avatar</p>
         <img src="images/avatares/marciano.png"  class="imgCircle" id="marciano" onclick="clickImageMarciano()" value="">
@@ -84,14 +73,16 @@ echo "</p>";
     <script type="text/javascript">
     var dialog = document.getElementById("dialog");
     var buttonOpen = document.getElementById("button");
-
+        //Esta funcion cierra el dialog
       function closeDialog(){
           dialog.close();
         }
+
+        // Esta funcion abre un dialog para seleccionar el personaje que quiere tener el niño
         function showDialog(){
         dialog.show();
       }
-
+        //Estas funciones son las que ponen el personaje en el circulo del avatar
       function clickImageMarciano(){
         var marciano = "images/avatares/marciano.png"
         console.log("Has seleccionado marciano " + marciano);

@@ -19,10 +19,10 @@ $jsonP=$results;
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
 <!-- <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct"> -->
 <!-- <h1 style="text-align:center;font-family:sans-serif;">SEÑALA LA MANO IZQUIERDA</h1> -->
-  <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct" usemap="#image-map">
+  <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct" usemap="#image-map" style="left:70%;">
 <img src="../images/Identificar/ManoIzq/hand.png" alt="" style="    position: absolute;
     left: 25%;
-    top: 20%;">
+    top: 22%;">
   <map name="image-map">
       <area target="" style="
       /* border: 1px solid black; */

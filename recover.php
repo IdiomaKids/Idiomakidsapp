@@ -25,7 +25,7 @@ if (isset($destino)) {
     mail($destino,$reason,$text,$from);
     header("Location: /index.php");
   }else {
-    echo "no esxite";
+    $message = 'Lo sentimos, el correo no existe';
 
 }
 }
@@ -41,12 +41,22 @@ if (isset($destino)) {
      <title>IdiomaKids</title>
    </head>
    <body class="bodyBack">
+     <h1 style="text-align:center;">CAMBIO DE CONTRASEÑA</h1>
      <img src="images/LogoApp.png" style="width:33%;margin-top:1%;margin-left:33%;"></img>
      <form class="" action="recover.php" method="post">
        <p style="text-align:center;font-size:20px;font-family:sans-serif;">Introduce tu correo</p>
-       <input type="text" name="email" style="margin-left:42%;"id="email">
-       <input type="submit" name="" value="ENVIAR" style="position:absolute;bottom:200px;transform:translateX(-50%);left:40%;"id="buttonRegister">
-       <a href="index.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" style="position:absolute;bottom:200px;transform:translateX(-50%);left:61%;" id="buttonRegister" style="margin-right:5%;">VOLVER</button></a>
+       <input type="text" name="email" style="margin-left:42%;"id="email" required>
+       <?php if(!empty($message)): ?>
+         <p style="text-align:center;"> <?= $message ?></p>
+       <?php endif; ?>
+       <a href="recover.php" style="text-align:center;display:block;" id="send"onclick="reload()">¿No has recibido el correo?</a>
+       <input type="submit" name="" value="ENVIAR" style="position:absolute;bottom:90px;transform:translateX(-50%);left:40%;"id="buttonRegister">
+       <a href="index.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" style="position:absolute;bottom:90px;transform:translateX(-50%);left:61%;" id="buttonRegister" style="margin-right:5%;">VOLVER</button></a>
 </form>
+<script type="text/javascript">
+  function reload(){
+    document.getElementById('send').style.display = 'none';
+  }
+</script>
    </body>
  </html>

@@ -54,11 +54,11 @@
 
     <section class="emailField">
         <h4 style="font-size:25px;display:table-row;">Email</h4>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
     </section>
     <section class="passwordField">
       <h4 style="font-size:25px;display:table-row;">Contraseña</h4>
-      <input type="password" name="password" id="password">
+      <input type="password" name="password" id="password" required>
     </section>
 
   </container>

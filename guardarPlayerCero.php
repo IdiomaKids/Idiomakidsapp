@@ -1,8 +1,9 @@
 <?php
 require 'database.php';
 session_start();
-//var_dump($_SESSION);
-//var_dump($_POST);
+
+//El funcionamiento de esta clase es igual que el de la calse guardarPLayer.php, solo que en esta clase cuando registrar a un jugador lo manda directamente
+//al mapa correspondiente
 $parent = $_SESSION['id_user'];
 $emailParent = $_SESSION['email'];
 
@@ -20,6 +21,7 @@ $emailParent = $_SESSION['email'];
     $_SESSION['birthday'] = $_POST['birthday'];
     $_SESSION['avatar'] = $_POST['avatar'];
 
+    //Si la quuey se ejecuta el jugador pasa por la pasarelaCro.php, que es la que asigna el mapa al jugador en funcion de la edad del niño
     if ($stmt->execute()) {
       $_SESSION['id_player'] = $conn->lastInsertId();
       header("Location: /pasarelaCero.php");
@@ -90,14 +92,15 @@ echo "</p>";
     <script type="text/javascript">
     var dialog = document.getElementById("dialog");
     var buttonOpen = document.getElementById("button");
-
+      //Esta funcion cierra el dialog
       function closeDialog(){
           dialog.close();
         }
+        //Esta funcion es la que abre el dialog para que se seleccione el avatar que tendrá el niño
         function showDialog(){
         dialog.show();
       }
-
+//Estas funciones son las que ponen el avatar en el circulo que hay en la pantalla que simboliza el avatar
       function clickImageMarciano(){
         var marciano = "images/avatares/marciano.png"
         console.log("Has seleccionado marciano " + marciano);

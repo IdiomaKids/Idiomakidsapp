@@ -5,7 +5,6 @@ $idplayer = $_SESSION['id_player'];
 // echo $idplayer;
  ?>
 
-<!-- En esta pantalla simplemente la utlizamos de pasarela para acceder a contenido, administrar jugador y calificaciones -->
 <!DOCTYPE html>
 <html lang="" dir="ltr">
   <head>

@@ -5,7 +5,7 @@ $idplayer = $_SESSION['id_player'];
 $image = $_SESSION['avatar'];
 $name = $_SESSION['name'];
 
-
+//Hacemos una query que actualiza el avatar del jugador en la base de datos
 if (!empty($_POST['avatar'])) {
   $sql1 = "UPDATE players SET avatar = :avatar WHERE id_player = $idplayer";
   //echo $sql1;
@@ -14,34 +14,10 @@ if (!empty($_POST['avatar'])) {
   if ($stmt1->execute()) {
     $_SESSION['avatar'] = $_POST['avatar'];
     header("Location: pasarelaCero.php");
-    echo "document.getElementById('avatar').value = '';";
-
-
-    // $actual = date("Y-d-j");
-    // $result = date("Y", strtotime($actual)) - date("Y", strtotime($birthdayP));;
-    // echo $result;
-    $message = 'Usuario creado correctamente';
-  } else {
-    $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
-  }
+    // echo "document.getElementById('avatar').value = '';";
+}
 }
 
-
-
-
-
-// echo $total;
-// echo $total2;
-// echo $total3;
- // echo $total4;
-
-
-
-// $phpVariable = 90;
-//
-// $puntos = $total - $phpVariable;
-
-// echo $puntos;
 echo "<h2 style='display:inline;position:absolute;top:0;'>";
 echo $name;
 echo "</h2>";
@@ -55,6 +31,7 @@ echo "</h2>";
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="levels/youngest/styleLevels.css">
     <link rel="stylesheet" href="sinLogin/sinLoginStyle.css">
+    <link rel="shortcut icon" type="image/png" href="images/LogoApp.ico"/>
   </head>
   <body class="bodyBack">
     <a href="../../logout.php">
@@ -68,6 +45,7 @@ echo "</h2>";
     <!-- <button type="button" name="button"></button> -->
     <div>
     <div style="height: 200px;">
+<!-- Esta es la imagen del niño actual -->
     <?php echo "<img id='inputAvatar' style='background-color: white;
     width: 150px;
     height: 150px;
@@ -85,6 +63,8 @@ echo "</h2>";
 
   <!-- <p value="" id="avatar" style="display:none;"></p> -->
   <input type="text" name="avatar" id="avatar" value="" style="display:none;">
+
+  <!-- Esta imagen es el candado que encima de todas las filas, pero con un id diferente por cada una, ya que son individuales -->
   <img src="../../images/pjBlock.png" alt="" style="
 
     width: 109px;
@@ -122,6 +102,7 @@ echo "</h2>";
     position: absolute;" id="purpleColumn" onclick="bloqPj4()">
 
   </img>
+  <!-- Aqui estan todas las imagenes disponibles para seleccionar, divididas en columnas -->
     <div class="">
     <img src="images/avatares/plutoCharacter/plutoWhite.png"  onclick="clickImagePluto()" class="imgCircle2" id="plutoWhite" value="">
     <img src="images/avatares/plutoCharacter/plutoRed.png"  onclick="clickImagePlutoRed()" class="imgCircle2" id="plutoRed" value="">
@@ -149,6 +130,8 @@ echo "</h2>";
   </div>
 <?php
 
+//Estas son las querys que lanzamos para coger el valor de score de cada nivel
+
 $sql = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 11";
 $stmt = $conn->prepare($sql);
 $stmt -> execute();
@@ -174,6 +157,9 @@ $result4 = $conn->query($sql4);
 $total4 = $result4->fetchColumn();;
 
 // echo $total4;
+
+//Aqui hacemos la comprobación esclonada para quitar los candados, si es 3 en la primera variable se quita, luego se comprueba, si la primera variable y la segunda
+//son 3, y asi con todos
 
 if ($total == 3) {
   echo "<script> document.getElementById('redColumn').style.display = 'none';";
@@ -210,6 +196,8 @@ if ($total == 3) {
 
 
   <script type="text/javascript">
+
+// Aqui estan las funciones que activan los mensajes de error por si seleccionas un personaje que no tienes desbloqueado
 
   function bloqPj1(){
   document.getElementById("float").id = "float2";
@@ -254,6 +242,7 @@ gone4();
   </div>
   </body>
 
+<!-- Estas son las funciones que utilizamos para cambiar el personaje de forma visual antes de cambiarlo -->
   <script type="text/javascript">
   function clickImageMarciano(){
     var marciano = "images/avatares/marciano.png"

@@ -8,14 +8,34 @@ $iduser = $_SESSION["id_user"];
 $idplayer = $_SESSION["id_player"];
 // echo $idplayer;
 
-// Utilizamos las variables de sesión para pasar los datos por la pasarela, como en todos los archivos
+
 echo "<h2>Bienvenido, $name";
 echo "</h2>";
+
+
+// echo $name;
+// echo "<br>";
+// echo $birth;
+// echo "<br>";
+// echo $avatar;
+// echo "<br>";
+// echo $iduser;
+// echo "<br>";
+// echo $idplayer;
+
+
+
+
+
+
+
  ?>
-
-
 <script type="text/javascript">
+function mutePage() {
+    var elems = document.querySelectorAll("video, audio");
 
+    [].forEach.call(elems, function(elem) { muteMe(elem); });
+}
 </script>
 <!DOCTYPE html>
 <html lang="" dir="ltr">
@@ -34,8 +54,7 @@ echo "</h2>";
    top: 0;
    margin: 5px;
 "></a>
-<!-- Ponemos los divs que son los disparadores que activan los diferentes eventos, que abren diferentes pantallas, mapa, cambiar jugador, personajes
-y confuguracióna padres -->
+<button type="button" name="button" id="my_mute_button" onclick="mutePage()"></button>
 <div style="width: 24%;
     height: 350px;
     position: absolute;
@@ -76,7 +95,6 @@ cursor: pointer;
 
 </div>
 <script type="text/javascript">
-// Estos son los eventos que se activan en los divs
   function map(){
     window.location.href="youngestMap.php";
   }
