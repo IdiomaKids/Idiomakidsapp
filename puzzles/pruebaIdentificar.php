@@ -31,13 +31,15 @@ $jsonP=$results;
 
   <div id="n">
     <h1 class="center">CUADRADO</h1>
+    <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;left:100px;"alt="">
+    <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;right:100px;"alt="">
   </div>
 
   <div id="i">
     <h1 class="center">INCORRECTO</h1>
   </div>
 
-
+<p style="display:none;" value="0" id="contador"></p>
   <script>
     var myJSON = <?= $jsonP['jsondata']; ?>
 
@@ -73,6 +75,9 @@ $jsonP=$results;
 
 
     function verBueno(){
+      // var contador = 1;
+      document.getElementById('contador').value = 1;
+      // window.alert(document.getElementById('contador').value);
       document.getElementById("no").id="yes";
       document.getElementById("fondoCorrect").style.opacity = 1;
       win.play();

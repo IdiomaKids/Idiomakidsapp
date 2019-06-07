@@ -167,6 +167,7 @@ echo "</section>";
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="images/LogoApp.ico"/>
     <meta charset="utf-8">
     <title>IdiomaKids</title>
   </head>
@@ -180,7 +181,6 @@ echo "</section>";
    margin: 5px;
 "></a>
 <h1 style="text-align:center;">Calificaciones</h1>
-
   <a href="/configurationn/configScreen.php" style="text-decoration:none;color:black;position:absolute;bottom:0;transform:translateX(-50%);left:50%;margin-bottom:1%;"><button type="button" name="buttonR" class="salir" >VOLVER</button></a>
   </body>
 </html>

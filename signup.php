@@ -3,17 +3,19 @@ session_start();
 require 'database.php';
 //var_dump($_SESSION['id_user']);
 $message = '';
+//Comprobamos que los campos de email y contraseña no esten vacios.
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $sql = "INSERT INTO users (email, password) VALUES (:email, :password)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':email', $_POST['email']);
     $email = $_POST['email'];
+    //La contraseña la encriptamos con un hash, para mayor seguridad y protección.
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $stmt->bindParam(':password', $password);
 
     $pass1 = $_POST['password'];
     $pass2 = $_POST['passwordR'];
-
+//Antes de mandar el registro, comprobamos que las contraseñas sean igules, si lo son, pasamos a la siguiente pantalla, si no se devuelve un mensaje de error y te manda a la misma pantalla
 if ($pass1 == $pass2) {
   if ($stmt->execute()) {
     header("Location: /guardarPlayerCero.php");
@@ -37,6 +39,7 @@ if ($pass1 == $pass2) {
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="images/LogoApp.ico"/>
     <script type="text/javascript" src="script.js"></script>
     <meta charset="utf-8">
     <title>IdiomaKids</title>
@@ -55,19 +58,20 @@ if ($pass1 == $pass2) {
 
     <section class="emailField">
         <h4 style="font-size:25px;display:table-row;">Email</h4>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
 
     </section>
     <section class="passwordField">
       <h4 style="font-size:25px;display:table-row;">Contraseña</h4>
-      <input type="password" name="password" minlength = 6 id="password">
+      <input type="password" name="password" minlength = 6 id="password" required>
     </section>
 
     <section class="passwordField">
         <h4 style="font-size:25px;margin-bottom: 0%;">Repetir contraseña</h4>
-        <input type="password" name="passwordR" minlength = 6 id="passwordR" onfocusout="passCheck()" onmouseout="passCheck()">
+        <input type="password" name="passwordR" minlength = 6 id="passwordR" onfocusout="passCheck()" onmouseout="passCheck()" required>
     </section>
 <script type="text/javascript">
+//Hacemos una comprabacion en vivo de las contraseñas antes de mandarlas a la base de datos, si alguien consigue burlar este paso, entra en juego el paso anterior de comprobacion de contraseñas
     var pass1 = document.getElementById('passwordR');
     var pass2 = document.getElementById('password');
   if (pass1.value != pass2.value) {

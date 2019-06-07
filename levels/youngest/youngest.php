@@ -30,17 +30,12 @@ echo "</h2>";
 
 
  ?>
-<script type="text/javascript">
-function mutePage() {
-    var elems = document.querySelectorAll("video, audio");
 
-    [].forEach.call(elems, function(elem) { muteMe(elem); });
-}
-</script>
 <!DOCTYPE html>
 <html lang="" dir="ltr">
   <head>
     <link rel="stylesheet" href="styleLevels.css">
+    <link rel="shortcut icon" type="image/png" href="../../images/LogoApp.ico"/>
     <meta charset="utf-8">
     <title>IdiomaKids</title>
   </head>
@@ -54,7 +49,7 @@ function mutePage() {
    top: 0;
    margin: 5px;
 "></a>
-<button type="button" name="button" id="my_mute_button" onclick="mutePage()"></button>
+
 <div style="width: 24%;
     height: 350px;
     position: absolute;

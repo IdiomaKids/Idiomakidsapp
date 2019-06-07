@@ -31,6 +31,8 @@ $jsonP=$results;
 
   <div id="n">
     <h1 class="center">CERDO</h1>
+    <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;left:100px;"alt="">
+    <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;right:100px;"alt="">
   </div>
 
   <div id="i">

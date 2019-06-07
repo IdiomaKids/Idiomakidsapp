@@ -1,4 +1,4 @@
-
+<!-- Este es un archivo simple que muestra los contenidos de los distintos mapas -->
 <!DOCTYPE html>
 <html>
   <head>

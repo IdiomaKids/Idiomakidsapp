@@ -14,11 +14,12 @@ if (!empty($_POST['avatar'])) {
   if ($stmt1->execute()) {
     $_SESSION['avatar'] = $_POST['avatar'];
     header("Location: pasarelaCero.php");
+    // echo "document.getElementById('avatar').value = '';";
 }
 }
 
-echo "<h2 style='display:inline;position:absolute;top:-20px;'>";
-echo "<p>Cambiar personaje de $name</p>";
+echo "<h2 style='display:inline;position:absolute;top:0;'>";
+echo $name;
 echo "</h2>";
  ?>
 
@@ -41,6 +42,7 @@ echo "</h2>";
    top: 0;
    margin: 5px;
 "></a>
+    <!-- <button type="button" name="button"></button> -->
     <div>
     <div style="height: 200px;">
 <!-- Esta es la imagen del niño actual -->
@@ -59,6 +61,7 @@ echo "</h2>";
   </div>
   <form class="" action="character.php" method="post">
 
+  <!-- <p value="" id="avatar" style="display:none;"></p> -->
   <input type="text" name="avatar" id="avatar" value="" style="display:none;">
 
   <!-- Esta imagen es el candado que encima de todas las filas, pero con un id diferente por cada una, ya que son individuales -->

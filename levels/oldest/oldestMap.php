@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="shortcut icon" type="image/png" href="../../images/LogoApp.ico"/>
     <meta charset="utf-8">
     <title>IdiomaKids</title>
   </head>

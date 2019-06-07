@@ -2,12 +2,14 @@
   session_start();
 
   require 'database.php';
+  //Aqui comprobamos que los datos introducidos en los campos no esten vacios, y si no lo estan ejecuta la query
   if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $records = $conn->prepare('SELECT id_user, email, password FROM users WHERE email = :email');
     $records->bindParam(':email', $_POST['email']);
     $records->execute();
     $results = $records->fetch(PDO::FETCH_ASSOC);
     $message = '';
+    //Si los datos introducidos son correctos pasamaos a la siguiente pantalla de seleccion de jugador
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
       $_SESSION['id_user'] = $results['id_user'];
       $_SESSION['email'] = $results['email'];
@@ -18,6 +20,10 @@
       $message = 'Lo sentimos, el usuario no existe';
     }
   }
+
+  //Aqui comprobamos que si hay una sesion abierta coja el numero total de usuarios y los muestra en la pantalla de whoareyouSetS.php estilo Netflix, en caso de no
+  //tener te manda la pantalla guardarPlayerCero.php para crear uno, para darse esta ultima situacion el usuario solo creo la cuenta y no asigno ningun usuario a la misma
+
   if (isset($_SESSION['id_user'])) {
     $iduser2 = $_SESSION['id_user'];
     $sql212 = "SELECT COUNT(id_player) FROM players WHERE id_user = $iduser2";

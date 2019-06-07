@@ -68,6 +68,7 @@ function cerrar() {
 }
 </script>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="images/LogoApp.ico"/>
     <meta charset="utf-8">
     <title>IdiomaKids</title>
   </head>

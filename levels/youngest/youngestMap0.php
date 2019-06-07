@@ -11,7 +11,6 @@
       <meta charset="utf-8">
       <title>IdiomaKids</title>
       <link rel="stylesheet" href="styleLevels.css">
-      <link rel="shortcut icon" type="image/png" href="../../images/LogoApp.ico"/>
    </head>
    <body style="background-color:lightgreen;overflow-y:initial;margin:0%;padding:0%;z-index:5;"id="body1">
       <a href="../../logout.php">
@@ -25,7 +24,7 @@
          <img src="../../images/Identificar/3estrella.png" width="150px" style="position:absolute;top:0;display:none;" id="1s3"alt="">
          <script type="text/javascript">
             function enviar(){
-              document.location.href = "youngestMap.php?contador=" + contador + "&positionMap=1";
+              document.location.href = "youngestMap.php?contador=" + contador;
             }
          </script>
          <?php
@@ -33,17 +32,18 @@
             $PHPvariable ="0";
             $PHPvariable0 = "0";
 
-            $sqlCheckUserInBBDD = "SELECT COUNT(id_player) FROM player_data_map WHERE id_player = $idplayer";
-            $result = $conn->query($sqlCheckUserInBBDD);
-            $total = $result->fetchColumn();
 
             $sql = "INSERT INTO player_data_map (id_map, id_player, player_character_position, enable) VALUES (1, $idplayer, 1, 0)";
             $stmt = $conn->prepare($sql);
-            if ($total == 0) {
+            if ($total == $PHPvariable) {
               $stmt->execute();
+            }else if ($total!=$PHPvariable){
+
             }
 
-
+            $sql3 = "SELECT COUNT(id_player) FROM player_data_map WHERE id_player = $idplayer";
+            $result = $conn->query($sql3);
+            $total = $result->fetchColumn();
 
             ?>
       </div>
@@ -53,9 +53,9 @@
          <script type="text/javascript">
             <?php
                extract($_GET);
-               $sqlSelectScoreUserLevel1Map1 = "SELECT score from score where id_player = $idplayer and id_level = 11";
-               $resultSelectScoreUserLevel1Map1 = $conn->query($sqlSelectScoreUserLevel1Map1);
-               $totalSelectScoreUserLevel1Map1 = $resultSelectScoreUserLevel1Map1->fetchColumn();
+               $sql1 = "SELECT score from score where id_player = $idplayer and id_level = 11";
+               $result1 = $conn->query($sql1);
+               $total1 = $result1->fetchColumn();
                   ?>
                var contador = 0;
                var square = 0;
@@ -111,13 +111,13 @@
                }
 
                    <?php
-               $sqlUpdateScoreMap1Level1 = "UPDATE score SET score = $contador WHERE id_player = $idplayer AND id_level = 11";
-               $stmtUpdateScoreMap1Level1 = $conn->prepare($sqlUpdateScoreMap1Level1);
-               if ($totalSelectScoreUserLevel1Map1<$contador) {
-                 $sqlUpdatePointsMap1Level1 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 11";
-                 $stmtUpdatePointsMap1Level1 = $conn->prepare($sqlUpdatePointsMap1Level1);
-                 $stmtUpdatePointsMap1Level1 -> execute();
-                 $stmtUpdateScoreMap1Level1->execute();
+               $sql13 = "UPDATE score SET score = $contador WHERE id_player = $idplayer AND id_level = 11";
+               $stmt13 = $conn->prepare($sql13);
+               if ($total1<$contador) {
+                 $sql132 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 11";
+                 $stmt132 = $conn->prepare($sql132);
+                 $stmt132 -> execute();
+                 $stmt13->execute();
                }
                ?>
 
@@ -140,7 +140,7 @@
       </div>
       <script type="text/javascript">
          function enviar2(){
-           document.location.href = "youngestMap.php?contador2=" + contador2 + "&positionMap=2";
+           document.location.href = "youngestMap.php?contador2=" + contador2;
          }
       </script>
       <dialog id="dialog2" style="width:90%;height:90%;top:3%;z-index:2;"value="0">
@@ -149,9 +149,9 @@
          <script type="text/javascript">
             <?php
                extract($_GET);
-               $sqlSelectScoreUserLevel2Map1 = "SELECT score from score where id_player = $idplayer and id_level = 12";
-               $resultSelectScoreUserLevel2Map1 = $conn->query($sqlSelectScoreUserLevel2Map1);
-               $totalSelectScoreUserLevel2Map1 = $resultSelectScoreUserLevel2Map1->fetchColumn();
+               $sql72 = "SELECT score from score where id_player = $idplayer and id_level = 12";
+               $result72 = $conn->query($sql72);
+               $total72 = $result72->fetchColumn();
                       ?>
             var contador2 = 0;
             var apple = 0;
@@ -174,7 +174,6 @@
                 document.getElementById('boton21').style.display = "inline-block";
 
             }
-
             var rp = setInterval('reloadPig()',1000);
             function reloadPig(){
             var y = document.getElementById('frame2').contentWindow.document.getElementById('fondoCorrect').style.opacity
@@ -202,13 +201,13 @@
             }
             }
                 <?php
-               $sqlUpdateScoreMap1Level2 = "UPDATE score SET score = $contador2 WHERE id_player = $idplayer AND id_level = 12";
-               $stmtUpdateScoreMap1Level2 = $conn->prepare($sqlUpdateScoreMap1Level2);
-               if ($totalSelectScoreUserLevel2Map1<$contador2) {
-                 $sqlUpdatePointsMap1Level2 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 12";
-                 $stmtUpdatePointsMap1Level2 = $conn->prepare($sqlUpdatePointsMap1Level2);
-                 $stmtUpdatePointsMap1Level2 -> execute();
-                 $stmtUpdateScoreMap1Level2->execute();
+               $sql13 = "UPDATE score SET score = $contador2 WHERE id_player = $idplayer AND id_level = 12";
+               $stmt13 = $conn->prepare($sql13);
+               if ($total72<$contador2) {
+                 $sql132 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 12";
+                 $stmt132 = $conn->prepare($sql132);
+                 $stmt132 -> execute();
+                 $stmt13->execute();
                }
                ?>
             function boton31(){
@@ -230,7 +229,7 @@
       </div>
       <script type="text/javascript">
          function enviar3(){
-           document.location.href = "youngestMap.php?contador3=" + contador3 + "&positionMap=3";
+           document.location.href = "youngestMap.php?contador3=" + contador3;
 
 
          }
@@ -241,9 +240,9 @@
          <script type="text/javascript">
             <?php
                extract($_GET);
-               $sqlSelectScoreUserLevel3Map1 = "SELECT score from score where id_player = $idplayer and id_level = 13";
-               $resultSelectScoreUserLevel3Map1 = $conn->query($sqlSelectScoreUserLevel3Map1);
-               $totalSelectScoreUserLevel3Map1 = $resultSelectScoreUserLevel3Map1->fetchColumn();
+               $sql723 = "SELECT score from score where id_player = $idplayer and id_level = 13";
+               $result723 = $conn->query($sql723);
+               $total723 = $result723->fetchColumn();
                       ?>
             var contador3 = 0;
             var tree = 0;
@@ -294,13 +293,13 @@
             }
 
                 <?php
-               $sqlUpdateScoreMap1Level3 = "UPDATE score SET score = $contador3 WHERE id_player = $idplayer AND id_level = 13";
-               $sqlUpdateScoreMap1Level3 = $conn->prepare($sqlUpdateScoreMap1Level3);
-               if ($totalSelectScoreUserLevel3Map1<$contador3) {
-                 $sqlUpdatePointsMap1Level3 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 13";
-                 $stmtUpdatePointsMap1Level3 = $conn->prepare($sqlUpdatePointsMap1Level3);
-                 $stmtUpdatePointsMap1Level3 -> execute();
-                 $sqlUpdateScoreMap1Level3->execute();
+               $sql13 = "UPDATE score SET score = $contador3 WHERE id_player = $idplayer AND id_level = 13";
+               $stmt13 = $conn->prepare($sql13);
+               if ($total723<$contador3) {
+                 $sql132 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 13";
+                 $stmt132 = $conn->prepare($sql132);
+                 $stmt132 -> execute();
+                 $stmt13->execute();
                }
                ?>
             function boton311(){
@@ -322,7 +321,7 @@
       </div>
       <script type="text/javascript">
          function enviar4(){
-           document.location.href = "youngestMap.php?contador4=" + contador4 + "&positionMap=4";
+           document.location.href = "youngestMap.php?contador4=" + contador4;
 
 
          }
@@ -334,9 +333,9 @@
          <script type="text/javascript">
             <?php
                extract($_GET);
-               $sqlSelectScoreUserLevel4Map1 = "SELECT score from score where id_player = $idplayer and id_level = 14";
-               $resultSelectScoreUserLevel4Map1 = $conn->query($sqlSelectScoreUserLevel4Map1);
-               $totalSelectScoreUserLevel4Map1 = $resultSelectScoreUserLevel4Map1->fetchColumn();
+               $sql7234 = "SELECT score from score where id_player = $idplayer and id_level = 14";
+               $result7234 = $conn->query($sql7234);
+               $total7234 = $result7234->fetchColumn();
                   ?>
             var contador4 = 0;
             var carrot = 0;
@@ -389,13 +388,13 @@
             }
 
                 <?php
-               $sqlUpdateScoreMap1Level4 = "UPDATE score SET score = $contador4 WHERE id_player = $idplayer AND id_level = 14";
-               $stmtUpdateScoreMap1Level4 = $conn->prepare($sqlUpdateScoreMap1Level4);
-               if ($totalSelectScoreUserLevel4Map1<$contador4) {
-                 $sqlUpdatePointsMap1Level4 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 14";
-                 $stmtUpdatePointsMap1Level4 = $conn->prepare($sqlUpdatePointsMap1Level4);
-                 $stmtUpdatePointsMap1Level4 -> execute();
-                 $stmtUpdateScoreMap1Level4->execute();
+               $sql13 = "UPDATE score SET score = $contador4 WHERE id_player = $idplayer AND id_level = 14";
+               $stmt13 = $conn->prepare($sql13);
+               if ($total7234<$contador4) {
+                 $sql132 = "UPDATE score SET points = 300 WHERE id_player = $idplayer AND id_level = 14";
+                 $stmt132 = $conn->prepare($sql132);
+                 $stmt132 -> execute();
+                 $stmt13->execute();
                }
                ?>
 
@@ -449,94 +448,95 @@
              right: 0;
              margin: 5px;' src='../../$image>'>";?>
       <?php
-         $sqlCountId_PlayerMap1Level1 = "SELECT COUNT(id_player) FROM score WHERE id_player = $idplayer and id_level = 11";
-         $resultCountId_PlayerMap1Level1 = $conn->query($sqlCountId_PlayerMap1Level1);
-         $totalCountId_PlayerMap1Level1 = $resultCountId_PlayerMap1Level1->fetchColumn();
+         $sql4 = "SELECT COUNT(id_player) FROM score WHERE id_player = $idplayer and id_level = 11";
+         $result4 = $conn->query($sql4);
+         $total4 = $result4->fetchColumn();
 
-         $sqlInsertFirstScoreMap1Level1 = "INSERT INTO score (id_player, id_level, score) VALUES ($idplayer, 11, 0)";
-         $stmtInsertFirstScoreMap1Level1 = $conn->prepare($sqlInsertFirstScoreMap1Level1);
-         if ($totalCountId_PlayerMap1Level1 == $PHPvariable0) {
-           $stmtInsertFirstScoreMap1Level1->execute();
-         }else if ($totalCountId_PlayerMap1Level1!=$PHPvariable0){
+         $sql5 = "INSERT INTO score (id_player, id_level, score) VALUES ($idplayer, 11, 0)";
+         $stmt5 = $conn->prepare($sql5);
+         if ($total4 == $PHPvariable0) {
+           $stmt5->execute();
+         }else if ($total4!=$PHPvariable0){
 
          }
-         $sqlSelectScoreID_PlayerLevel1Map1 = "SELECT score from score where id_player = $idplayer and id_level = 11";
-         $resultSelectScoreID_PlayerLevel1Map1 = $conn->query($sqlSelectScoreID_PlayerLevel1Map1);
-         $totalSelectScoreID_PlayerLevel1Map1 = $resultSelectScoreID_PlayerLevel1Map1->fetchColumn();
-         //echo $totalSelectScoreID_PlayerLevel1Map1;
+         $sql7 = "SELECT score from score where id_player = $idplayer and id_level = 11";
+         $result7 = $conn->query($sql7);
+         $total7 = $result7->fetchColumn();
+         //echo $total7;
          //echo $idplayer;
-         if ($totalSelectScoreID_PlayerLevel1Map1) {
-         echo "<script> document.getElementById('1s".$totalSelectScoreID_PlayerLevel1Map1."').style.display = 'inline-block' </script>";
+         if ($total7) {
+         echo "<script> document.getElementById('1s".$total7."').style.display = 'inline-block' </script>";
          }
-            if ($totalSelectScoreID_PlayerLevel1Map1 > 0) {
-              // echo $totalSelectScoreID_PlayerLevel1Map1;
+            if ($total7 > 0) {
+              // echo $total7;
 
               echo "<script> document.getElementById('image').style.left = '50px'";
               echo "</script>";
               echo " <script> document.getElementById('image').style.bottom = '120px'";
               echo "</script>";
 
-              $sqlUpdateMapPosition2Id_Map1 = "UPDATE player_data_map SET player_character_position = 2 WHERE id_player = $idplayer AND id_map = 1";
-              $stmtUpdateMapPosition2Id_Map1 = $conn->prepare($sqlUpdateMapPosition2Id_Map1);
-              if ($totalSelectScoreID_PlayerLevel1Map1>0) {
-              $stmtUpdateMapPosition2Id_Map1->execute();
-                if ($stmtUpdateMapPosition2Id_Map1->execute()) {
-                  $sqlCountId_PlayerMap1Level2 = "SELECT COUNT(id_player) FROM score WHERE id_player = $idplayer and id_level = 12";
-                  $resultCountId_PlayerMap1Level2 = $conn->query($sqlCountId_PlayerMap1Level2);
-                  $totalCountId_PlayerMap1Level2 = $resultCountId_PlayerMap1Level2->fetchColumn();
+              $sql20 = "UPDATE player_data_map SET player_character_position = 2 WHERE id_player = $idplayer AND id_map = 1";
+              $stmt20 = $conn->prepare($sql20);
+              if ($total7>0) {
 
-                  $sqlInsertFirstScoreMap1Level2 = "INSERT INTO score (id_player, id_level, score) VALUES ($idplayer, 12, 0)";
-                  $stmtInsertFirstScoreMap1Level2 = $conn->prepare($sqlInsertFirstScoreMap1Level2);
-                    if ($totalCountId_PlayerMap1Level2 == $PHPvariable0) {
-                      $stmtInsertFirstScoreMap1Level2->execute();
-                    }else if ($totalCountId_PlayerMap1Level2!=$PHPvariable0){
+              $stmt20->execute();
+                if ($stmt20->execute()) {
+                  $sql21 = "SELECT COUNT(id_player) FROM score WHERE id_player = $idplayer and id_level = 12";
+                  $result21 = $conn->query($sql21);
+                  $total21 = $result21->fetchColumn();
+
+                  $sql22 = "INSERT INTO score (id_player, id_level, score) VALUES ($idplayer, 12, 0)";
+                  $stmt22 = $conn->prepare($sql22);
+                    if ($total21 == $PHPvariable0) {
+                      $stmt22->execute();
+                    }else if ($total4!=$PHPvariable0){
 
                     }
 
-                $sqlSelectScoreID_PlayerLevel2Map1 = "SELECT score from score where id_player = $idplayer and id_level = 12";
-                $resultSelectScoreID_PlayerLevel2Map1 = $conn->query($sqlSelectScoreID_PlayerLevel2Map1);
-                $totalSelectScoreID_PlayerLevel2Map1 = $resultSelectScoreID_PlayerLevel2Map1->fetchColumn();
-                // echo $totalSelectScoreID_PlayerLevel2Map1;
-                echo "<script> document.getElementById('2s".$totalSelectScoreID_PlayerLevel2Map1."').style.display = 'inline-block' </script>";
+                $sql72 = "SELECT score from score where id_player = $idplayer and id_level = 12";
+                $result72 = $conn->query($sql72);
+                $total72 = $result72->fetchColumn();
+                // echo $total72;
+                echo "<script> document.getElementById('2s".$total72."').style.display = 'inline-block' </script>";
 
                 }
               }
 
             }
 
-            if ($totalSelectScoreID_PlayerLevel2Map1 > 0) {
+            if ($total72 > 0) {
             echo "<script> document.getElementById('image').style.left = '665px'";
             echo "</script>";
             echo " <script> document.getElementById('image').style.bottom = '340px'";
             echo "</script>";
-            $sqlUpdateMapPosition3Id_Map1 = "UPDATE player_data_map SET player_character_position = 3 WHERE id_player = $idplayer AND id_map = 1";
-            $stmtUpdateMapPosition3Id_Map1 = $conn->prepare($sqlUpdateMapPosition3Id_Map1);
-              if ($totalSelectScoreID_PlayerLevel2Map1>0) {
-                $stmtUpdateMapPosition3Id_Map1->execute();
-                  if ($stmtUpdateMapPosition3Id_Map1->execute()) {
-                    $sqlCountId_PlayerMap1Level3 = "SELECT COUNT(id_player) FROM score WHERE id_player = $idplayer and id_level = 13";
-                    $resultCountId_PlayerMap1Level3 = $conn->query($sqlCountId_PlayerMap1Level3);
-                    $totalCountId_PlayerMap1Level3 = $resultCountId_PlayerMap1Level3->fetchColumn();
+            $sql201 = "UPDATE player_data_map SET player_character_position = 3 WHERE id_player = $idplayer AND id_map = 1";
+            $stmt201 = $conn->prepare($sql201);
+              if ($total72>0) {
+                $stmt201->execute();
+                  if ($stmt201->execute()) {
+                    $sql212 = "SELECT COUNT(id_player) FROM score WHERE id_player = $idplayer and id_level = 13";
+                    $result212 = $conn->query($sql212);
+                    $total212 = $result212->fetchColumn();
 
-                    $sqlInsertFirstScoreMap1Level3 = "INSERT INTO score (id_player, id_level, score) VALUES ($idplayer, 13, 0)";
-                    $stmtInsertFirstScoreMap1Level3 = $conn->prepare($sqlInsertFirstScoreMap1Level3);
-                      if ($totalCountId_PlayerMap1Level3 == $PHPvariable0) {
-                        $stmtInsertFirstScoreMap1Level3->execute();
-                      }else if ($totalCountId_PlayerMap1Level3!=$PHPvariable0){
+                    $sql222 = "INSERT INTO score (id_player, id_level, score) VALUES ($idplayer, 13, 0)";
+                    $stmt222 = $conn->prepare($sql222);
+                      if ($total212 == $PHPvariable0) {
+                        $stmt222->execute();
+                      }else if ($total4!=$PHPvariable0){
 
                       }
 
-                $sqlSelectScoreID_PlayerLevel3Map1 = "SELECT score from score where id_player = $idplayer and id_level = 13";
-                $resultSelectScoreID_PlayerLevel3Map1 = $conn->query($sqlSelectScoreID_PlayerLevel3Map1);
-                $totalSelectScoreID_PlayerLevel3Map1 = $resultSelectScoreID_PlayerLevel3Map1->fetchColumn();
-                // echo $totalSelectScoreID_PlayerLevel3Map1;
-                echo "<script> document.getElementById('3s".$totalSelectScoreID_PlayerLevel3Map1."').style.display = 'inline-block' </script>";
+                $sql721 = "SELECT score from score where id_player = $idplayer and id_level = 13";
+                $result721 = $conn->query($sql721);
+                $total721 = $result721->fetchColumn();
+                // echo $total721;
+                echo "<script> document.getElementById('3s".$total721."').style.display = 'inline-block' </script>";
 
                 }
               }
             }
 
-            if ($totalSelectScoreID_PlayerLevel3Map1 > 0) {
+            if ($total721 > 0) {
 
               echo "<script> document.getElementById('image').style.left = '85.5%'";
               echo "</script>";
@@ -544,97 +544,48 @@
               echo "</script>";
               echo "<script> document.getElementById('image').style.right = '69px'";
               echo "</script>";
-              $sqlUpdateMapPosition4Id_Map1 = "UPDATE player_data_map SET player_character_position = 4 WHERE id_player = $idplayer AND id_map = 1";
-              $stmtUpdateMapPosition4Id_Map1 = $conn->prepare($sqlUpdateMapPosition4Id_Map1);
-                if ($totalSelectScoreID_PlayerLevel3Map1>0) {
-                    $stmtUpdateMapPosition4Id_Map1->execute();
-                      if ($stmtUpdateMapPosition4Id_Map1->execute()) {
-                        $sqlCountId_PlayerMap1Level4 = "SELECT COUNT(id_player) FROM score WHERE id_player = $idplayer and id_level = 14";
-                        $resultCountId_PlayerMap1Level4 = $conn->query($sqlCountId_PlayerMap1Level4);
-                        $totalCountId_PlayerMap1Level4 = $resultCountId_PlayerMap1Level4->fetchColumn();
+              $sql2011 = "UPDATE player_data_map SET player_character_position = 4 WHERE id_player = $idplayer AND id_map = 1";
+              $stmt2011 = $conn->prepare($sql2011);
+                if ($total721>0) {
+                    $stmt2011->execute();
+                      if ($stmt2011->execute()) {
+                        $sql2121 = "SELECT COUNT(id_player) FROM score WHERE id_player = $idplayer and id_level = 14";
+                        $result2121 = $conn->query($sql2121);
+                        $total2121 = $result2121->fetchColumn();
 
-                        $sqlInsertFirstScoreMap1Level4 = "INSERT INTO score (id_player, id_level, score) VALUES ($idplayer, 14, 0)";
-                        $stmtInsertFirstScoreMap1Level4 = $conn->prepare($sqlInsertFirstScoreMap1Level4);
-                          if ($totalCountId_PlayerMap1Level4 == $PHPvariable0) {
-                            $stmtInsertFirstScoreMap1Level4->execute();
-                          }else if ($totalCountId_PlayerMap1Level4!=$PHPvariable0){
+                        $sql2221 = "INSERT INTO score (id_player, id_level, score) VALUES ($idplayer, 14, 0)";
+                        $stmt2221 = $conn->prepare($sql2221);
+                          if ($total2121 == $PHPvariable0) {
+                            $stmt2221->execute();
+                          }else if ($total4!=$PHPvariable0){
 
                           }
 
-              $sqlSelectScoreID_PlayerLevel4Map1 = "SELECT score from score where id_player = $idplayer and id_level = 14";
-              $resultSelectScoreID_PlayerLevel4Map1 = $conn->query($sqlSelectScoreID_PlayerLevel4Map1);
-              $totalSelectScoreID_PlayerLevel4Map1 = $resultSelectScoreID_PlayerLevel4Map1->fetchColumn();
+              $sql7211 = "SELECT score from score where id_player = $idplayer and id_level = 14";
+              $result7211 = $conn->query($sql7211);
+              $total7211 = $result7211->fetchColumn();
               // echo $total7211;
-              echo "<script> document.getElementById('4s".$totalSelectScoreID_PlayerLevel4Map1."').style.display = 'inline-block' </script>";
+              echo "<script> document.getElementById('4s".$total7211."').style.display = 'inline-block' </script>";
 
                 }
               }
             }
 
-            if ($totalSelectScoreID_PlayerLevel1Map1 < 1) {
+            if ($total7 < 1) {
             echo "<script> document.getElementById('2').style.display = 'none' </script>";
                 }else {
                   echo "<script> document.getElementById('2').style.display = 'block' </script>";
                 }
-            if ($totalSelectScoreID_PlayerLevel2Map1 < 1) {
+            if ($total72 < 1) {
               echo "<script> document.getElementById('3').style.display = 'none' </script>";
                 }else {
                   echo "<script> document.getElementById('3').style.display = 'block' </script>";
                 }
-            if ($totalSelectScoreID_PlayerLevel3Map1 < 1) {
+            if ($total721 < 1) {
               echo "<script> document.getElementById('4').style.display = 'none' </script>";
                 }else {
                   echo "<script> document.getElementById('4').style.display = 'block' </script>";
                 }
-
-                  // $sqlSelectPositionID_PlayerMap1 = "SELECT player_character_position from player_data_map where id_player = $idplayer";
-                  // $resultSelectPositionID_PlayerMap1 = $conn->query($sqlSelectPositionID_PlayerMap1);
-                  // $totalSelectPositionID_PlayerMap1 = $resultSelectPositionID_PlayerMap1->fetchColumn();
-                  // echo $totalSelectPositionID_PlayerMap1;
-
-
-                    if ($positionMap == 1) {
-                      $sqlUpdateMapPosition1Id_Map1 = "UPDATE player_data_map SET player_character_position = 1 WHERE id_player = $idplayer AND id_map = 1";
-                      $stmtUpdateMapPosition1Id_Map1 = $conn->prepare($sqlUpdateMapPosition1Id_Map1);
-                      $stmtUpdateMapPosition1Id_Map1->execute();
-                      echo "<script> document.getElementById('image').style.right = '0px'";
-                      echo "</script>";
-                      echo "<script> document.getElementById('image').style.left = '89%'";
-                      echo "</script>";
-                      echo " <script> document.getElementById('image').style.bottom = '0px'";
-                      echo "</script>";
-                    }
-                    else if ($positionMap == 2) {
-                      $sqlUpdateMapPosition1Id_Map1 = "UPDATE player_data_map SET player_character_position = 2 WHERE id_player = $idplayer AND id_map = 1";
-                      $stmtUpdateMapPosition1Id_Map1 = $conn->prepare($sqlUpdateMapPosition1Id_Map1);
-                      $stmtUpdateMapPosition1Id_Map1->execute();
-                      echo "<script> document.getElementById('image').style.left = '50px'";
-                      echo "</script>";
-                      echo " <script> document.getElementById('image').style.bottom = '120px'";
-                      echo "</script>";
-                    }
-                    else if ($positionMap == 3) {
-                      $sqlUpdateMapPosition1Id_Map1 = "UPDATE player_data_map SET player_character_position = 3 WHERE id_player = $idplayer AND id_map = 1";
-                      $stmtUpdateMapPosition1Id_Map1 = $conn->prepare($sqlUpdateMapPosition1Id_Map1);
-                      $stmtUpdateMapPosition1Id_Map1->execute();
-                      echo "<script> document.getElementById('image').style.left = '665px'";
-                      echo "</script>";
-                      echo " <script> document.getElementById('image').style.bottom = '340px'";
-                      echo "</script>";
-                    }
-                    else if ($positionMap == 4) {
-                      $sqlUpdateMapPosition1Id_Map1 = "UPDATE player_data_map SET player_character_position = 4 WHERE id_player = $idplayer AND id_map = 1";
-                      $stmtUpdateMapPosition1Id_Map1 = $conn->prepare($sqlUpdateMapPosition1Id_Map1);
-                      $stmtUpdateMapPosition1Id_Map1->execute();
-                      echo "<script> document.getElementById('image').style.left = '85.5%'";
-                      echo "</script>";
-                      echo " <script> document.getElementById('image').style.bottom = '452px'";
-                      echo "</script>";
-                      echo "<script> document.getElementById('image').style.right = '69px'";
-                      echo "</script>";
-                    }
-
-
              ?>
    </body>
 </html>

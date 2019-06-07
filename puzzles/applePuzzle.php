@@ -1,5 +1,8 @@
 <?php
 require '../database.php';
+//En esta clase no necsitamos variables de sesion, ya que no necesita ningun dato del jugador o del tutor
+
+//Aqui en esta query seleccionamos el json de la base de datos y cogemos su campo
 $records = $conn->prepare('SELECT jsondata FROM `games` WHERE id_game = 121');
 $records->execute();
 $results = $records->fetch(PDO::FETCH_ASSOC);
@@ -31,6 +34,8 @@ $jsonP=$results;
 
  <div id="float">
    <h1 class="center">MANZANA</h1>
+   <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;left:100px;"alt="">
+   <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;right:100px;"alt="">
  </div>
 
  <div id="noClick"></div>
@@ -40,6 +45,7 @@ $jsonP=$results;
  </html>
 
  <script>
+ //Aqui tratamos en json y cogemos los datos que queremos ver
  var myObj, myJSON, text, obj;
 
  myObj =
@@ -56,6 +62,7 @@ $jsonP=$results;
  var url3 = '../images/Puzzle/Apple/apple3.png';
  var url4 = '../images/Puzzle/Apple/apple4.png';
 
+//Con estas condiciones comprobamos que en el obj del json tiene el dato position, si es asi, le asignamos una imagen que tenemos en local
  if (obj.position11 == "apple11.png") {
  document.getElementById('demo11').setAttributeNS('', 'href', url1);
 
@@ -71,12 +78,12 @@ $jsonP=$results;
  }
 
 
-
+//Cogemos todas las piezas
  var piezas = document.getElementsByClassName('movil');
-
+//Les damos tamaño a las piezas
  var tamWidh = [236.5,180,180,239.1];
  var tamHeight = [262,350,355,270];
-
+//Les damos los atributos a las piezas
  for(var i=0;i<piezas.length;i++){
  	piezas[i].setAttribute("width", tamWidh[i]);
  	piezas[i].setAttribute("height",tamHeight[i]);
@@ -89,6 +96,7 @@ $jsonP=$results;
  var currentPosX = 0;
  var currentPosY = 0;
 
+//En esta funcion damos movimiento a la pieza cuando la seleccionamos
  function seleccionarElemento(evt) {
  	elementSelect = reordenar(evt);
  	currentX = evt.clientX;
@@ -98,6 +106,7 @@ $jsonP=$results;
  	elementSelect.setAttribute("onmousemove","moverElemento(evt)");
  }
 
+//En esta funcion movemos la pieza
  function moverElemento(evt){
  	var dx = evt.clientX - currentX;
  	var dy = evt.clientY - currentY;
@@ -112,6 +121,7 @@ $jsonP=$results;
  	iman();
  }
 
+//Aqui soltamos la pieza
  function deseleccionarElemento(evt){
  	testing();
  	if(elementSelect != 0){
@@ -124,6 +134,7 @@ $jsonP=$results;
 
  var entorno = document.getElementById('entorno');
 
+//En caso de refrescar aqui hacemos que las piezas vuelvan a su posicion original
  function reordenar(evt){
  	var padre = evt.target.parentNode;
  	var clone = padre.cloneNode(true);
@@ -136,6 +147,7 @@ $jsonP=$results;
  var origX = [499,671,499,612];
  var origY = [-30,-45.7,60,130];
 
+//Esta funcion lo que hace es atraer a la pieza a su posicion en un ratio de 15 en coordenandas
  function iman(){
  	for(var i=0;i<piezas.length;i++){
  		if (Math.abs(currentPosx-origX[i])<15 && Math.abs(currentPosy-origY[i])<15) {
@@ -148,6 +160,7 @@ $jsonP=$results;
 
  var win = document.getElementById("win");
 
+//La funcion testing es la que se encarga de controlar que esten todas las piezas colocadas y en su posicion
  function testing() {
  	var bien_ubicada = 0;
  	var padres = document.getElementsByClassName('padre');

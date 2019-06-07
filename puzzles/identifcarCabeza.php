@@ -1,40 +1,30 @@
 <!DOCTYPE html>
-<?php
-require '../database.php';
-$records = $conn->prepare('SELECT jsondata FROM `games` WHERE id_game = 111');
-$records->execute();
-$results = $records->fetch(PDO::FETCH_ASSOC);
-// var_dump($results);
-//print json_encode($results);
-$jsonP=null;
-$jsonP=$results;
- ?>
-
 <html>
 <link rel="stylesheet" href="styleIdenifier.css">
 <body>
-
+<!-- En este juego no necesitamos un json, ya que con solo dos capas podemos realizar el juego -->
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
-<!-- <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct"> -->
-<!-- <h1 style="text-align:center;font-family:sans-serif;">SEÑALA LA MANO IZQUIERDA</h1> -->
-  <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct" usemap="#image-map" style="left:70%;">
+
+<!-- Cargamos el fondo de referencia del cuerpo humano -->
+  <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect2" solution="correct" usemap="#image-map" style="left:70%;">
   <img src="../images/Identificar/ManoIzq/head.png" alt="" style="    position: absolute;
       left: 25%;
       top: 20%;width:200px;">
+      <!-- Cargamos los dos divs que usaremos de activadores de los eventos -->
   <map name="image-map">
       <area target="" style="
       /* border: 1px solid black; */
-      left: 53.8%;
+      left: 62.8%;
       padding: 85px;
       position: absolute;
-      top: 7%;
+      top: 6%;
       padding-left: 123px;"alt="" title="" coords="500,252,50" shape="circle" onclick="verBueno()">
   </map>
   <area target="" style="
       /* border: 1px solid black; */
-      left: 46.7%;
+      left: 54.7%;
     padding: 150px;
     position: absolute;
     top: 32%;
@@ -46,6 +36,8 @@ $jsonP=$results;
 
   <div id="n">
     <h1 class="center">CABEZA</h1>
+    <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;left:100px;"alt="">
+    <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;right:100px;"alt="">
   </div>
 
   <div id="i">
@@ -55,10 +47,10 @@ $jsonP=$results;
 
   <script>
 
-
+//Los eventos que deciden si esta bien o mal la respuesta, en el primer function cargamos la respuesta correcta y en el segundo la incorrecta, si te equivocas, puedes volver a intentarlo
     function verBueno(){
       document.getElementById("no").id="yes";
-      document.getElementById("fondoCorrect").style.opacity = 1;
+      document.getElementById("fondoCorrect2").style.opacity = 1;
       win.play();
       document.getElementById("n").id= "voluble";
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);

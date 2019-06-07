@@ -19,21 +19,23 @@ $jsonP=$results;
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
 <!-- <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct"> -->
 <!-- <h1 style="text-align:center;font-family:sans-serif;">SEÑALA LA MANO IZQUIERDA</h1> -->
-  <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct" usemap="#image-map" style="left:70%;">
+  <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect2" solution="correct" usemap="#image-map" style="left:70%;">
 <img src="../images/Identificar/ManoIzq/hand.png" alt="" style="    position: absolute;
     left: 25%;
     top: 22%;">
   <map name="image-map">
       <area target="" style="
       /* border: 1px solid black; */
-    left: 70%;
+    left: 80%;
     padding: 28px;
     position: absolute;
-    top: 32%;"alt="" title="" coords="500,252,50" shape="circle" onclick="verBueno()">
+    top: 30%;
+    height:10px;
+    padding-right:35px;"alt="" title="" coords="500,252,50" shape="circle" onclick="verBueno()">
   </map>
   <area target="" style="
       /* border: 1px solid black; */
-      left: 45.3%;
+      left: 54.3%;
       padding: 170px;
       position: absolute;
       top: 7%;
@@ -42,8 +44,10 @@ $jsonP=$results;
   <div id="no" width="100%" height="-webkit-fill-available">
   </div>
 
-  <div id="n">
-    <h1 class="center">MANO IZQUIERDA</h1>
+  <div id="n" style="padding:28px;">
+    <h1 class="center" style="height:auto;">MANO IZQUIERDA</h1>
+    <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;left:100px;"alt="">
+    <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;right:100px;"alt="">
   </div>
 
   <div id="i">
@@ -56,7 +60,7 @@ $jsonP=$results;
 
     function verBueno(){
       document.getElementById("no").id="yes";
-      document.getElementById("fondoCorrect").style.opacity = 1;
+      document.getElementById("fondoCorrect2").style.opacity = 1;
       win.play();
       document.getElementById("n").id= "voluble";
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);

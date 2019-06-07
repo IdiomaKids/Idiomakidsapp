@@ -1,10 +1,12 @@
 <?php
 require 'database.php';
 session_start();
+//Aqui definimos las variables que vamos a utilizar para mandar el correo
 $destino= $_POST['email'];
-$from= "From: idiomakids@gmail.com";
+$from= "From: idiomakids@idiomakids.com";
 $reason = "Cambio de contraseña";
-$text = "Para restablecer la contraseña vaya al siguiente enlace https://www.idiomakids.com/confirmRecover.php?mail=$destino
+$token = bin2hex(random_bytes(64));
+$text = "Para restablecer la contraseña vaya al siguiente enlace https://www.idiomakids.com/confirmRecover.php?mail=$destino&token=$token
 
 Muchas gracias.
 
@@ -13,8 +15,9 @@ El equipo de IdiomaKids
 ";
 
 
-
+//Si existe destino, es decir, que la url contenga el email, pasamos el if y lo realizamos
 if (isset($destino)) {
+//Aqui hacemos una comprobación en la base de datos para ver si el eamil existe, si no existe, notofica al usuario de que ese email no existe, si no, el correo se manda
   $_SESSION['email'] = $_POST['email'];
   $sql4 = "SELECT COUNT(email) FROM users WHERE email = '$destino'";
   // var_dump($sql4);

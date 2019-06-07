@@ -26,11 +26,13 @@ $jsonP=$results;
   <g class="padre" id="2"><image xlink:href="" class="movil" id="demo21" x="94" y="255"></g>
   <g class="padre" id="3"><image xlink:href="" class="movil" id="demo22" x="383" y="327"></g>
  </svg>
-<p style="display:none;" id="valor"></p>
+<p style="display:none;" id="valor2"></p>
  <!-- </div> -->
 
  <div id="float">
    <h1 class="center">SIETE</h1>
+   <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;left:100px;"alt="">
+   <img src="../../../images/emoticones-de-pollo-aplaudiendo.gif" style="position:absolute;right:100px;"alt="">
  </div>
 
  <div id="noClick"></div>
@@ -164,7 +166,7 @@ $jsonP=$results;
  		}
  	}
  	if(bien_ubicada == 4){
-    var bien = document.getElementById('valor').value = '4';
+    var bien = document.getElementById('valor2').value = '4';
     //window.alert(bien);
  		win.play();
  		//document.getElementsByClassName("movil").pointer-events="none";

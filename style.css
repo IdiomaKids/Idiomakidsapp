@@ -266,8 +266,19 @@ p {
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   .emailField {
-    width: 52%;
-    height: 100px;
-    text-align: left;
+    width: 35%;
+    height: 45px;
+    display: inline-block;
+    /* text-align: left; */
     margin-top: 5%;
-  }
+    margin-left: -10%;
+}
+.passwordField {
+    display: inline-block;
+    /* text-align: left; */
+    margin-top: 10%;
+    margin-left: -10%;
+}
+.buttonGroup {
+    display: grid;
+}
