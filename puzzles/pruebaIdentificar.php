@@ -84,7 +84,7 @@ $jsonP=$results;
       document.getElementById("no").id="yes";
       document.getElementById("fondoCorrect").style.opacity = 1;
       square2.play();
-      win.play();
+      setTimeout(win.play(), 1000);
       document.getElementById("n").id= "voluble";
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);
     }
