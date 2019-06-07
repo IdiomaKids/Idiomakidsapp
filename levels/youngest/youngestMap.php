@@ -67,10 +67,10 @@
                  if (y == 1 && square==0) {
                    square = 1;
                    contador = contador + 1;
-                   setTimeout("document.getElementById('frame1').src = '../../puzzles/cowPuzzle.php'",3000);
+                   setTimeout("document.getElementById('frame1').src = '../../puzzles/cowPuzzle.php'",3500);
                    // document.getElementById('frame1').src = "../../puzzles/cowPuzzle.php";
                    document.getElementById('boton').style.display = "none";
-                   setTimeout("document.getElementById('boton2').style.display = 'inline-block'", 3000);
+                   setTimeout("document.getElementById('boton2').style.display = 'inline-block'", 3500);
 
                  }
                  } function boton1() {
@@ -84,9 +84,9 @@
                  if (x == 4 && cow==0) {
                    cow = 1;
                    contador = contador + 1;
-                   setTimeout("  document.getElementById('frame1').src = '../../puzzles/identifcarMano.php'", 3000);
+                   setTimeout("  document.getElementById('frame1').src = '../../puzzles/identifcarMano.php'", 3500);
                    document.getElementById('boton2').style.display = "none";
-                   setTimeout("document.getElementById('boton3').style.display = 'inline-block'", 3000);
+                   setTimeout("document.getElementById('boton3').style.display = 'inline-block'", 3500);
                  }
                }
                function boton2() {
@@ -98,13 +98,13 @@
                }
 
 
-               var rH = setInterval('reloadHand()',3000);
+               var rH = setInterval('reloadHand()',3500);
                function reloadHand(){
                  var z = document.getElementById('frame1').contentWindow.document.getElementById('fondoCorrect2').style.opacity
                  if (z == 1 && hand == 0) {
                    hand = 1;
                    contador = contador + 1;
-                   setTimeout(enviar(), 3000);
+                   setTimeout(enviar(), 3500);
                    closeDialog();
 
                  }
@@ -163,9 +163,9 @@
               if (x == 4 && apple ==0) {
               apple = 1;
               contador2 = contador2 + 1;
-              setTimeout("  document.getElementById('frame2').src = '../../puzzles/pruebaIdentificarPig.php'", 3000);
+              setTimeout("  document.getElementById('frame2').src = '../../puzzles/pruebaIdentificarPig.php'", 3500);
                 document.getElementById('boton11').style.display = "none";
-              setTimeout("document.getElementById('boton21').style.display = 'inline-block'", 3000);
+              setTimeout("document.getElementById('boton21').style.display = 'inline-block'", 3500);
             }
             }
             function boton11() {
@@ -181,9 +181,9 @@
             if (y == 1 && pig == 0) {
             pig = 1;
             contador2 = contador2 +1;
-            setTimeout("document.getElementById('frame2').src = '../../puzzles/threePuzzle.php'",3000);
+            setTimeout("document.getElementById('frame2').src = '../../puzzles/threePuzzle.php'",3500);
             document.getElementById('boton21').style.display = "none";
-            setTimeout("document.getElementById('boton31').style.display = 'inline-block'", 3000);
+            setTimeout("document.getElementById('boton31').style.display = 'inline-block'", 3500);
             }
             }
             function boton21() {
@@ -191,13 +191,13 @@
               document.getElementById('boton21').style.display = "none";
               document.getElementById('boton31').style.display = "inline-block";
             }
-            var rt = setInterval('reloadThree()', 3000);
+            var rt = setInterval('reloadThree()', 3500);
             function reloadThree(){
             var z = document.getElementById('frame2').contentWindow.document.getElementById('valor2').value
             if (z == 4 && three == 0) {
             three = 1;
             contador2 = contador2 + 1;
-            setTimeout(enviar2(), 3000);
+            setTimeout(enviar2(), 3500);
             closeDialog();
             }
             }
@@ -255,15 +255,15 @@
               if (x == 1 && tree == 0) {
                 tree = 1;
                 contador3 = contador3 + 1;
-                setTimeout("document.getElementById('frame3').src = '../../puzzles/horsePuzzle.php'",3000);
+                setTimeout("document.getElementById('frame3').src = '../../puzzles/horsePuzzle.php'",3500);
                 document.getElementById('boton111').style.display = "none";
-                setTimeout("document.getElementById('boton211').style.display = 'inline-block'", 3000);
+                setTimeout("document.getElementById('boton211').style.display = 'inline-block'", 3500);
               }
             }
             function boton111() {
               document.getElementById('frame3').src = "../../puzzles/horsePuzzle.php";
                 document.getElementById('boton111').style.display = "none";
-                setTimeout("document.getElementById('boton21').style.display = 'inline-block'", 3000);
+                document.getElementById('boton211').style.display = 'inline-block';
             }
             var rh = setInterval('reloadHorse()', 1000);
             function reloadHorse(){
@@ -271,9 +271,9 @@
             if (y == 4 && horse == 0) {
             horse = 1;
             contador3 = contador3 + 1;
-            setTimeout("document.getElementById('frame3').src = '../../puzzles/identifcarCabeza.php'",3000);
+            setTimeout("document.getElementById('frame3').src = '../../puzzles/identifcarCabeza.php'",3500);
             document.getElementById('boton211').style.display = "none";
-            setTimeout("document.getElementById('boton311').style.display = 'inline-block'", 3000);
+            setTimeout("document.getElementById('boton311').style.display = 'inline-block'", 3500);
             }
             }
             function boton211() {
@@ -282,13 +282,13 @@
               document.getElementById('boton311').style.display = "inline-block";
             }
 
-            var rc = setInterval('reloadHead()', 3000);
+            var rc = setInterval('reloadHead()', 3500);
             function reloadHead(){
             var z = document.getElementById('frame3').contentWindow.document.getElementById('fondoCorrect2').style.opacity
             if (z == 1 && head == 0) {
             head = 1;
             contador3 = contador3 + 1;
-            setTimeout(enviar3(), 3000);
+            setTimeout(enviar3(), 3500);
             closeDialog();
             }
             }
@@ -348,9 +348,9 @@
               if (x == 4 && carrot == 0) {
                 carrot = 1;
                 contador4 = contador4 + 1;
-                setTimeout("document.getElementById('frame4').src = '../../puzzles/pruebaIdentificarBanana.php'",3000);
+                setTimeout("document.getElementById('frame4').src = '../../puzzles/pruebaIdentificarBanana.php'",3500);
                 document.getElementById('boton1111').style.display = "none";
-                setTimeout("document.getElementById('boton2111').style.display = 'inline-block'", 3000);
+                setTimeout("document.getElementById('boton2111').style.display = 'inline-block'", 3500);
               }
             }
             function boton1111() {
@@ -367,9 +367,9 @@
             if (y == 1 && banana == 0) {
             banana = 1;
             contador4 = contador4 + 1;
-            setTimeout("document.getElementById('frame4').src = '../../puzzles/sevenPuzzle.php'",3000);
+            setTimeout("document.getElementById('frame4').src = '../../puzzles/sevenPuzzle.php'",3500);
             document.getElementById('boton2111').style.display = "none";
-            setTimeout("document.getElementById('boton3111').style.display = 'inline-block'", 3000);
+            setTimeout("document.getElementById('boton3111').style.display = 'inline-block'", 3500);
             }
             }
             function boton2111() {
@@ -377,13 +377,13 @@
               document.getElementById('boton2111').style.display = "none";
               document.getElementById('boton3111').style.display = "inline-block";
             }
-            setInterval('reloadSeven()', 3000);
+            setInterval('reloadSeven()', 3500);
             function reloadSeven(){
             var z = document.getElementById('frame4').contentWindow.document.getElementById('valor2').value
             if (z==4 && seven == 0) {
             seven = 1;
             contador4 = contador4 + 1;
-            setTimeout(enviar4(), 3000);
+            setTimeout(enviar4(), 3500);
             closeDialog();
             }
             }

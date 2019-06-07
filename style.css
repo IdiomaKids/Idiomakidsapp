@@ -269,16 +269,28 @@ p {
     width: 35%;
     height: 45px;
     display: inline-block;
-    /* text-align: left; */
+    text-align: inherit;
     margin-top: 5%;
-    margin-left: -10%;
+    margin-left: -23%;
 }
+
+
 .passwordField {
     display: inline-block;
-    /* text-align: left; */
+    text-align: inherit;
     margin-top: 10%;
     margin-left: -10%;
 }
 .buttonGroup {
     display: grid;
+    grid-row-gap: 40px;
+    font-size: 40px;
+}
+
+#buttonLogin, #buttonRegister, #buttonAccessWithoutAccount{
+  width: 35%;
+}
+
+.containerFields{
+  display: grid;
 }

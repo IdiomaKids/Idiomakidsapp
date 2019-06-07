@@ -17,6 +17,9 @@ $jsonP=$results;
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
+   <audio src="">
+
+   </audio>
   <img src="../images/Identificar/Cuadrado/square.png" alt="" class="fondo" id="fondoCorrect" solution="correct">
 
   <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 20%;top: 70%;">
