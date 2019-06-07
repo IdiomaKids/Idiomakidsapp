@@ -37,6 +37,9 @@ $jsonP=$results;
 
  <div id="noClick"></div>
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
+ <audio id="cow2" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/vaca.mp3">
+
+ </audio>
  </body>
 
  </html>
@@ -168,6 +171,7 @@ $jsonP=$results;
  	if(bien_ubicada == 4){
     var bien = document.getElementById('valor').value = '4';
     //window.alert(bien);
+    cow2.play();
  		win.play();
  		//document.getElementsByClassName("movil").pointer-events="none";
 
