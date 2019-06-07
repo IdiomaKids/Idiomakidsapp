@@ -169,8 +169,8 @@ $jsonP=$results;
  	if(bien_ubicada == 4){
     var bien = document.getElementById('valor').value = '4';
     //window.alert(bien);
-    cow2.play();
- 		setTimeout(win.play(), 1000);
+    setTimeout(cow2.play(), 100);
+ 		win.play();
  		//document.getElementsByClassName("movil").pointer-events="none";
 
  		document.getElementById("float").id = "float2";

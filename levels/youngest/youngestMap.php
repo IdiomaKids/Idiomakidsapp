@@ -26,6 +26,7 @@
          <script type="text/javascript">
             function enviar(){
               document.location.href = "youngestMap.php?contador=" + contador + "&positionMap=1";
+              closeDialog();
             }
          </script>
          <?php
@@ -98,14 +99,13 @@
                }
 
 
-               var rH = setInterval('reloadHand()',3500);
+               var rH = setInterval('reloadHand()',4000);
                function reloadHand(){
                  var z = document.getElementById('frame1').contentWindow.document.getElementById('fondoCorrect2').style.opacity
                  if (z == 1 && hand == 0) {
                    hand = 1;
                    contador = contador + 1;
-                   setTimeout(enviar(), 3500);
-                   closeDialog();
+                   setTimeout('enviar()', 4000);
 
                  }
                }
@@ -123,7 +123,6 @@
 
                   function boton3(){
                enviar();
-                 closeDialog();
                }
 
 
@@ -141,6 +140,7 @@
       <script type="text/javascript">
          function enviar2(){
            document.location.href = "youngestMap.php?contador2=" + contador2 + "&positionMap=2";
+           closeDialog();
          }
       </script>
       <dialog id="dialog2" style="width:90%;height:90%;top:3%;z-index:2;"value="0">
@@ -191,14 +191,13 @@
               document.getElementById('boton21').style.display = "none";
               document.getElementById('boton31').style.display = "inline-block";
             }
-            var rt = setInterval('reloadThree()', 3500);
+            var rt = setInterval('reloadThree()', 4000);
             function reloadThree(){
             var z = document.getElementById('frame2').contentWindow.document.getElementById('valor2').value
             if (z == 4 && three == 0) {
             three = 1;
             contador2 = contador2 + 1;
-            setTimeout(enviar2(), 3500);
-            closeDialog();
+            setTimeout('enviar2()', 4000);
             }
             }
                 <?php
@@ -213,7 +212,6 @@
                ?>
             function boton31(){
             enviar2();
-              closeDialog();
             }
 
 
@@ -231,7 +229,7 @@
       <script type="text/javascript">
          function enviar3(){
            document.location.href = "youngestMap.php?contador3=" + contador3 + "&positionMap=3";
-
+           closeDialog();
 
          }
       </script>
@@ -282,14 +280,13 @@
               document.getElementById('boton311').style.display = "inline-block";
             }
 
-            var rc = setInterval('reloadHead()', 3500);
+            var rc = setInterval('reloadHead()', 4000);
             function reloadHead(){
             var z = document.getElementById('frame3').contentWindow.document.getElementById('fondoCorrect2').style.opacity
             if (z == 1 && head == 0) {
             head = 1;
             contador3 = contador3 + 1;
-            setTimeout(enviar3(), 3500);
-            closeDialog();
+            setTimeout('enviar3()', 4000);
             }
             }
 
@@ -305,7 +302,6 @@
                ?>
             function boton311(){
             enviar3();
-              closeDialog();
             }
 
 
@@ -323,7 +319,7 @@
       <script type="text/javascript">
          function enviar4(){
            document.location.href = "youngestMap.php?contador4=" + contador4 + "&positionMap=4";
-
+           closeDialog();
 
          }
 
@@ -377,14 +373,13 @@
               document.getElementById('boton2111').style.display = "none";
               document.getElementById('boton3111').style.display = "inline-block";
             }
-            setInterval('reloadSeven()', 3500);
+            setInterval('reloadSeven()', 4000);
             function reloadSeven(){
             var z = document.getElementById('frame4').contentWindow.document.getElementById('valor2').value
             if (z==4 && seven == 0) {
             seven = 1;
             contador4 = contador4 + 1;
-            setTimeout(enviar4(), 3500);
-            closeDialog();
+            setTimeout('enviar4()', 4000);
             }
             }
 
@@ -401,7 +396,6 @@
 
             function boton3111(){
             enviar4();
-              closeDialog();
             }
 
 
