@@ -17,7 +17,7 @@ $jsonP=$results;
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
-   <audio id="lefthand" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lefthand.mp3"></audio>
+   <audio id="lefthand2" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lefthand.mp3"></audio>
 <!-- <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct"> -->
 <!-- <h1 style="text-align:center;font-family:sans-serif;">SEÑALA LA MANO IZQUIERDA</h1> -->
   <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect2" solution="correct" usemap="#image-map" style="left:70%;">
@@ -62,7 +62,8 @@ $jsonP=$results;
     function verBueno(){
       document.getElementById("no").id="yes";
       document.getElementById("fondoCorrect2").style.opacity = 1;
-      win.play();
+      setTimeout('win.play()', 1000);
+      lefthand2.play();
       document.getElementById("n").id= "voluble";
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);
     }
