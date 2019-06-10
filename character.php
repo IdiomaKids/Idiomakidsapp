@@ -226,16 +226,16 @@ gone4();
   }
   </script>
   <div id="float">
-    <h1 class="center">Disponibles solo al completar el nivel 1</h1>
+    <h1 class="center">Disponibles solo al completar el nivel 1 con tres estrellas</h1>
   </div>
   <div id="floatL1">
-    <h1 class="center">Disponibles solo al completar los niveles 1 y 2</h1>
+    <h1 class="center">Disponibles solo al completar los niveles 1 y 2 con tres estrellas</h1>
   </div>
   <div id="floatL2">
-    <h1 class="center">Disponibles solo al completar los niveles 1, 2 y 3</h1>
+    <h1 class="center">Disponibles solo al completar los niveles 1, 2 y 3 con tres estrellas</h1>
   </div>
   <div id="floatL3">
-    <h1 class="center">Disponibles solo al completar los niveles 1, 2, 3 y 4</h1>
+    <h1 class="center">Disponibles solo al completar los niveles 1, 2, 3 y 4 con tres estrellas</h1>
   </div>
   </body>
 

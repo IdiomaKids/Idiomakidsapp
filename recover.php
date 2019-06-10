@@ -5,8 +5,8 @@ session_start();
 $destino= $_POST['email'];
 $from= "From: idiomakids@idiomakids.com";
 $reason = "Cambio de contraseña";
-$token = bin2hex(random_bytes(64));
-$text = "Para restablecer la contraseña vaya al siguiente enlace https://www.idiomakids.com/confirmRecover.php?mail=$destino&token=$token
+// $token = bin2hex(random_bytes(64));
+$text = "Para restablecer la contraseña vaya al siguiente enlace https://www.idiomakids.com/confirmRecover.php?mail=$destino
 
 Muchas gracias.
 

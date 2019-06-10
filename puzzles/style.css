@@ -61,3 +61,7 @@ align-items: center;
     font-family: cursive;
     /* display: -webkit-box; */
 }
+
+.movil{
+	cursor: grab;
+}

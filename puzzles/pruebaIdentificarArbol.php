@@ -17,6 +17,9 @@ $jsonP=$results;
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
+   <audio id="tree3" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/arbol.mp3">
+
+   </audio>
   <img src="../images/Identificar/Arbol/tree.png" alt="" class="fondo" id="fondoCorrect" solution="correct">
 
   <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 20%;top: 70%;">
@@ -78,6 +81,7 @@ $jsonP=$results;
       document.getElementById("no").id="yes";
       document.getElementById("fondoCorrect").src = "../images/Identificar/Arbol/tree2.png";
       document.getElementById("fondoCorrect").style.opacity = 1;
+      tree3.play();
       win.play();
       document.getElementById("n").id= "voluble";
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);

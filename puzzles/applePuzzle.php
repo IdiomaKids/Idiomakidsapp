@@ -88,6 +88,7 @@ $jsonP=$results;
  	piezas[i].setAttribute("width", tamWidh[i]);
  	piezas[i].setAttribute("height",tamHeight[i]);
  	piezas[i].setAttribute("onmousedown","seleccionarElemento(evt)");
+  piezas[i].setAttribute("cursor", "grab");
  }
 
  var elementSelect = 0;
@@ -104,6 +105,7 @@ $jsonP=$results;
  	currentPosx = parseFloat(elementSelect.getAttribute("x"));
  	currentPosy = parseFloat(elementSelect.getAttribute("y"));
  	elementSelect.setAttribute("onmousemove","moverElemento(evt)");
+  elementSelect.setAttribute("cursor", "grabbing");
  }
 
 //En esta funcion movemos la pieza
@@ -118,6 +120,7 @@ $jsonP=$results;
  	currentY = evt.clientY;
  	elementSelect.setAttribute("onmouseout","deseleccionarElemento(evt)");
  	elementSelect.setAttribute("onmouseup","deseleccionarElemento(evt)");
+  // elementSelect.setAttribute("cursor", "grabbing");
  	iman();
  }
 

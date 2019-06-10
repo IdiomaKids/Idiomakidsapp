@@ -84,6 +84,7 @@ $jsonP=$results;
  	piezas[i].setAttribute("width", tamWidh[i]);
  	piezas[i].setAttribute("height",tamHeight[i]);
  	piezas[i].setAttribute("onmousedown","seleccionarElemento(evt)");
+  piezas[i].setAttribute("cursor", "grab");
  }
 
  var elementSelect = 0;

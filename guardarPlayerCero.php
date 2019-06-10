@@ -39,7 +39,7 @@ $emailParent = $_SESSION['email'];
     <meta charset="utf-8">
     <title>IdiomaKids</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="pruebaDialog/dialog-con-estilo.css">
+    <link rel="stylesheet" href="dialog.css">
     <link rel="shortcut icon" type="image/png" href="images/LogoApp.ico"/>
   </head>
   <body class="bodyBack">
