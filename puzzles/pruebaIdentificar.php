@@ -17,9 +17,7 @@ $jsonP=$results;
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
-   <audio id="square2" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/cuadrado.mp3">
-
-   </audio>
+   <audio id="square2" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/cuadrado.mp3">   </audio>
   <img src="../images/Identificar/Cuadrado/square.png" alt="" class="fondo" id="fondoCorrect" solution="correct">
 
   <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 20%;top: 70%;">
@@ -83,7 +81,7 @@ $jsonP=$results;
       // window.alert(document.getElementById('contador').value);
       document.getElementById("no").id="yes";
       document.getElementById("fondoCorrect").style.opacity = 1;
-      square2.play();
+      setTimeout(square2.play(), 10);
       setTimeout(win.play(), 1000);
       document.getElementById("n").id= "voluble";
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);
