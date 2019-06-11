@@ -30,7 +30,7 @@
   transition: 1s;
 }
 
-.bodyMiddle {
+.bodyScreen {
   background-color: #f5bc51;
 }
 
@@ -51,7 +51,7 @@
   margin: 5px;
 }
 
-.scsec::webkit-scrollbar{
+.scsec::webkit-scrollbar {
   width: 7px;
   background: transparent;
 }
@@ -67,17 +67,20 @@ h2 {
     text-align: left;
     margin-top: 5%;
   }
-  h2{
+
+  h2 {
     font-size: 50px;
     text-align: center;
   }
-  .group{
+
+  .group {
     top: 20%;
     left: 50%;
     position: absolute;
     width: 60%;
   }
-  .buttonStyle{
+
+  .buttonStyle {
     font-size: 40px;
   }
 }

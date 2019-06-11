@@ -6,7 +6,6 @@ $avatar = $_SESSION["avatar"];
 $iduser = $_SESSION["id_user"];
 $idplayer = $_SESSION["id_player"];
 // echo $idplayer;
-
 require 'database.php';
 //echo $iduser;
 // En esta query cogemos el email y la passaword en funcion del id, para hacer despues la comprobación de campos.
@@ -23,7 +22,6 @@ $_SESSION['birth'] = $_POST['birth'];
     $email2 = $_POST['email'];
     $pass2 = password_verify($_POST['password'], $fila['password']);
   }
-
   // Si el dato introducido en los campos es difernete a estas comprobaciones con la BBDD, nos da error y vuelve a la misma pantalla
   // para volver a introducirlo
   if($email2 > 1 && $fila['email'] != $email2){
@@ -31,15 +29,15 @@ $_SESSION['birth'] = $_POST['birth'];
   }if($pass2 > 1 && $fila['password'] != $pass2){
       $message = 'Contraseña erronea';
   }
-
   // Si los datos son correctos se pasa a la siguiente pantalla
   if ($fila['email'] == $email2 && $fila['password'] == $pass2 ) {
     $_SESSION['id_player'] = $idplayer;
     header("Location: /configurationn/configScreen.php");
       echo "<p> Bienn";
       echo "</p>";
+    }else{
+      $message = 'Intorduzca el correo y la contraseña con la que inició sesión';
     }
-
   }
  ?>
 

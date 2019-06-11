@@ -36,19 +36,20 @@ foreach ($conn->query($sql) as $fila) {
 
   $actual = date("Y-d-j");
   $result = $actual - date("Y", strtotime($playerBirthday));
-  $sql4 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 11";
+  $sql4 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = (SELECT id_level WHERE id_player = $idplayer)";
   $result4 = $conn->query($sql4);
   $total4 = $result4->fetchColumn();
 
-  $sql5 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 12";
+
+  $sql5 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = (SELECT id_level WHERE id_player = $idplayer)";
   $result5 = $conn->query($sql5);
   $total5 = $result5->fetchColumn();
 
-  $sql6 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 13";
+  $sql6 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = (SELECT id_level WHERE id_player = $idplayer)";
   $result6 = $conn->query($sql6);
   $total6 = $result6->fetchColumn();
 
-  $sql7 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 14";
+  $sql7 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = (SELECT id_level WHERE id_player = $idplayer)";
   $result7 = $conn->query($sql7);
   $total7 = $result7->fetchColumn();
 
@@ -62,12 +63,25 @@ foreach ($conn->query($sql) as $fila) {
   // echo $total7;
   //echo $result;
            // print "Nombre: " .  $fila['name'] . "\n";
-           // echo "<p>";
-           // print "id player: " . $fila['id_player'] . "\n";
+          //  echo "<p>";
+          //  print "id player: " . $fila['birthday'] . "\n";
+          //  echo "</p>";
            $_SESSION["birthday"] = $fila["birthday"];
            //var_dump($fila['id_player']);
            //echo "<a style='text-decoration:none;color:black;' href='califications.php?id=$idplayer&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
-           echo "<div style='width:200px;display:inline-block;margin-top:10%;'>";
+           echo "<div style='width:200px;display:inline-block;margin-top:3%;'>";
+           if ($result<=5) {
+             echo "<p style='text-align:center;'>Pequeños";
+             echo "</p>";
+           }
+           else if ($result == 6 || $result <=8) {
+             echo "<p style='text-align:center;'>Medianos";
+             echo "</p>";
+           }
+           else if ($result >= 9) {
+             echo "<p style='text-align:center;'>Mayores";
+             echo "</p>";
+           }
            echo "<img  style='background-color:white;width: 150px;height: 150px;border-radius: 100px;border: 3px solid black;margin-left: 12%;margin-bottom: 1%;cursor: pointer;' src=".$fila["avatar"].">";
 
            echo "</img>";

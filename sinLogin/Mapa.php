@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>IdiomaKids</title>
     <link rel="stylesheet" href="sinLoginStyle.css">
+    <link rel="shortcut icon" type="image/png" href="../../../images/LogoApp.ico"/>
   </head>
   <body style="background-color:lightgreen;overflow-y:initial;margin:0%;padding:0%;">
     <a href="../../logout.php">

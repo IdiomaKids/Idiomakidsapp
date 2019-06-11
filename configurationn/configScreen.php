@@ -5,14 +5,16 @@ $idplayer = $_SESSION['id_player'];
 // echo $idplayer;
  ?>
 
+<!-- //Pagina que sirve de pasarela entre las diferentes opciones que tiene; Estan abajo detalladas -->
 <!DOCTYPE html>
 <html lang="" dir="ltr">
   <head>
     <link rel="stylesheet" href="styleScreen.css">
+    <link rel="shortcut icon" type="image/png" href="images/LogoApp.ico"/>
     <meta charset="utf-8">
     <title>IdiomaKids</title>
   </head>
-  <body class="bodyMiddle">
+  <body class="bodyScreen">
     <a href="../../logout.php">
     <img src="../../images/logout.png" alt="" style="
    width: 50px;

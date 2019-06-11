@@ -7,20 +7,25 @@ $idplayer2 = $_SESSION['id_player'];
 $name = $_SESSION['name'];
 $birth = $_SESSION["birthday"];
 $avatar = $_SESSION["avatar"];
-// echo $idplayer2;
+
+//Este archivo es el que muestra los jugadores que tiene el tutor, pero con la opción de borrar o añadir jugadores
+
+//Primero en esta query accedemos a la tabla players, que es donde estan todos los jugadores almacenados
   $sql = "SELECT id_player, name, id_user, birthday, avatar FROM players WHERE id_user = $iduser";
   $stmt = $conn->prepare($sql);
   $stmt->bindParam(':id_user', $_SESSION['id_user']);
   $stmt->execute();
+
+//Lo segundo que hacemos aqui es contar cuantos usuarios tiene asociados el tutor y sacar el numero
   $sql3 = "SELECT COUNT(id_player) FROM players WHERE id_user = $iduser";
-  $result = $conn->query($sql3); //$pdo sería el objeto conexión
+  $result = $conn->query($sql3);
   $total = $result->fetchColumn();
-  // echo $total;
-  // echo $sql3;
-//echo $avatar;
-//echo $row['name'];
-//var_dump($sql);
+
+//Empezamos a organizar los resultados, y los guardamos en un section donde van a ir siendo pintados
 echo "<section class='scsec'>";
+
+//Con este foreach lo que hacemos es coger la query que hemos hecho antes en el primer paso para conseguir uno a uno los datos que tiene cada usuario,
+//con $fila lo que hacemos es lo que hemos explicado antes, coger uno a uno los datos, y con la variable fila ir pintandolos
 foreach ($conn->query($sql) as $fila) {
   $playerBirthday = $fila["birthday"];
   $name = $fila['name'];
@@ -29,31 +34,23 @@ foreach ($conn->query($sql) as $fila) {
   $avatar = $fila['avatar'];
   $actual = date("Y-d-j");
   $result = date("Y", strtotime($actual)) - date("Y", strtotime($playerBirthday));
-  //echo $result;
-           // print "Nombre: " .  $fila['name'] . "\n";
-           // echo "<p>";
-           // print "id player: " . $fila['id_player'] . "\n";
+
            $_SESSION["birthday"] = $fila["birthday"];
-           //var_dump($fila['id_player']);
            echo "<a style='text-decoration:none;color:black;' href='#?id=$idplayer&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
            echo "</a>";
-           // echo "<a style='display:inline-block;'href='adminPlayer.php?id=$idplayer'>Borrar";
-           // echo "<p style='display:inline-block;' onclick='delete()'>Eliminar";
-            // echo "</a>";
-           // echo "</p>";
            echo "<div style='width:200px;display:inline-block;margin-top:5%;'>";
            echo "<img style='background-color:white;width: 150px;height: 150px;border-radius: 100px;border: 3px solid black;margin-left: 12%;margin-bottom: 1%;cursor: pointer;' src='../".$fila["avatar"]."'>";
            echo "<img>";
-           //echo $fila["id_player"];
            echo "<p style='text-align:center;text-decoration:none;'>$name";
            echo "</p>";
            echo "<a id = 'comp' style='display:block;text-align:center;text-decoration:none;color:red;'href='adminPlayer.php?id=$idplayer'>Borrar";
            echo "</a>";
            echo "</a>";
            echo "</div>";
-//echo $idplayer;
-        // echo $fila['id_player'];
         extract($_GET);
+
+//Aqui es donde utilizamos la query del count, hacemos una comprobación de que si el numero total de jugadores es 1, no se pueda borrar el único jugador asociado
+//En caso contrario se podrian borrar los usuarios que queramos
 if ($total == 1) {
   echo "<script>document.getElementById('comp').style.display = 'none'</script>";
 }else{
@@ -70,7 +67,6 @@ if ($total == 1) {
             $sql2 = "DELETE FROM players where id_player = $id";
             $stmt2 = $conn->prepare($sql2);
             $stmt2->execute();
-            // echo "<script>alert('ELIMINADO $id')</script>";
             echo "<script>location.href='adminPlayer.php'</script>";
         }
       }
@@ -78,31 +74,35 @@ if ($total == 1) {
 echo "</section>";
  ?>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <link rel="stylesheet" href="../style.css">
-    <meta charset="utf-8">
-    <title>IdiomaKids</title>
-  </head>
-  <body class="bodyBack">
-    <h1 style="text-align:center;">ADMINISTRAR JUGADOR</h1>
-    <a href="../../logout.php">
-    <img src="../../images/logout.png" alt="" style="
-   width: 50px;
-   position: absolute;
-   right: 0;
-   top: 0;
-   margin: 5px;
-"></a>
-<h1 style="text-align:center;"></h1>
-<container style="position: relative;
-    /* width: 90%; */
-    bottom: -590px;
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+
+ <head>
+   <link rel="stylesheet" href="../style.css">
+   <link rel="shortcut icon" type="image/png" href="images/LogoApp.ico"/>
+   <meta charset="utf-8">
+   <title>IdiomaKids</title>
+ </head>
+
+ <body class="bodyBack">
+   <h1 style="text-align:center;">ADMINISTRAR JUGADOR</h1>
+   <a href="../../logout.php">
+     <img src="../../images/logout.png" alt="" style="
+    width: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
     margin: 5px;
-    left: 28%;"class="buttonStyle">
-<a href="../guardarPlayer.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">AÑADIR</button></a>
-<a href="configScreen.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">VOLVER</button></a>
-</container>
-</body>
-</html>
+ "></a>
+   <h1 style="text-align:center;"></h1>
+   <container style="position: relative;
+     /* width: 90%; */
+     bottom: -590px;
+     margin: 5px;
+     left: 28%;" class="buttonStyle">
+     <a href="../guardarPlayer.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">AÑADIR</button></a>
+     <a href="configScreen.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">VOLVER</button></a>
+   </container>
+ </body>
+
+ </html>

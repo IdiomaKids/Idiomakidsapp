@@ -6,29 +6,9 @@ $birth = $_SESSION["birthday"];
 $avatar = $_SESSION["avatar"];
 $iduser = $_SESSION["id_user"];
 $idplayer = $_SESSION["id_player"];
-// echo $idplayer;
-
 
 echo "<h2>Bienvenido, $name";
 echo "</h2>";
-
-
-// echo $name;
-// echo "<br>";
-// echo $birth;
-// echo "<br>";
-// echo $avatar;
-// echo "<br>";
-// echo $iduser;
-// echo "<br>";
-// echo $idplayer;
-
-
-
-
-
-
-
  ?>
 
 <!DOCTYPE html>
@@ -49,7 +29,7 @@ echo "</h2>";
    top: 0;
    margin: 5px;
 "></a>
-
+<!-- //Al ser divs individuales, hemos decidido poner los estilos directamente en el Html -->
 <div style="width: 24%;
     height: 350px;
     position: absolute;
@@ -90,6 +70,7 @@ cursor: pointer;
 
 </div>
 <script type="text/javascript">
+//Los diferentes sitios a los que se puede ir al pulsar en los divs
   function map(){
     window.location.href="middleMap.php";
   }
