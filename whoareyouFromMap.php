@@ -5,7 +5,7 @@ $iduser = $_SESSION['id_user'];
 $email = $_SESSION['email'];
 $idplayer = $_SESSION['id_player'];
 
-
+//Seleccionamos los jugadores asociados al tutor
   $sql = "SELECT id_player, name, id_user, birthday, avatar FROM players WHERE id_user = $iduser";
   $stmt = $conn->prepare($sql);
   $stmt->bindParam(':id_user', $_SESSION['id_user']);
@@ -31,6 +31,7 @@ echo "<section style='position: absolute;
     top:0%;
     overflow-y:scroll;
     height:570px;' class='scsec'>";
+            //Pintamos los datos con la variable $fila y mostramos los jugadores que tiene el tutor
 foreach ($conn->query($sql) as $fila) {
   $playerBirthday = $fila["birthday"];
   $name = $fila['name'];

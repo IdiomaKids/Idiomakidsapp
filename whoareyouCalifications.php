@@ -5,7 +5,7 @@ $iduser = $_SESSION['id_user'];
 $email = $_SESSION['email'];
 
 //echo $iduser;
-
+//Seleccionamos los jugadores asociados al tutor
   $sql = "SELECT id_player, name, id_user, birthday, avatar FROM players WHERE id_user = $iduser";
   $stmt = $conn->prepare($sql);
   $stmt->bindParam(':id_user', $_SESSION['id_user']);
@@ -27,6 +27,7 @@ echo "<section style='position: absolute;
     top:8%;
     overflow-y:scroll;
     height:541px;' class='scsec'>";
+    //Pintamos los datos con la variable $fila y por cada usuario se asigna en forma de estrellas la puntuacion de cada nivel de cada mapa
 foreach ($conn->query($sql) as $fila) {
   $playerBirthday = $fila["birthday"];
   $name = $fila['name'];
@@ -53,19 +54,6 @@ foreach ($conn->query($sql) as $fila) {
   $result7 = $conn->query($sql7);
   $total7 = $result7->fetchColumn();
 
-
-  // echo $total4;
-  //
-  // echo $total5;
-  //
-  // echo $total6;
-  //
-  // echo $total7;
-  //echo $result;
-           // print "Nombre: " .  $fila['name'] . "\n";
-          //  echo "<p>";
-          //  print "id player: " . $fila['birthday'] . "\n";
-          //  echo "</p>";
            $_SESSION["birthday"] = $fila["birthday"];
            //var_dump($fila['id_player']);
            //echo "<a style='text-decoration:none;color:black;' href='califications.php?id=$idplayer&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
