@@ -37,20 +37,20 @@ foreach ($conn->query($sql) as $fila) {
 
   $actual = date("Y-d-j");
   $result = $actual - date("Y", strtotime($playerBirthday));
-  $sql4 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = (SELECT id_level WHERE id_player = $idplayer)";
+  $sql4 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 11";
   $result4 = $conn->query($sql4);
   $total4 = $result4->fetchColumn();
 
 
-  $sql5 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = (SELECT id_level WHERE id_player = $idplayer)";
+  $sql5 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 12";
   $result5 = $conn->query($sql5);
   $total5 = $result5->fetchColumn();
 
-  $sql6 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = (SELECT id_level WHERE id_player = $idplayer)";
+  $sql6 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 13";
   $result6 = $conn->query($sql6);
   $total6 = $result6->fetchColumn();
 
-  $sql7 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = (SELECT id_level WHERE id_player = $idplayer)";
+  $sql7 = "SELECT score FROM score WHERE id_player = $idplayer AND id_level = 14";
   $result7 = $conn->query($sql7);
   $total7 = $result7->fetchColumn();
 
