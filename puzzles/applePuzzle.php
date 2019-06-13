@@ -40,6 +40,7 @@ $jsonP=$results;
 
  <div id="noClick"></div>
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
+  <audio id="apple" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/manzana.mp3"></audio>
  </body>
 
  </html>
@@ -182,7 +183,8 @@ $jsonP=$results;
  	if(bien_ubicada == 4){
     var bien = document.getElementById('valor').value = '4';
     //window.alert(bien);
- 		win.play();
+    apple.play();
+ 		setTimeout('win.play()', 500);
  		//document.getElementsByClassName("movil").pointer-events="none";
 
  		document.getElementById("float").id = "float2";
