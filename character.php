@@ -22,6 +22,7 @@ echo "<p>Cambiar personaje de $name</p>";
 echo "</h2>";
  ?>
 
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
