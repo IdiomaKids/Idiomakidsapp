@@ -36,7 +36,7 @@ $jsonP=$results;
  </div>
 
  <div id="noClick"></div>
- <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
+ <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/clap2.mp3"></audio>
  </body>
 
  </html>

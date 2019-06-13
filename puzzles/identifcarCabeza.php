@@ -4,8 +4,8 @@
 <body>
 <!-- En este juego no necesitamos un json, ya que con solo dos capas podemos realizar el juego -->
 
- <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
-   <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
+ <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/clap2.mp3"></audio>
+   <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/lose.mp3"></audio>
 
 <!-- Cargamos el fondo de referencia del cuerpo humano -->
   <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect2" solution="correct" usemap="#image-map" style="left:70%;">

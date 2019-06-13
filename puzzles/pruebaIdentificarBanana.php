@@ -15,8 +15,8 @@ $jsonP=$results;
 <body>
 
 
- <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
-   <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
+ <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/clap2.mp3"></audio>
+   <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/lose.mp3"></audio>
   <img src="../images/Identificar/Platano/bananaFondo.png" alt="" class="fondo" id="fondoCorrect" solution="correct" style="top:10%">
 
   <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 16%;top: 70%;">

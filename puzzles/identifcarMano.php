@@ -15,9 +15,9 @@ $jsonP=$results;
 <body>
 
 
- <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/clap2.mp3"></audio>
-   <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lose.mp3"></audio>
-   <audio id="lefthand2" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/lefthand.mp3"></audio>
+ <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/clap2.mp3"></audio>
+   <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/lose.mp3"></audio>
+   <audio id="lefthand2" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/lefthand.mp3"></audio>
 <!-- <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect" solution="correct"> -->
 <!-- <h1 style="text-align:center;font-family:sans-serif;">SEÑALA LA MANO IZQUIERDA</h1> -->
   <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect2" solution="correct" usemap="#image-map" style="left:70%;">
