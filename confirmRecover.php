@@ -75,17 +75,19 @@ if (!empty($_POST['password'])) {
       if (x == y && x >1 && y>1) {
         document.getElementById('MessageCheck').style.display = 'none';
         document.getElementById('buttonRegister2').id = 'buttonRegisterCheck';
+        document.getElementById('buttonRegister2').type = 'submit';
 
       }else{
         document.getElementById('MessageCheck').style.display = 'inline-block';
         document.getElementById('buttonRegisterCheck').id = 'buttonRegister2';
+        document.getElementById('buttonRegister2').type = 'text';
 
       }
     }
   </script>
   <p style="display:none;" id="MessageCheck">Las contraseñas no son iguales</p>
   <div class="buttonGroup">
-    <input type="submit" name="buttonR" id="buttonRegister2" value="RESETEAR CONTRASEÑA"></input>
+    <input type="submit" name="buttonR" id="buttonRegister2" value="CAMBIAR CONTRASEÑA"></input>
 
   </div>
 </form>

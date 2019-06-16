@@ -14,7 +14,7 @@ $sql = "SELECT email, password FROM users WHERE id_user = $iduser";
 $stmt = $conn->prepare($sql);
 $stmt->bindParam(':id_user', $_SESSION['id_user']);
 $stmt->execute();
-$_SESSION['birth'] = $_POST['birth'];
+// $_SESSION['birth'] = $_POST['birth'];
   if ($stmt->execute()) {
     foreach ($conn->query($sql) as $fila) {
     //echo $fila['email'];
@@ -83,10 +83,5 @@ $_SESSION['birth'] = $_POST['birth'];
         <a href="pasarelaCero.php" style="text-decoration:none;color:black;"><button type="button" name="buttonR" id="buttonRegister" style="margin-right:5%;">VOLVER</button></a>
 
     </form>
-    <script type="text/javascript">
-      function check(){
-        document.getElementById('email').value;
-      }
-    </script>
   </body>
 </html>

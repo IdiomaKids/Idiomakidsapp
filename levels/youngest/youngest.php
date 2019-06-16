@@ -7,28 +7,8 @@ $avatar = $_SESSION["avatar"];
 $iduser = $_SESSION["id_user"];
 $idplayer = $_SESSION["id_player"];
 // echo $idplayer;
-
-
 echo "<h2>Bienvenido, $name";
 echo "</h2>";
-
-
-// echo $name;
-// echo "<br>";
-// echo $birth;
-// echo "<br>";
-// echo $avatar;
-// echo "<br>";
-// echo $iduser;
-// echo "<br>";
-// echo $idplayer;
-
-
-
-
-
-
-
  ?>
 
 <!DOCTYPE html>

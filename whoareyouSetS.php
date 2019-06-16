@@ -43,7 +43,7 @@ foreach ($conn->query($sql) as $fila) {
            // print "id player: " . $fila['id_player'] . "\n";
            $_SESSION["birthday"] = $fila["birthday"];
            //var_dump($fila['id_player']);
-           echo "<a style='text-decoration:none;color:black;' href='pasarela.php?id=$idplayer&birth=$result&name=$name&iduser=$iduser&avatar=$avatar'>";
+           echo "<a style='text-decoration:none;color:black;' href='pasarela.php?id=$idplayer &birth= $result &name=$name &iduser=$iduser &avatar=$avatar'>";
            echo "<div style='width:200px;display:inline-block;margin-top:5%;'>";
            echo "<img style='background-color:white;width: 150px;height: 150px;border-radius: 100px;border: 3px solid black;margin-left: 12%;margin-bottom: 1%;cursor: pointer;' src=".$fila["avatar"].">";
            echo "<img>";

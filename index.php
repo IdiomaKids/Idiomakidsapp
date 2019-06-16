@@ -15,7 +15,7 @@
       $_SESSION['email'] = $results['email'];
 
 
-      header("Location: /whoareyou.php");
+      header("Location: /whoareyouSetS.php");
     } else {
       $message = 'Lo sentimos, el usuario no existe';
     }

@@ -27,8 +27,6 @@ $emailParent = $_SESSION['email'];
       header("Location: /pasarelaCero.php");
 
       $message = 'Usuario creado correctamente';
-    } else {
-      $message = 'El correo introducido ya existe. Por favor, introduzca uno válido';
     }
   }
  ?>
@@ -118,7 +116,6 @@ echo "</p>";
         document.getElementById('avatar').value = "images/avatares/pluto.png";
         console.log(document.getElementById('avatar').value);
         dialog.close();
-
       }
 
       function clickImageSully(){

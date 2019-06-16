@@ -15,7 +15,8 @@ $message = '';
 
     $pass1 = $_POST['password'];
     $pass2 = $_POST['passwordR'];
-//Antes de mandar el registro, comprobamos que las contraseñas sean igules, si lo son, pasamos a la siguiente pantalla, si no se devuelve un mensaje de error y te manda a la misma pantalla
+//Antes de mandar el registro, comprobamos que las contraseñas sean igules, si lo son, pasamos
+// a la siguiente pantalla, si no se devuelve un mensaje de error y te manda a la misma pantalla
 if ($pass1 == $pass2) {
   if ($stmt->execute()) {
     header("Location: /guardarPlayerCero.php");
@@ -107,7 +108,6 @@ if ($pass1 == $pass2) {
     <div class="">
       <input type="checkbox" name="button" required></input>
       <p style="display:inline-block;">He leido y acepto la <a href="dataProtection.html" target="_blank">política de protección de datos</a> de IdiomaKids</p>
-
     </div>
   </div>
 </form>

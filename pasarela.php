@@ -37,19 +37,4 @@ $_SESSION["avatar"] = $avatar;
 $_SESSION["id_user"] = $iduser;
 $_SESSION["id_player"] = $idplayer;
 $stmt->execute();
-
-
-// echo "<br>";
-// echo $idplayer;
-// echo "<br>";
-// echo $birth;
-// echo "<br>";
-// echo $name;
-// echo "<br>";
-// echo $iduser;
-// echo "<br>";
-// echo $avatar;
-
-
-
  ?>

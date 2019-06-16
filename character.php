@@ -44,7 +44,7 @@ echo "</h2>";
 "></a>
     <div>
     <div style="height: 200px;">
-<!-- Esta es la imagen del niño actual -->
+<!-- Esta es la imagen acual del niño -->
     <?php echo "<img id='inputAvatar' style='background-color: white;
     width: 150px;
     height: 150px;
@@ -62,7 +62,7 @@ echo "</h2>";
 
   <input type="text" name="avatar" id="avatar" value="" style="display:none;">
 
-  <!-- Esta imagen es el candado que encima de todas las filas, pero con un id diferente por cada una, ya que son individuales -->
+  <!-- Esta imagen es el candado que hay encima de todas las filas, pero con un id diferente por cada una, ya que son individuales -->
   <img src="../../images/pjBlock.png" alt="" style="
 
     width: 109px;
@@ -71,8 +71,8 @@ echo "</h2>";
     z-index: 1;
     display: inline-block;
     position: absolute;" id="redColumn"  onclick="bloqPj1()">
-
   </img>
+
   <img src="../../images/pjBlock.png" alt="" style="
 
     width: 108px;
@@ -163,7 +163,6 @@ if ($total == 3) {
   echo "<script> document.getElementById('redColumn').style.display = 'none';";
   echo "</script>";
 
-
         if ($total2 == 3){
           echo "<script> document.getElementById('blueColumn').style.display = 'none';";
           echo "</script>";
@@ -181,15 +180,15 @@ if ($total == 3) {
 
 
 ?>
-    <a href="pasarelaCero.php" id="buttonRegister" style="text-align:center;text-decoration:none;position:absolute;margin:5px;bottom:0;left:25%;">VOLVER</a>
+    <a href="pasarelaCero.php" id="buttonRegister" style="text-align:center;text-decoration:none;position:absolute;margin:5px;bottom:0;left:25%;">
+      VOLVER</a>
     <input type="submit" name="" value="CAMBIAR PERSONAJE" id="buttonRegister" style="
     text-align: center;
     text-decoration: none;
     position: absolute;
     margin: 5px;
     bottom: 0;
-    left: 50%;
-    ">
+    left: 50%;">
   </form>
 
 
@@ -227,16 +226,16 @@ gone4();
   }
   </script>
   <div id="float">
-    <h1 class="center">Disponibles solo al completar el nivel 1 con tres estrellas</h1>
+    <h1 class="center">Disponibles sólo al completar el nivel 1 con tres estrellas</h1>
   </div>
   <div id="floatL1">
-    <h1 class="center">Disponibles solo al completar los niveles 1 y 2 con tres estrellas</h1>
+    <h1 class="center">Disponibles sólo al completar los niveles 1 y 2 con tres estrellas</h1>
   </div>
   <div id="floatL2">
-    <h1 class="center">Disponibles solo al completar los niveles 1, 2 y 3 con tres estrellas</h1>
+    <h1 class="center">Disponibles sólo al completar los niveles 1, 2 y 3 con tres estrellas</h1>
   </div>
   <div id="floatL3">
-    <h1 class="center">Disponibles solo al completar los niveles 1, 2, 3 y 4 con tres estrellas</h1>
+    <h1 class="center">Disponibles sólo al completar los niveles 1, 2, 3 y 4 con tres estrellas</h1>
   </div>
   </body>
 

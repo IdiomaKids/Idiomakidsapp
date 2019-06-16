@@ -1,7 +1,7 @@
 <?php
 require ("database.php");
 session_start();
-
+//En esta pantalla recogemos los datos recibidos de la pantalla guardarPlayerCero.php
 $idplayer = $_SESSION['id_player'];
 $birth = $_SESSION['birthday'];
 $name = $_SESSION['name'];
@@ -10,7 +10,7 @@ $avatar = $_SESSION['avatar'];
 
 //echo $birth;
 
-//En esta pantalla recogemos los datos recibidos de la pantalla guardarPlayerCero.php
+//Calculamos la edad en funcion de la fecha recibida
 $actual = date("Y-d-j");
 $result = $actual - date("Y", strtotime($birth));
 
@@ -21,7 +21,8 @@ $stmt->bindParam(':id_user', $_SESSION['id_user']);
 $_SESSION["id_user"] = $iduser;
 $stmt->execute();
 
-//Aqui pasamos el resultado de la resta de la fecha actual y la fecha de nacimiento del niño, o bien si recibimos por sesion la edad pasar al mapa correspondiente
+//Aqui pasamos el resultado de la resta de la fecha actual y la fecha de nacimiento del niño,
+// o bien si recibimos por sesion la edad pasar al mapa correspondiente
 if ($result <=5 || $birth <=5) {
 header("Location: levels/youngest/youngest.php");
 echo "<p> in progress 5";
@@ -39,10 +40,4 @@ else if ($result >= 9 || $birth >= 9) {
   echo "<p> in progress 9";
   echo "</p>";
 }
-
-
-
-
-
-
  ?>

@@ -156,10 +156,6 @@ echo "</div>";
 
 
         // echo $fila['id_player'];
-
-
-
-
 }
 
 echo "</section>";

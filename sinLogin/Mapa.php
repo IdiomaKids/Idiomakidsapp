@@ -135,31 +135,11 @@
             document.getElementById('image').style.bottom = '120px'
               document.getElementById('reg2').style.display = 'inline-block'
           }
-          if (contador == 0) {
-            document.getElementById('1s0').style.display = "inline-block";
-          }else if (contador == 1) {
-            document.getElementById('1s1').style.display = "inline-block";
-            document.getElementById('image').style.left = '50px'
-            document.getElementById('image').style.bottom = '120px'
-              document.getElementById('reg2').style.display = 'inline-block'
-          }else if (contador == 2) {
-            document.getElementById('1s2').style.display = "inline-block";
-            document.getElementById('image').style.left = '50px'
-            document.getElementById('image').style.bottom = '120px'
-              document.getElementById('reg2').style.display = 'inline-block'
-          }else if(contador == 3){
-            document.getElementById('1s3').style.display = "inline-block";
-            document.getElementById('image').style.left = '50px'
-            document.getElementById('image').style.bottom = '120px'
-              document.getElementById('reg2').style.display = 'inline-block'
-          }
           setTimeout('closeDialog()', 4000);
-
         }
       }
 
       function handButton(){
-
         if (contador == 0) {
           document.getElementById('1s0').style.display = "inline-block";
         }else if (contador == 1) {
@@ -178,29 +158,7 @@
           document.getElementById('image').style.bottom = '120px'
             document.getElementById('reg2').style.display = 'inline-block'
         }
-        if (contador == 0) {
-          document.getElementById('1s0').style.display = "inline-block";
-        }else if (contador == 1) {
-          document.getElementById('1s1').style.display = "inline-block";
-          document.getElementById('image').style.left = '50px'
-          document.getElementById('image').style.bottom = '120px'
-            document.getElementById('reg2').style.display = 'inline-block'
-        }else if (contador == 2) {
-          document.getElementById('1s2').style.display = "inline-block";
-          document.getElementById('image').style.left = '50px'
-          document.getElementById('image').style.bottom = '120px'
-            document.getElementById('reg2').style.display = 'inline-block'
-        }else if(contador == 3){
-          document.getElementById('1s3').style.display = "inline-block";
-          document.getElementById('image').style.left = '50px'
-          document.getElementById('image').style.bottom = '120px'
-            document.getElementById('reg2').style.display = 'inline-block'
-        }
         closeDialog();
-
-
-
-
       }
 
 
