@@ -5,7 +5,7 @@ $email = $_GET['mail'];
 $emailRecover = $_POST['email'];
 $password2 = $_POST['password'];
 
-
+$message = '';
 //Aqui comprobamos que el email existe en la BBDD para no mandar emails a gente que no este registrada en la web
 $sql4 = "SELECT id_user FROM users WHERE email = '$email'";
 $result4 = $conn->query($sql4);
@@ -20,8 +20,13 @@ $stmt15 = $conn->prepare($sql15);
 
 //Comprobamos que el campo de la password no este vacio, y si no lo esta ejecuta la query
 if (!empty($_POST['password'])) {
-  $stmt15->execute();
-  header("Location: index.php");
+  if ($_POST['password'] == $_POST['passwordR']) {
+    $stmt15->execute();
+    header("Location: index.php");
+  }else{
+    $message = 'Las contraseñas no son iguales';
+
+}
 }
 
  ?>
@@ -85,6 +90,9 @@ if (!empty($_POST['password'])) {
       }
     }
   </script>
+  <?php if(!empty($message)): ?>
+    <?= $message ?>
+  <?php endif; ?>
   <p style="display:none;" id="MessageCheck">Las contraseñas no son iguales</p>
   <div class="buttonGroup">
     <input type="submit" name="buttonR" id="buttonRegister2" value="CAMBIAR CONTRASEÑA"></input>

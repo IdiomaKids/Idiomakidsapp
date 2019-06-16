@@ -92,7 +92,6 @@ $jsonP=$results;
     function verMalo(){
         lose.play();
       document.getElementById("i").id = "voluble2";
-
       setTimeout(function(){ document.getElementById("voluble2").id = "i"; }, 2000);
     }
 
