@@ -17,6 +17,9 @@ $jsonP=$results;
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/clap2.mp3"></audio>
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/lose.mp3"></audio>
+   <audio id="pig2" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/cerdo.mp3">
+
+   </audio>
   <img src="../images/Identificar/Cerdo/pig.png" alt="" class="fondo" id="fondoCorrect" solution="correct" style="top:15%;">
 
   <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 18%;top: 70%;">
@@ -78,7 +81,8 @@ $jsonP=$results;
       document.getElementById("no").id="yes";
       document.getElementById("fondoCorrect").src = "../images/Identificar/Cerdo/pigCorrect.png";
       document.getElementById("fondoCorrect").style.opacity = 1;
-      win.play();
+      pig2.play();
+      setTimeout("win.play()", 500);
       document.getElementById("n").id= "voluble";
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);
     }

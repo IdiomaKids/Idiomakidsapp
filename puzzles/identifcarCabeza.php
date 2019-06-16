@@ -6,6 +6,9 @@
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/clap2.mp3"></audio>
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/lose.mp3"></audio>
+   <audio id="head2" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/cabeza.mp3">
+
+   </audio>
 
 <!-- Cargamos el fondo de referencia del cuerpo humano -->
   <img src="../images/Identificar/ManoIzq/body.png" alt="" class="fondobody" id="fondoCorrect2" solution="correct" usemap="#image-map" style="left:70%;">
@@ -51,7 +54,8 @@
     function verBueno(){
       document.getElementById("no").id="yes";
       document.getElementById("fondoCorrect2").style.opacity = 1;
-      win.play();
+      head2.play();
+      setTimeout("win.play()", 500);
       document.getElementById("n").id= "voluble";
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);
     }
@@ -59,7 +63,6 @@
     function verMalo(){
         lose.play();
       document.getElementById("i").id = "voluble2";
-
       setTimeout(function(){ document.getElementById("voluble2").id = "i"; }, 2000);
     }
 

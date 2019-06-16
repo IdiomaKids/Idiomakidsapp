@@ -17,6 +17,9 @@ $jsonP=$results;
 
  <audio id="win" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/clap2.mp3"></audio>
    <audio id="lose" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/lose.mp3"></audio>
+   <audio id="banana2" src="https://raw.githubusercontent.com/IdiomaKids/Idiomakidsapp/rescate/audios/platano.mp3">
+
+   </audio>
   <img src="../images/Identificar/Platano/bananaFondo.png" alt="" class="fondo" id="fondoCorrect" solution="correct" style="top:10%">
 
   <div class="" style="display: block;transform: translateX(-50%);transform: translateY(-50%);position: absolute;left: 16%;top: 70%;">
@@ -78,7 +81,8 @@ $jsonP=$results;
       document.getElementById("no").id="yes";
       document.getElementById("fondoCorrect").src = "../images/Identificar/Platano/correctBanana.png";
       document.getElementById("fondoCorrect").style.opacity = 1;
-      win.play();
+      banana2.play();
+      setTimeout("win.play()", 500);
       document.getElementById("n").id= "voluble";
       setTimeout(function(){ document.getElementById("voluble").id = "n"; }, 3000);
     }
