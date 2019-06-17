@@ -13,8 +13,6 @@
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
       $_SESSION['id_user'] = $results['id_user'];
       $_SESSION['email'] = $results['email'];
-
-
       header("Location: /whoareyouSetS.php");
     } else {
       $message = 'Lo sentimos, el usuario no existe';
